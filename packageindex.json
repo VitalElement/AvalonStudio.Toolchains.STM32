@@ -1,4 +1,5 @@
 {
+  "Name": "AvalonStudio.Toolchains.STM32",
   "Description": "GCC based toolchain for STM32. arm-none-eabi",
   "RepoUrl": "https://github.com/VitalElement/AvalonStudio.Toolchains.STM32.git",
   "Tags": [
