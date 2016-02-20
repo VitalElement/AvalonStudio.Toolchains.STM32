@@ -3,8 +3,8 @@
   "Description": "GCC based toolchain for STM32. arm-none-eabi",
   "RepoUrl": "http://github.com/VitalElement/AvalonStudio.Toolchains.STM32.git",
   "Tags": [
-    "Win32-Slow-v0.01-4.9.3",
-    "Win32-Slow-v0.02-4.9.3",
-    "Win32-Slow-v0.03-5.2.1"
+    "Linux-Slow-v0.03-5.2.1",
+    "Win32-Slow-v0.03-5.2.1",
+    "Win32-Slow-v0.01-4.9.3"
   ]
 }
