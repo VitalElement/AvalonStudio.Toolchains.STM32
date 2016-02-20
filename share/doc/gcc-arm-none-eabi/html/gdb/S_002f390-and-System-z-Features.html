@@ -3,7 +3,7 @@
 <title>S/390 and System z Features - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Standard-Target-Features.html#Standard-Target-Features" title="Standard Target Features">
 <link rel="prev" href="PowerPC-Features.html#PowerPC-Features" title="PowerPC Features">
@@ -50,41 +50,41 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Standard-Target-Features.html#Standard-
 <h4 class="subsection">G.4.9 S/390 and System z Features</h4>
 
 <p><a name="index-target-descriptions_002c-S_002f390-features-3522"></a><a name="index-target-descriptions_002c-System-z-features-3523"></a>
-The &lsquo;<samp><span class="samp">org.gnu.gdb.s390.core</span></samp>&rsquo; feature is required for S/390 and
+The `<samp><span class="samp">org.gnu.gdb.s390.core</span></samp>' feature is required for S/390 and
 System z targets.  It should contain the PSW and the 16 general
 registers.  In particular, System z targets should provide the 64-bit
-registers &lsquo;<samp><span class="samp">pswm</span></samp>&rsquo;, &lsquo;<samp><span class="samp">pswa</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">r0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">r15</span></samp>&rsquo;. 
+registers `<samp><span class="samp">pswm</span></samp>', `<samp><span class="samp">pswa</span></samp>', and `<samp><span class="samp">r0</span></samp>' through `<samp><span class="samp">r15</span></samp>'. 
 S/390 targets should provide the 32-bit versions of these registers. 
 A System z target that runs in 31-bit addressing mode should provide
-32-bit versions of &lsquo;<samp><span class="samp">pswm</span></samp>&rsquo; and &lsquo;<samp><span class="samp">pswa</span></samp>&rsquo;, as well as the general
-register's upper halves &lsquo;<samp><span class="samp">r0h</span></samp>&rsquo; through &lsquo;<samp><span class="samp">r15h</span></samp>&rsquo;, and their
-lower halves &lsquo;<samp><span class="samp">r0l</span></samp>&rsquo; through &lsquo;<samp><span class="samp">r15l</span></samp>&rsquo;.
+32-bit versions of `<samp><span class="samp">pswm</span></samp>' and `<samp><span class="samp">pswa</span></samp>', as well as the general
+register's upper halves `<samp><span class="samp">r0h</span></samp>' through `<samp><span class="samp">r15h</span></samp>', and their
+lower halves `<samp><span class="samp">r0l</span></samp>' through `<samp><span class="samp">r15l</span></samp>'.
 
-   <p>The &lsquo;<samp><span class="samp">org.gnu.gdb.s390.fpr</span></samp>&rsquo; feature is required.  It should
-contain the 64-bit registers &lsquo;<samp><span class="samp">f0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">f15</span></samp>&rsquo;, and
-&lsquo;<samp><span class="samp">fpc</span></samp>&rsquo;.
+   <p>The `<samp><span class="samp">org.gnu.gdb.s390.fpr</span></samp>' feature is required.  It should
+contain the 64-bit registers `<samp><span class="samp">f0</span></samp>' through `<samp><span class="samp">f15</span></samp>', and
+`<samp><span class="samp">fpc</span></samp>'.
 
-   <p>The &lsquo;<samp><span class="samp">org.gnu.gdb.s390.acr</span></samp>&rsquo; feature is required.  It should
-contain the 32-bit registers &lsquo;<samp><span class="samp">acr0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">acr15</span></samp>&rsquo;.
+   <p>The `<samp><span class="samp">org.gnu.gdb.s390.acr</span></samp>' feature is required.  It should
+contain the 32-bit registers `<samp><span class="samp">acr0</span></samp>' through `<samp><span class="samp">acr15</span></samp>'.
 
-   <p>The &lsquo;<samp><span class="samp">org.gnu.gdb.s390.linux</span></samp>&rsquo; feature is optional.  It should
-contain the register &lsquo;<samp><span class="samp">orig_r2</span></samp>&rsquo;, which is 64-bit wide on System z
+   <p>The `<samp><span class="samp">org.gnu.gdb.s390.linux</span></samp>' feature is optional.  It should
+contain the register `<samp><span class="samp">orig_r2</span></samp>', which is 64-bit wide on System z
 targets and 32-bit otherwise.  In addition, the feature may contain
-the &lsquo;<samp><span class="samp">last_break</span></samp>&rsquo; register, whose width depends on the addressing
-mode, as well as the &lsquo;<samp><span class="samp">system_call</span></samp>&rsquo; register, which is always
+the `<samp><span class="samp">last_break</span></samp>' register, whose width depends on the addressing
+mode, as well as the `<samp><span class="samp">system_call</span></samp>' register, which is always
 32-bit wide.
 
-   <p>The &lsquo;<samp><span class="samp">org.gnu.gdb.s390.tdb</span></samp>&rsquo; feature is optional.  It should
-contain the 64-bit registers &lsquo;<samp><span class="samp">tdb0</span></samp>&rsquo;, &lsquo;<samp><span class="samp">tac</span></samp>&rsquo;, &lsquo;<samp><span class="samp">tct</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">atia</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">tr0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">tr15</span></samp>&rsquo;.
+   <p>The `<samp><span class="samp">org.gnu.gdb.s390.tdb</span></samp>' feature is optional.  It should
+contain the 64-bit registers `<samp><span class="samp">tdb0</span></samp>', `<samp><span class="samp">tac</span></samp>', `<samp><span class="samp">tct</span></samp>',
+`<samp><span class="samp">atia</span></samp>', and `<samp><span class="samp">tr0</span></samp>' through `<samp><span class="samp">tr15</span></samp>'.
 
-   <p>The &lsquo;<samp><span class="samp">org.gnu.gdb.s390.vx</span></samp>&rsquo; feature is optional.  It should contain
-64-bit wide registers &lsquo;<samp><span class="samp">v0l</span></samp>&rsquo; through &lsquo;<samp><span class="samp">v15l</span></samp>&rsquo;, which will be
-combined by <span class="sc">gdb</span> with the floating point registers &lsquo;<samp><span class="samp">f0</span></samp>&rsquo;
-through &lsquo;<samp><span class="samp">f15</span></samp>&rsquo; to present the 128-bit wide vector registers
-&lsquo;<samp><span class="samp">v0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">v15</span></samp>&rsquo;.  In addition, this feature should
-contain the 128-bit wide vector registers &lsquo;<samp><span class="samp">v16</span></samp>&rsquo; through
-&lsquo;<samp><span class="samp">v31</span></samp>&rsquo;.
+   <p>The `<samp><span class="samp">org.gnu.gdb.s390.vx</span></samp>' feature is optional.  It should contain
+64-bit wide registers `<samp><span class="samp">v0l</span></samp>' through `<samp><span class="samp">v15l</span></samp>', which will be
+combined by <span class="sc">gdb</span> with the floating point registers `<samp><span class="samp">f0</span></samp>'
+through `<samp><span class="samp">f15</span></samp>' to present the 128-bit wide vector registers
+`<samp><span class="samp">v0</span></samp>' through `<samp><span class="samp">v15</span></samp>'.  In addition, this feature should
+contain the 128-bit wide vector registers `<samp><span class="samp">v16</span></samp>' through
+`<samp><span class="samp">v31</span></samp>'.
 
    </body></html>
 

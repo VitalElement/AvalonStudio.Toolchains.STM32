@@ -3,7 +3,7 @@
 <title>Variables - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Ambiguous-Expressions.html#Ambiguous-Expressions" title="Ambiguous Expressions">
@@ -138,7 +138,7 @@ when the program stops after executing the call <code>bar(0)</code>:
      (gdb) p bar::a
      $4 = 0
 </pre>
-   <p><a name="index-C_0040t_007b_002b_002b_007d-scope-resolution-595"></a>These uses of &lsquo;<samp><span class="samp">::</span></samp>&rsquo; are very rarely in conflict with the very
+   <p><a name="index-C_0040t_007b_002b_002b_007d-scope-resolution-595"></a>These uses of `<samp><span class="samp">::</span></samp>' are very rarely in conflict with the very
 similar use of the same notation in C<tt>++</tt>.  When they are in
 conflict, the C<tt>++</tt> meaning takes precedence; however, this can be
 overridden by quoting the file or function name with single quotes.
@@ -190,8 +190,8 @@ info formats that are best suited to C<tt>++</tt> programs.
 
    <p>If you ask to print an object whose contents are unknown to
 <span class="sc">gdb</span>, e.g., because its data type is not completely specified
-by the debug information, <span class="sc">gdb</span> will say &lsquo;<samp><span class="samp">&lt;incomplete
-type&gt;</span></samp>&rsquo;.  See <a href="Symbols.html#Symbols">incomplete type</a>, for more about this.
+by the debug information, <span class="sc">gdb</span> will say `<samp><span class="samp">&lt;incomplete
+type&gt;</span></samp>'.  See <a href="Symbols.html#Symbols">incomplete type</a>, for more about this.
 
    <p>If you append <kbd>@entry</kbd> string to a function parameter name you get its
 value at the time the function got called.  If the value is not available an

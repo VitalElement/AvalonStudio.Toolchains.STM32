@@ -3,7 +3,7 @@
 <title>Function Attributes - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Mixed-Declarations.html#Mixed-Declarations" title="Mixed Declarations">
@@ -88,7 +88,7 @@ and for types (see <a href="Type-Attributes.html#Type-Attributes">Type Attribute
 
  <p>GCC plugins may provide their own attributes.
 
- <p>You may also specify attributes with &lsquo;<samp><span class="samp">__</span></samp>&rsquo; preceding and following
+ <p>You may also specify attributes with `<samp><span class="samp">__</span></samp>' preceding and following
 each keyword.  This allows you to use them in header files without
 being concerned about a possible macro of the same name.  For example,
 you may use <code>__noreturn__</code> instead of <code>noreturn</code>.
@@ -104,9 +104,9 @@ alias for another symbol, which must be specified.  For instance,
 
      <pre class="smallexample">          void __f () { /* <span class="roman">Do something.</span> */; }
           void f () __attribute__ ((weak, alias ("__f")));
-</pre>
-     <p class="noindent">defines &lsquo;<samp><span class="samp">f</span></samp>&rsquo; to be a weak alias for &lsquo;<samp><span class="samp">__f</span></samp>&rsquo;.  In C++, the
-mangled name for the target must be used.  It is an error if &lsquo;<samp><span class="samp">__f</span></samp>&rsquo;
+     </pre>
+     <p class="noindent">defines `<samp><span class="samp">f</span></samp>' to be a weak alias for `<samp><span class="samp">__f</span></samp>'.  In C++, the
+mangled name for the target must be used.  It is an error if `<samp><span class="samp">__f</span></samp>'
 is not defined in the same translation unit.
 
      <p>Not all target machines support this attribute.
@@ -145,7 +145,7 @@ one.
 
      <pre class="smallexample">          void* my_calloc(size_t, size_t) __attribute__((alloc_size(1,2)))
           void* my_realloc(void*, size_t) __attribute__((alloc_size(2)))
-</pre>
+     </pre>
      <p class="noindent">declares that <code>my_calloc</code> returns memory of the size given by
 the product of parameter 1 and 2 and that <code>my_realloc</code> returns memory
 of the size given by parameter 2.
@@ -162,7 +162,7 @@ Argument numbering starts at one.
      <p>For instance,
 
      <pre class="smallexample">          void* my_memalign(size_t, size_t) __attribute__((alloc_align(1)))
-</pre>
+     </pre>
      <p class="noindent">declares that <code>my_memalign</code> returns memory with minimum alignment
 given by parameter 1.
 
@@ -175,7 +175,7 @@ If the attribute has two arguments, the second argument is misalignment offset.
 
      <pre class="smallexample">          void* my_alloc1(size_t) __attribute__((assume_aligned(16)))
           void* my_alloc2(size_t) __attribute__((assume_aligned(32, 8)))
-</pre>
+     </pre>
      <p class="noindent">declares that <code>my_alloc1</code> returns 16-byte aligned pointer and
 that <code>my_alloc2</code> returns a pointer whose value modulo 32 is equal
 to 8.
@@ -305,7 +305,7 @@ do instead.  Note that the warnings only occurs for uses:
      <pre class="smallexample">          int old_fn () __attribute__ ((deprecated));
           int old_fn ();
           int (*fn_ptr)() = old_fn;
-</pre>
+     </pre>
      <p class="noindent">results in a warning on line 3 but not line 2.  The optional <var>msg</var>
 argument, which must be a string, is printed in the warning if
 present.
@@ -458,7 +458,7 @@ declaration:
      <pre class="smallexample">          extern int
           my_printf (void *my_object, const char *my_format, ...)
                 __attribute__ ((format (printf, 2, 3)));
-</pre>
+     </pre>
      <p class="noindent">causes the compiler to check the arguments in calls to <code>my_printf</code>
 for consistency with the <code>printf</code> style format string argument
 <code>my_format</code>.
@@ -472,9 +472,9 @@ MinGW targets, <code>ms_printf</code>, <code>ms_scanf</code>, and
 <code>ms_strftime</code> are also present. 
 <var>archetype</var> values such as <code>printf</code> refer to the formats accepted
 by the system's C runtime library,
-while values prefixed with &lsquo;<samp><span class="samp">gnu_</span></samp>&rsquo; always refer
+while values prefixed with `<samp><span class="samp">gnu_</span></samp>' always refer
 to the formats accepted by the GNU C Library.  On Microsoft Windows
-targets, values prefixed with &lsquo;<samp><span class="samp">ms_</span></samp>&rsquo; refer to the formats accepted by the
+targets, values prefixed with `<samp><span class="samp">ms_</span></samp>' refer to the formats accepted by the
 <samp><span class="file">msvcrt.dll</span></samp> library. 
 The parameter <var>string-index</var>
 specifies which argument is the format string argument (starting
@@ -529,7 +529,7 @@ declaration:
      <pre class="smallexample">          extern char *
           my_dgettext (char *my_domain, const char *my_format)
                 __attribute__ ((format_arg (2)));
-</pre>
+     </pre>
      <p class="noindent">causes the compiler to check the arguments in calls to a <code>printf</code>,
 <code>scanf</code>, <code>strftime</code> or <code>strfmon</code> type function, whose
 format string argument is a call to the <code>my_dgettext</code> function, for
@@ -613,7 +613,7 @@ function <code>foo</code>.
           {
               foo();
           }
-</pre>
+     </pre>
      <p>If functions are defined in one file and are called in another file,
 then be sure to write this declaration in both files.
 
@@ -640,19 +640,19 @@ function returning pointer to void function returning void:
           {
             return my_memcpy; // we'll just always select this routine
           }
-</pre>
+     </pre>
      <p class="noindent">The exported header file declaring the function the user calls would
 contain:
 
      <pre class="smallexample">          extern void *memcpy (void *, const void *, size_t);
-</pre>
+     </pre>
      <p class="noindent">allowing the user to call this as a regular function, unaware of the
 implementation.  Finally, the indirect function needs to be defined in
 the same translation unit as the resolver function:
 
      <pre class="smallexample">          void *memcpy (void *, const void *, size_t)
                __attribute__ ((ifunc ("resolve_memcpy")));
-</pre>
+     </pre>
      <p>Indirect functions cannot be weak.  Binutils version 2.20.1 or higher
 and GNU C Library version 2.11.1 are required to use this feature.
 
@@ -670,7 +670,7 @@ and SH processors can be specified via the <code>interrupt_handler</code> attrib
 in a parameter to the interrupt attribute like this:
 
      <pre class="smallexample">          void f () __attribute__ ((interrupt ("ilink1")));
-</pre>
+     </pre>
      <p>Permissible values for this parameter are: <code>ilink1</code><!-- /@w --> and
 <code>ilink2</code><!-- /@w -->.
 
@@ -686,7 +686,7 @@ is silently ignored.
 adding an optional parameter to the interrupt attribute like this:
 
      <pre class="smallexample">          void f () __attribute__ ((interrupt ("IRQ")));
-</pre>
+     </pre>
      <p class="noindent">Permissible values for this parameter are: <code>IRQ</code>, <code>FIQ</code>,
 <code>SWI</code>, <code>ABORT</code> and <code>UNDEF</code>.
 
@@ -726,7 +726,7 @@ might be in when the function exits.
      <p>On Epiphany targets one or more optional parameters can be added like this:
 
      <pre class="smallexample">          void __attribute__ ((interrupt ("dma0, dma1"))) universal_dma_handler ();
-</pre>
+     </pre>
      <p>Permissible values for these parameters are: <code>reset</code><!-- /@w -->,
 <code>software_exception</code><!-- /@w -->, <code>page_miss</code><!-- /@w -->,
 <code>timer0</code><!-- /@w -->, <code>timer1</code><!-- /@w -->, <code>message</code><!-- /@w -->,
@@ -758,7 +758,7 @@ Epiphany targets:
             fast_timer_handler ();
           void __attribute__ ((interrupt ("dma0, dma1"), forwarder_section ("tramp")))
             external_dma_handler ();
-</pre>
+     </pre>
      <p>On MIPS targets, you can use the following attributes to modify the behavior
 of an interrupt handler:
           <dl>
@@ -786,7 +786,7 @@ have this attribute return using <code>eret</code> instead.
           void __attribute__ ((interrupt, use_shadow_register_set,
                                keep_interrupts_masked,
                                use_debug_exception_return)) v7 ();
-</pre>
+     </pre>
      <p>On NDS32 target, this attribute indicates that the specified function
 is an interrupt handler.  The compiler generates corresponding sections
 for use in an interrupt handler.  You can use the following attributes
@@ -818,13 +818,13 @@ unfilled slots in the current table.
 the default table (note that preprocessor macros may be used for
 chip-specific symbolic vector names):
      <pre class="smallexample">          void __attribute__ ((interrupt (5))) txd1_handler ();
-</pre>
+     </pre>
      <p>This example assigns a function to two slots in the default table
 (using preprocessor macros defined elsewhere) and makes it the default
 for the <code>dct</code> table:
      <pre class="smallexample">          void __attribute__ ((interrupt (RXD1_VECT,RXD2_VECT,"dct","$default")))
           	txd1_handler ();
-</pre>
+     </pre>
      <br><dt><code>interrupt_handler</code><dd><a name="index-g_t_0040code_007binterrupt_005fhandler_007d-function-attribute_002c-Blackfin-3125"></a><a name="index-g_t_0040code_007binterrupt_005fhandler_007d-function-attribute_002c-m68k-3126"></a><a name="index-g_t_0040code_007binterrupt_005fhandler_007d-function-attribute_002c-H8_002f300-3127"></a><a name="index-g_t_0040code_007binterrupt_005fhandler_007d-function-attribute_002c-SH-3128"></a>Use this attribute on the Blackfin, m68k, H8/300, H8/300H, H8S, and SH to
 indicate that the specified function is an interrupt handler.  The compiler
 generates function entry and exit sequences suitable for use in an
@@ -885,7 +885,7 @@ command-line switches and <code>#pragma long_calls</code> settings.  For ARM, th
 <code>long_call</code> attribute indicates that the function might be far
 away from the call site and require a different (more expensive)
 calling sequence.   The <code>short_call</code> attribute always places
-the offset to the function from the call site into the &lsquo;<samp><span class="samp">BL</span></samp>&rsquo;
+the offset to the function from the call site into the `<samp><span class="samp">BL</span></samp>'
 instruction directly.
 
      <p>For ARC, a function marked with the <code>long_call</code> attribute is
@@ -1071,7 +1071,7 @@ other than inlining that cause function calls to be optimized away,
 although the function call is live.  To keep such calls from being
 optimized away, put
      <pre class="smallexample">          asm ("");
-</pre>
+     </pre>
      <p class="noindent">(see <a href="Extended-Asm.html#Extended-Asm">Extended Asm</a>) in the called function, to serve as a special
 side-effect.
 
@@ -1089,7 +1089,7 @@ be non-null pointers.  For instance, the declaration:
      <pre class="smallexample">          extern void *
           my_memcpy (void *dest, const void *src, size_t len)
                   __attribute__((nonnull (1, 2)));
-</pre>
+     </pre>
      <p class="noindent">causes the compiler to check that, in calls to <code>my_memcpy</code>,
 arguments <var>dest</var> and <var>src</var> are non-null.  If the compiler
 determines that a null pointer is passed in an argument slot marked
@@ -1104,7 +1104,7 @@ following declaration is equivalent to the previous example:
      <pre class="smallexample">          extern void *
           my_memcpy (void *dest, const void *src, size_t len)
                   __attribute__((nonnull));
-</pre>
+     </pre>
      <br><dt><code>no_reorder</code><dd><a name="index-g_t_0040code_007bno_005freorder_007d-function-attribute-3193"></a>Do not reorder functions or variables marked <code>no_reorder</code>
 against each other or top level assembler statements the executable. 
 The actual order in the program will depend on the linker command
@@ -1118,7 +1118,7 @@ return value should be a non-null pointer.  For instance, the declaration:
 
      <pre class="smallexample">          extern void *
           mymalloc (size_t len) __attribute__((returns_nonnull));
-</pre>
+     </pre>
      <p class="noindent">lets the compiler optimize callers based on the knowledge
 that the return value will never be null.
 
@@ -1135,7 +1135,7 @@ their own functions that never return.  You can declare them
             /* <span class="roman">...</span> */ /* <span class="roman">Print error message.</span> */ /* <span class="roman">...</span> */
             exit (1);
           }
-</pre>
+     </pre>
      <p>The <code>noreturn</code> keyword tells the compiler to assume that
 <code>fatal</code> cannot return.  It can then optimize without regard to what
 would happen if <code>fatal</code> ever did return.  This makes slightly
@@ -1169,10 +1169,10 @@ command line.  Arguments can either be numbers or strings.  Numbers
 are assumed to be an optimization level.  Strings that begin with
 <code>O</code> are assumed to be an optimization option, while other options
 are assumed to be used with a <code>-f</code> prefix.  You can also use the
-&lsquo;<samp><span class="samp">#pragma GCC optimize</span></samp>&rsquo; pragma to set the optimization options
+`<samp><span class="samp">#pragma GCC optimize</span></samp>' pragma to set the optimization options
 that affect more than one function. 
 See <a href="Function-Specific-Option-Pragmas.html#Function-Specific-Option-Pragmas">Function Specific Option Pragmas</a>, for details about the
-&lsquo;<samp><span class="samp">#pragma GCC optimize</span></samp>&rsquo; pragma.
+`<samp><span class="samp">#pragma GCC optimize</span></samp>' pragma.
 
      <p>This can be used for instance to have frequently-executed functions
 compiled with more aggressive optimization options that produce faster
@@ -1217,7 +1217,7 @@ For example,
 
      <pre class="smallexample">          /* Argument passed in r0, and result returned in r0+r1.  */
           double f2d (float) __attribute__((pcs("aapcs")));
-</pre>
+     </pre>
      <p>Variadic functions always use the <code>"aapcs"</code> calling convention and
 the compiler rejects attempts to specify an alternative.
 
@@ -1229,7 +1229,7 @@ arithmetic operator would be.  These functions should be declared
 with the attribute <code>pure</code>.  For example,
 
      <pre class="smallexample">          int square (int) __attribute__ ((pure));
-</pre>
+     </pre>
      <p class="noindent">says that the hypothetical function <code>square</code> is safe to call
 fewer times than the program says.
 
@@ -1360,7 +1360,7 @@ attribute is present. The return from <code>break_handler</code> is done through
 the <code>rtbd</code> instead of <code>rtsd</code>.
 
      <pre class="smallexample">          void f () __attribute__ ((break_handler));
-</pre>
+     </pre>
      <br><dt><code>section ("</code><var>section-name</var><code>")</code><dd><a name="index-g_t_0040code_007bsection_007d-function-attribute-3228"></a>Normally, the compiler places the code it generates in the <code>text</code> section. 
 Sometimes, however, you need additional sections, or you need certain
 particular functions to appear in special sections.  The <code>section</code>
@@ -1368,7 +1368,7 @@ attribute specifies that a function lives in a particular section.
 For example, the declaration:
 
      <pre class="smallexample">          extern void foobar (void) __attribute__ ((section ("bar")));
-</pre>
+     </pre>
      <p class="noindent">puts the function <code>foobar</code> in the <code>bar</code> section.
 
      <p>Some file formats do not support arbitrary sections so the <code>section</code>
@@ -1386,7 +1386,7 @@ position P counting backwards from the end of the argument list.
      <pre class="smallexample">          __attribute__ ((sentinel))
           is equivalent to
           __attribute__ ((sentinel(0)))
-</pre>
+     </pre>
      <p>The attribute is automatically set with a position of 0 for the built-in
 functions <code>execl</code> and <code>execlp</code>.  The built-in function
 <code>execle</code> has the attribute set with a position of 1.
@@ -1428,7 +1428,7 @@ alternate stack.
      <pre class="smallexample">          void *alt_stack;
           void f () __attribute__ ((interrupt_handler,
                                     sp_switch ("alt_stack")));
-</pre>
+     </pre>
      <br><dt><code>stdcall</code><dd><a name="index-g_t_0040code_007bstdcall_007d-function-attribute_002c-x86_002d32-3232"></a><a name="index-functions-that-pop-the-argument-stack-on-x86_002d32-3233"></a>On x86-32 targets, the <code>stdcall</code> attribute causes the compiler to
 assume that the called function pops off the stack space used to
 pass arguments, unless it takes a variable number of arguments.
@@ -1443,10 +1443,10 @@ application code.
 be compiled with different target options than specified on the
 command line.  This can be used for instance to have functions
 compiled with a different ISA (instruction set architecture) than the
-default.  You can also use the &lsquo;<samp><span class="samp">#pragma GCC target</span></samp>&rsquo; pragma to set
+default.  You can also use the `<samp><span class="samp">#pragma GCC target</span></samp>' pragma to set
 more than one function to be compiled with specific target options. 
 See <a href="Function-Specific-Option-Pragmas.html#Function-Specific-Option-Pragmas">Function Specific Option Pragmas</a>, for details about the
-&lsquo;<samp><span class="samp">#pragma GCC target</span></samp>&rsquo; pragma.
+`<samp><span class="samp">#pragma GCC target</span></samp>' pragma.
 
      <p>For instance on an x86, you could compile one function with
 <code>target("sse4.1,arch=core2")</code> and another with
@@ -1461,10 +1461,10 @@ family are used).
 
      <pre class="smallexample">          int core2_func (void) __attribute__ ((__target__ ("arch=core2")));
           int sse3_func (void) __attribute__ ((__target__ ("sse3")));
-</pre>
+     </pre>
      <p>You can either use multiple
 strings to specify multiple options, or separate the options
-with a comma (&lsquo;<samp><span class="samp">,</span></samp>&rsquo;).
+with a comma (`<samp><span class="samp">,</span></samp>').
 
      <p>The <code>target</code> attribute is presently implemented for
 x86, PowerPC, and Nios II targets only. 
@@ -1473,67 +1473,67 @@ The options supported are specific to each target.
      <p>On the x86, the following options are allowed:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">abm</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-abm</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022abm_0022_0029_007d-function-attribute_002c-x86-3236"></a>Enable/disable the generation of the advanced bit instructions.
+<dt>`<samp><span class="samp">abm</span></samp>'<dt>`<samp><span class="samp">no-abm</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022abm_0022_0029_007d-function-attribute_002c-x86-3236"></a>Enable/disable the generation of the advanced bit instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">aes</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-aes</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022aes_0022_0029_007d-function-attribute_002c-x86-3237"></a>Enable/disable the generation of the AES instructions.
+          <br><dt>`<samp><span class="samp">aes</span></samp>'<dt>`<samp><span class="samp">no-aes</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022aes_0022_0029_007d-function-attribute_002c-x86-3237"></a>Enable/disable the generation of the AES instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">default</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022default_0022_0029_007d-function-attribute_002c-x86-3238"></a>See <a href="Function-Multiversioning.html#Function-Multiversioning">Function Multiversioning</a>, where it is used to specify the
+          <br><dt>`<samp><span class="samp">default</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022default_0022_0029_007d-function-attribute_002c-x86-3238"></a>See <a href="Function-Multiversioning.html#Function-Multiversioning">Function Multiversioning</a>, where it is used to specify the
 default function version.
 
-          <br><dt>&lsquo;<samp><span class="samp">mmx</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-mmx</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022mmx_0022_0029_007d-function-attribute_002c-x86-3239"></a>Enable/disable the generation of the MMX instructions.
+          <br><dt>`<samp><span class="samp">mmx</span></samp>'<dt>`<samp><span class="samp">no-mmx</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022mmx_0022_0029_007d-function-attribute_002c-x86-3239"></a>Enable/disable the generation of the MMX instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">pclmul</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-pclmul</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022pclmul_0022_0029_007d-function-attribute_002c-x86-3240"></a>Enable/disable the generation of the PCLMUL instructions.
+          <br><dt>`<samp><span class="samp">pclmul</span></samp>'<dt>`<samp><span class="samp">no-pclmul</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022pclmul_0022_0029_007d-function-attribute_002c-x86-3240"></a>Enable/disable the generation of the PCLMUL instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">popcnt</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-popcnt</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022popcnt_0022_0029_007d-function-attribute_002c-x86-3241"></a>Enable/disable the generation of the POPCNT instruction.
+          <br><dt>`<samp><span class="samp">popcnt</span></samp>'<dt>`<samp><span class="samp">no-popcnt</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022popcnt_0022_0029_007d-function-attribute_002c-x86-3241"></a>Enable/disable the generation of the POPCNT instruction.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse_0022_0029_007d-function-attribute_002c-x86-3242"></a>Enable/disable the generation of the SSE instructions.
+          <br><dt>`<samp><span class="samp">sse</span></samp>'<dt>`<samp><span class="samp">no-sse</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse_0022_0029_007d-function-attribute_002c-x86-3242"></a>Enable/disable the generation of the SSE instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse2</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse2</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse2_0022_0029_007d-function-attribute_002c-x86-3243"></a>Enable/disable the generation of the SSE2 instructions.
+          <br><dt>`<samp><span class="samp">sse2</span></samp>'<dt>`<samp><span class="samp">no-sse2</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse2_0022_0029_007d-function-attribute_002c-x86-3243"></a>Enable/disable the generation of the SSE2 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse3</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse3</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse3_0022_0029_007d-function-attribute_002c-x86-3244"></a>Enable/disable the generation of the SSE3 instructions.
+          <br><dt>`<samp><span class="samp">sse3</span></samp>'<dt>`<samp><span class="samp">no-sse3</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse3_0022_0029_007d-function-attribute_002c-x86-3244"></a>Enable/disable the generation of the SSE3 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse4</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse4</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4_0022_0029_007d-function-attribute_002c-x86-3245"></a>Enable/disable the generation of the SSE4 instructions (both SSE4.1
+          <br><dt>`<samp><span class="samp">sse4</span></samp>'<dt>`<samp><span class="samp">no-sse4</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4_0022_0029_007d-function-attribute_002c-x86-3245"></a>Enable/disable the generation of the SSE4 instructions (both SSE4.1
 and SSE4.2).
 
-          <br><dt>&lsquo;<samp><span class="samp">sse4.1</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse4.1</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4_002e1_0022_0029_007d-function-attribute_002c-x86-3246"></a>Enable/disable the generation of the sse4.1 instructions.
+          <br><dt>`<samp><span class="samp">sse4.1</span></samp>'<dt>`<samp><span class="samp">no-sse4.1</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4_002e1_0022_0029_007d-function-attribute_002c-x86-3246"></a>Enable/disable the generation of the sse4.1 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse4.2</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse4.2</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4_002e2_0022_0029_007d-function-attribute_002c-x86-3247"></a>Enable/disable the generation of the sse4.2 instructions.
+          <br><dt>`<samp><span class="samp">sse4.2</span></samp>'<dt>`<samp><span class="samp">no-sse4.2</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4_002e2_0022_0029_007d-function-attribute_002c-x86-3247"></a>Enable/disable the generation of the sse4.2 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse4a</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-sse4a</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4a_0022_0029_007d-function-attribute_002c-x86-3248"></a>Enable/disable the generation of the SSE4A instructions.
+          <br><dt>`<samp><span class="samp">sse4a</span></samp>'<dt>`<samp><span class="samp">no-sse4a</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022sse4a_0022_0029_007d-function-attribute_002c-x86-3248"></a>Enable/disable the generation of the SSE4A instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">fma4</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-fma4</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022fma4_0022_0029_007d-function-attribute_002c-x86-3249"></a>Enable/disable the generation of the FMA4 instructions.
+          <br><dt>`<samp><span class="samp">fma4</span></samp>'<dt>`<samp><span class="samp">no-fma4</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022fma4_0022_0029_007d-function-attribute_002c-x86-3249"></a>Enable/disable the generation of the FMA4 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">xop</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-xop</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022xop_0022_0029_007d-function-attribute_002c-x86-3250"></a>Enable/disable the generation of the XOP instructions.
+          <br><dt>`<samp><span class="samp">xop</span></samp>'<dt>`<samp><span class="samp">no-xop</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022xop_0022_0029_007d-function-attribute_002c-x86-3250"></a>Enable/disable the generation of the XOP instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">lwp</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-lwp</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022lwp_0022_0029_007d-function-attribute_002c-x86-3251"></a>Enable/disable the generation of the LWP instructions.
+          <br><dt>`<samp><span class="samp">lwp</span></samp>'<dt>`<samp><span class="samp">no-lwp</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022lwp_0022_0029_007d-function-attribute_002c-x86-3251"></a>Enable/disable the generation of the LWP instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">ssse3</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-ssse3</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022ssse3_0022_0029_007d-function-attribute_002c-x86-3252"></a>Enable/disable the generation of the SSSE3 instructions.
+          <br><dt>`<samp><span class="samp">ssse3</span></samp>'<dt>`<samp><span class="samp">no-ssse3</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022ssse3_0022_0029_007d-function-attribute_002c-x86-3252"></a>Enable/disable the generation of the SSSE3 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">cld</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-cld</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022cld_0022_0029_007d-function-attribute_002c-x86-3253"></a>Enable/disable the generation of the CLD before string moves.
+          <br><dt>`<samp><span class="samp">cld</span></samp>'<dt>`<samp><span class="samp">no-cld</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022cld_0022_0029_007d-function-attribute_002c-x86-3253"></a>Enable/disable the generation of the CLD before string moves.
 
-          <br><dt>&lsquo;<samp><span class="samp">fancy-math-387</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-fancy-math-387</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022fancy_002dmath_002d387_0022_0029_007d-function-attribute_002c-x86-3254"></a>Enable/disable the generation of the <code>sin</code>, <code>cos</code>, and
+          <br><dt>`<samp><span class="samp">fancy-math-387</span></samp>'<dt>`<samp><span class="samp">no-fancy-math-387</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022fancy_002dmath_002d387_0022_0029_007d-function-attribute_002c-x86-3254"></a>Enable/disable the generation of the <code>sin</code>, <code>cos</code>, and
 <code>sqrt</code> instructions on the 387 floating-point unit.
 
-          <br><dt>&lsquo;<samp><span class="samp">fused-madd</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-fused-madd</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022fused_002dmadd_0022_0029_007d-function-attribute_002c-x86-3255"></a>Enable/disable the generation of the fused multiply/add instructions.
+          <br><dt>`<samp><span class="samp">fused-madd</span></samp>'<dt>`<samp><span class="samp">no-fused-madd</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022fused_002dmadd_0022_0029_007d-function-attribute_002c-x86-3255"></a>Enable/disable the generation of the fused multiply/add instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">ieee-fp</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-ieee-fp</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022ieee_002dfp_0022_0029_007d-function-attribute_002c-x86-3256"></a>Enable/disable the generation of floating point that depends on IEEE arithmetic.
+          <br><dt>`<samp><span class="samp">ieee-fp</span></samp>'<dt>`<samp><span class="samp">no-ieee-fp</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022ieee_002dfp_0022_0029_007d-function-attribute_002c-x86-3256"></a>Enable/disable the generation of floating point that depends on IEEE arithmetic.
 
-          <br><dt>&lsquo;<samp><span class="samp">inline-all-stringops</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-inline-all-stringops</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022inline_002dall_002dstringops_0022_0029_007d-function-attribute_002c-x86-3257"></a>Enable/disable inlining of string operations.
+          <br><dt>`<samp><span class="samp">inline-all-stringops</span></samp>'<dt>`<samp><span class="samp">no-inline-all-stringops</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022inline_002dall_002dstringops_0022_0029_007d-function-attribute_002c-x86-3257"></a>Enable/disable inlining of string operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">inline-stringops-dynamically</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-inline-stringops-dynamically</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022inline_002dstringops_002ddynamically_0022_0029_007d-function-attribute_002c-x86-3258"></a>Enable/disable the generation of the inline code to do small string
+          <br><dt>`<samp><span class="samp">inline-stringops-dynamically</span></samp>'<dt>`<samp><span class="samp">no-inline-stringops-dynamically</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022inline_002dstringops_002ddynamically_0022_0029_007d-function-attribute_002c-x86-3258"></a>Enable/disable the generation of the inline code to do small string
 operations and calling the library routines for large operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">align-stringops</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-align-stringops</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022align_002dstringops_0022_0029_007d-function-attribute_002c-x86-3259"></a>Do/do not align destination of inlined string operations.
+          <br><dt>`<samp><span class="samp">align-stringops</span></samp>'<dt>`<samp><span class="samp">no-align-stringops</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022align_002dstringops_0022_0029_007d-function-attribute_002c-x86-3259"></a>Do/do not align destination of inlined string operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">recip</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-recip</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022recip_0022_0029_007d-function-attribute_002c-x86-3260"></a>Enable/disable the generation of RCPSS, RCPPS, RSQRTSS and RSQRTPS
+          <br><dt>`<samp><span class="samp">recip</span></samp>'<dt>`<samp><span class="samp">no-recip</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022recip_0022_0029_007d-function-attribute_002c-x86-3260"></a>Enable/disable the generation of RCPSS, RCPPS, RSQRTSS and RSQRTPS
 instructions followed an additional Newton-Raphson step instead of
 doing a floating-point division.
 
-          <br><dt>&lsquo;<samp><span class="samp">arch=</span><var>ARCH</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022arch_003d_0040var_007bARCH_007d_0022_0029_007d-function-attribute_002c-x86-3261"></a>Specify the architecture to generate code for in compiling the function.
+          <br><dt>`<samp><span class="samp">arch=</span><var>ARCH</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022arch_003d_0040var_007bARCH_007d_0022_0029_007d-function-attribute_002c-x86-3261"></a>Specify the architecture to generate code for in compiling the function.
 
-          <br><dt>&lsquo;<samp><span class="samp">tune=</span><var>TUNE</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022tune_003d_0040var_007bTUNE_007d_0022_0029_007d-function-attribute_002c-x86-3262"></a>Specify the architecture to tune for in compiling the function.
+          <br><dt>`<samp><span class="samp">tune=</span><var>TUNE</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022tune_003d_0040var_007bTUNE_007d_0022_0029_007d-function-attribute_002c-x86-3262"></a>Specify the architecture to tune for in compiling the function.
 
-          <br><dt>&lsquo;<samp><span class="samp">fpmath=</span><var>FPMATH</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022fpmath_003d_0040var_007bFPMATH_007d_0022_0029_007d-function-attribute_002c-x86-3263"></a>Specify which floating-point unit to use.  The
+          <br><dt>`<samp><span class="samp">fpmath=</span><var>FPMATH</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022fpmath_003d_0040var_007bFPMATH_007d_0022_0029_007d-function-attribute_002c-x86-3263"></a>Specify which floating-point unit to use.  The
 <code>target("fpmath=sse,387")</code> option must be specified as
 <code>target("fpmath=sse+387")</code> because the comma would separate
 different options. 
@@ -1542,99 +1542,99 @@ different options.
      <p>On the PowerPC, the following options are allowed:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">altivec</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-altivec</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022altivec_0022_0029_007d-function-attribute_002c-PowerPC-3264"></a>Generate code that uses (does not use) AltiVec instructions.  In
+<dt>`<samp><span class="samp">altivec</span></samp>'<dt>`<samp><span class="samp">no-altivec</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022altivec_0022_0029_007d-function-attribute_002c-PowerPC-3264"></a>Generate code that uses (does not use) AltiVec instructions.  In
 32-bit code, you cannot enable AltiVec instructions unless
 <samp><span class="option">-mabi=altivec</span></samp> is used on the command line.
 
-          <br><dt>&lsquo;<samp><span class="samp">cmpb</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-cmpb</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022cmpb_0022_0029_007d-function-attribute_002c-PowerPC-3265"></a>Generate code that uses (does not use) the compare bytes instruction
+          <br><dt>`<samp><span class="samp">cmpb</span></samp>'<dt>`<samp><span class="samp">no-cmpb</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022cmpb_0022_0029_007d-function-attribute_002c-PowerPC-3265"></a>Generate code that uses (does not use) the compare bytes instruction
 implemented on the POWER6 processor and other processors that support
 the PowerPC V2.05 architecture.
 
-          <br><dt>&lsquo;<samp><span class="samp">dlmzb</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-dlmzb</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022dlmzb_0022_0029_007d-function-attribute_002c-PowerPC-3266"></a>Generate code that uses (does not use) the string-search &lsquo;<samp><span class="samp">dlmzb</span></samp>&rsquo;
+          <br><dt>`<samp><span class="samp">dlmzb</span></samp>'<dt>`<samp><span class="samp">no-dlmzb</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022dlmzb_0022_0029_007d-function-attribute_002c-PowerPC-3266"></a>Generate code that uses (does not use) the string-search `<samp><span class="samp">dlmzb</span></samp>'
 instruction on the IBM 405, 440, 464 and 476 processors.  This instruction is
 generated by default when targeting those processors.
 
-          <br><dt>&lsquo;<samp><span class="samp">fprnd</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-fprnd</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022fprnd_0022_0029_007d-function-attribute_002c-PowerPC-3267"></a>Generate code that uses (does not use) the FP round to integer
+          <br><dt>`<samp><span class="samp">fprnd</span></samp>'<dt>`<samp><span class="samp">no-fprnd</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022fprnd_0022_0029_007d-function-attribute_002c-PowerPC-3267"></a>Generate code that uses (does not use) the FP round to integer
 instructions implemented on the POWER5+ processor and other processors
 that support the PowerPC V2.03 architecture.
 
-          <br><dt>&lsquo;<samp><span class="samp">hard-dfp</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-hard-dfp</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022hard_002ddfp_0022_0029_007d-function-attribute_002c-PowerPC-3268"></a>Generate code that uses (does not use) the decimal floating-point
+          <br><dt>`<samp><span class="samp">hard-dfp</span></samp>'<dt>`<samp><span class="samp">no-hard-dfp</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022hard_002ddfp_0022_0029_007d-function-attribute_002c-PowerPC-3268"></a>Generate code that uses (does not use) the decimal floating-point
 instructions implemented on some POWER processors.
 
-          <br><dt>&lsquo;<samp><span class="samp">isel</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-isel</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022isel_0022_0029_007d-function-attribute_002c-PowerPC-3269"></a>Generate code that uses (does not use) ISEL instruction.
+          <br><dt>`<samp><span class="samp">isel</span></samp>'<dt>`<samp><span class="samp">no-isel</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022isel_0022_0029_007d-function-attribute_002c-PowerPC-3269"></a>Generate code that uses (does not use) ISEL instruction.
 
-          <br><dt>&lsquo;<samp><span class="samp">mfcrf</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-mfcrf</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022mfcrf_0022_0029_007d-function-attribute_002c-PowerPC-3270"></a>Generate code that uses (does not use) the move from condition
+          <br><dt>`<samp><span class="samp">mfcrf</span></samp>'<dt>`<samp><span class="samp">no-mfcrf</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022mfcrf_0022_0029_007d-function-attribute_002c-PowerPC-3270"></a>Generate code that uses (does not use) the move from condition
 register field instruction implemented on the POWER4 processor and
 other processors that support the PowerPC V2.01 architecture.
 
-          <br><dt>&lsquo;<samp><span class="samp">mfpgpr</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-mfpgpr</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022mfpgpr_0022_0029_007d-function-attribute_002c-PowerPC-3271"></a>Generate code that uses (does not use) the FP move to/from general
+          <br><dt>`<samp><span class="samp">mfpgpr</span></samp>'<dt>`<samp><span class="samp">no-mfpgpr</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022mfpgpr_0022_0029_007d-function-attribute_002c-PowerPC-3271"></a>Generate code that uses (does not use) the FP move to/from general
 purpose register instructions implemented on the POWER6X processor and
 other processors that support the extended PowerPC V2.05 architecture.
 
-          <br><dt>&lsquo;<samp><span class="samp">mulhw</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-mulhw</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022mulhw_0022_0029_007d-function-attribute_002c-PowerPC-3272"></a>Generate code that uses (does not use) the half-word multiply and
+          <br><dt>`<samp><span class="samp">mulhw</span></samp>'<dt>`<samp><span class="samp">no-mulhw</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022mulhw_0022_0029_007d-function-attribute_002c-PowerPC-3272"></a>Generate code that uses (does not use) the half-word multiply and
 multiply-accumulate instructions on the IBM 405, 440, 464 and 476 processors. 
 These instructions are generated by default when targeting those
 processors.
 
-          <br><dt>&lsquo;<samp><span class="samp">multiple</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-multiple</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022multiple_0022_0029_007d-function-attribute_002c-PowerPC-3273"></a>Generate code that uses (does not use) the load multiple word
+          <br><dt>`<samp><span class="samp">multiple</span></samp>'<dt>`<samp><span class="samp">no-multiple</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022multiple_0022_0029_007d-function-attribute_002c-PowerPC-3273"></a>Generate code that uses (does not use) the load multiple word
 instructions and the store multiple word instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">update</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-update</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022update_0022_0029_007d-function-attribute_002c-PowerPC-3274"></a>Generate code that uses (does not use) the load or store instructions
+          <br><dt>`<samp><span class="samp">update</span></samp>'<dt>`<samp><span class="samp">no-update</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022update_0022_0029_007d-function-attribute_002c-PowerPC-3274"></a>Generate code that uses (does not use) the load or store instructions
 that update the base register to the address of the calculated memory
 location.
 
-          <br><dt>&lsquo;<samp><span class="samp">popcntb</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-popcntb</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022popcntb_0022_0029_007d-function-attribute_002c-PowerPC-3275"></a>Generate code that uses (does not use) the popcount and double-precision
+          <br><dt>`<samp><span class="samp">popcntb</span></samp>'<dt>`<samp><span class="samp">no-popcntb</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022popcntb_0022_0029_007d-function-attribute_002c-PowerPC-3275"></a>Generate code that uses (does not use) the popcount and double-precision
 FP reciprocal estimate instruction implemented on the POWER5
 processor and other processors that support the PowerPC V2.02
 architecture.
 
-          <br><dt>&lsquo;<samp><span class="samp">popcntd</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-popcntd</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022popcntd_0022_0029_007d-function-attribute_002c-PowerPC-3276"></a>Generate code that uses (does not use) the popcount instruction
+          <br><dt>`<samp><span class="samp">popcntd</span></samp>'<dt>`<samp><span class="samp">no-popcntd</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022popcntd_0022_0029_007d-function-attribute_002c-PowerPC-3276"></a>Generate code that uses (does not use) the popcount instruction
 implemented on the POWER7 processor and other processors that support
 the PowerPC V2.06 architecture.
 
-          <br><dt>&lsquo;<samp><span class="samp">powerpc-gfxopt</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-powerpc-gfxopt</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022powerpc_002dgfxopt_0022_0029_007d-function-attribute_002c-PowerPC-3277"></a>Generate code that uses (does not use) the optional PowerPC
+          <br><dt>`<samp><span class="samp">powerpc-gfxopt</span></samp>'<dt>`<samp><span class="samp">no-powerpc-gfxopt</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022powerpc_002dgfxopt_0022_0029_007d-function-attribute_002c-PowerPC-3277"></a>Generate code that uses (does not use) the optional PowerPC
 architecture instructions in the Graphics group, including
 floating-point select.
 
-          <br><dt>&lsquo;<samp><span class="samp">powerpc-gpopt</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-powerpc-gpopt</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022powerpc_002dgpopt_0022_0029_007d-function-attribute_002c-PowerPC-3278"></a>Generate code that uses (does not use) the optional PowerPC
+          <br><dt>`<samp><span class="samp">powerpc-gpopt</span></samp>'<dt>`<samp><span class="samp">no-powerpc-gpopt</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022powerpc_002dgpopt_0022_0029_007d-function-attribute_002c-PowerPC-3278"></a>Generate code that uses (does not use) the optional PowerPC
 architecture instructions in the General Purpose group, including
 floating-point square root.
 
-          <br><dt>&lsquo;<samp><span class="samp">recip-precision</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-recip-precision</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022recip_002dprecision_0022_0029_007d-function-attribute_002c-PowerPC-3279"></a>Assume (do not assume) that the reciprocal estimate instructions
+          <br><dt>`<samp><span class="samp">recip-precision</span></samp>'<dt>`<samp><span class="samp">no-recip-precision</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022recip_002dprecision_0022_0029_007d-function-attribute_002c-PowerPC-3279"></a>Assume (do not assume) that the reciprocal estimate instructions
 provide higher-precision estimates than is mandated by the PowerPC
 ABI.
 
-          <br><dt>&lsquo;<samp><span class="samp">string</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-string</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022string_0022_0029_007d-function-attribute_002c-PowerPC-3280"></a>Generate code that uses (does not use) the load string instructions
+          <br><dt>`<samp><span class="samp">string</span></samp>'<dt>`<samp><span class="samp">no-string</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022string_0022_0029_007d-function-attribute_002c-PowerPC-3280"></a>Generate code that uses (does not use) the load string instructions
 and the store string word instructions to save multiple registers and
 do small block moves.
 
-          <br><dt>&lsquo;<samp><span class="samp">vsx</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-vsx</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022vsx_0022_0029_007d-function-attribute_002c-PowerPC-3281"></a>Generate code that uses (does not use) vector/scalar (VSX)
+          <br><dt>`<samp><span class="samp">vsx</span></samp>'<dt>`<samp><span class="samp">no-vsx</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022vsx_0022_0029_007d-function-attribute_002c-PowerPC-3281"></a>Generate code that uses (does not use) vector/scalar (VSX)
 instructions, and also enable the use of built-in functions that allow
 more direct access to the VSX instruction set.  In 32-bit code, you
 cannot enable VSX or AltiVec instructions unless
 <samp><span class="option">-mabi=altivec</span></samp> is used on the command line.
 
-          <br><dt>&lsquo;<samp><span class="samp">friz</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-friz</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022friz_0022_0029_007d-function-attribute_002c-PowerPC-3282"></a>Generate (do not generate) the <code>friz</code> instruction when the
+          <br><dt>`<samp><span class="samp">friz</span></samp>'<dt>`<samp><span class="samp">no-friz</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022friz_0022_0029_007d-function-attribute_002c-PowerPC-3282"></a>Generate (do not generate) the <code>friz</code> instruction when the
 <samp><span class="option">-funsafe-math-optimizations</span></samp> option is used to optimize
 rounding a floating-point value to 64-bit integer and back to floating
 point.  The <code>friz</code> instruction does not return the same value if
 the floating-point number is too large to fit in an integer.
 
-          <br><dt>&lsquo;<samp><span class="samp">avoid-indexed-addresses</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-avoid-indexed-addresses</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022avoid_002dindexed_002daddresses_0022_0029_007d-function-attribute_002c-PowerPC-3283"></a>Generate code that tries to avoid (not avoid) the use of indexed load
+          <br><dt>`<samp><span class="samp">avoid-indexed-addresses</span></samp>'<dt>`<samp><span class="samp">no-avoid-indexed-addresses</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022avoid_002dindexed_002daddresses_0022_0029_007d-function-attribute_002c-PowerPC-3283"></a>Generate code that tries to avoid (not avoid) the use of indexed load
 or store instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">paired</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-paired</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022paired_0022_0029_007d-function-attribute_002c-PowerPC-3284"></a>Generate code that uses (does not use) the generation of PAIRED simd
+          <br><dt>`<samp><span class="samp">paired</span></samp>'<dt>`<samp><span class="samp">no-paired</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022paired_0022_0029_007d-function-attribute_002c-PowerPC-3284"></a>Generate code that uses (does not use) the generation of PAIRED simd
 instructions.
 
-          <br><dt>&lsquo;<samp><span class="samp">longcall</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-longcall</span></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022longcall_0022_0029_007d-function-attribute_002c-PowerPC-3285"></a>Generate code that assumes (does not assume) that all calls are far
+          <br><dt>`<samp><span class="samp">longcall</span></samp>'<dt>`<samp><span class="samp">no-longcall</span></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022longcall_0022_0029_007d-function-attribute_002c-PowerPC-3285"></a>Generate code that assumes (does not assume) that all calls are far
 away so that a longer more expensive calling sequence is required.
 
-          <br><dt>&lsquo;<samp><span class="samp">cpu=</span><var>CPU</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022cpu_003d_0040var_007bCPU_007d_0022_0029_007d-function-attribute_002c-PowerPC-3286"></a>Specify the architecture to generate code for when compiling the
+          <br><dt>`<samp><span class="samp">cpu=</span><var>CPU</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022cpu_003d_0040var_007bCPU_007d_0022_0029_007d-function-attribute_002c-PowerPC-3286"></a>Specify the architecture to generate code for when compiling the
 function.  If you select the <code>target("cpu=power7")</code> attribute when
 generating 32-bit code, VSX and AltiVec instructions are not generated
 unless you use the <samp><span class="option">-mabi=altivec</span></samp> option on the command line.
 
-          <br><dt>&lsquo;<samp><span class="samp">tune=</span><var>TUNE</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022tune_003d_0040var_007bTUNE_007d_0022_0029_007d-function-attribute_002c-PowerPC-3287"></a>Specify the architecture to tune for when compiling the function.  If
+          <br><dt>`<samp><span class="samp">tune=</span><var>TUNE</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022tune_003d_0040var_007bTUNE_007d_0022_0029_007d-function-attribute_002c-PowerPC-3287"></a>Specify the architecture to tune for when compiling the function.  If
 you do not specify the <code>target("tune=</code><var>TUNE</var><code>")</code> attribute and
 you do specify the <code>target("cpu=</code><var>CPU</var><code>")</code> attribute,
 compilation tunes for the <var>CPU</var> architecture, and not the
@@ -1644,16 +1644,16 @@ default tuning specified on the command line.
      <p>When compiling for Nios II, the following options are allowed:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">custom-</span><var>insn</var><span class="samp">=</span><var>N</var></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">no-custom-</span><var>insn</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022custom_002d_0040var_007binsn_007d_003d_0040var_007bN_007d_0022_0029_007d-function-attribute_002c-Nios-II-3288"></a><a name="index-g_t_0040code_007btarget_0028_0022no_002dcustom_002d_0040var_007binsn_007d_0022_0029_007d-function-attribute_002c-Nios-II-3289"></a>Each &lsquo;<samp><span class="samp">custom-</span><var>insn</var><span class="samp">=</span><var>N</var></samp>&rsquo; attribute locally enables use of a
+<dt>`<samp><span class="samp">custom-</span><var>insn</var><span class="samp">=</span><var>N</var></samp>'<dt>`<samp><span class="samp">no-custom-</span><var>insn</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022custom_002d_0040var_007binsn_007d_003d_0040var_007bN_007d_0022_0029_007d-function-attribute_002c-Nios-II-3288"></a><a name="index-g_t_0040code_007btarget_0028_0022no_002dcustom_002d_0040var_007binsn_007d_0022_0029_007d-function-attribute_002c-Nios-II-3289"></a>Each `<samp><span class="samp">custom-</span><var>insn</var><span class="samp">=</span><var>N</var></samp>' attribute locally enables use of a
 custom instruction with encoding <var>N</var> when generating code that uses
-<var>insn</var>.  Similarly, &lsquo;<samp><span class="samp">no-custom-</span><var>insn</var></samp>&rsquo; locally inhibits use of
+<var>insn</var>.  Similarly, `<samp><span class="samp">no-custom-</span><var>insn</var></samp>' locally inhibits use of
 the custom instruction <var>insn</var>. 
 These target attributes correspond to the
 <samp><span class="option">-mcustom-</span><var>insn</var><span class="option">=</span><var>N</var></samp> and <samp><span class="option">-mno-custom-</span><var>insn</var></samp>
 command-line options, and support the same set of <var>insn</var> keywords. 
 See <a href="Nios-II-Options.html#Nios-II-Options">Nios II Options</a>, for more information.
 
-          <br><dt>&lsquo;<samp><span class="samp">custom-fpu-cfg=</span><var>name</var></samp>&rsquo;<dd><a name="index-g_t_0040code_007btarget_0028_0022custom_002dfpu_002dcfg_003d_0040var_007bname_007d_0022_0029_007d-function-attribute_002c-Nios-II-3290"></a>This attribute corresponds to the <samp><span class="option">-mcustom-fpu-cfg=</span><var>name</var></samp>
+          <br><dt>`<samp><span class="samp">custom-fpu-cfg=</span><var>name</var></samp>'<dd><a name="index-g_t_0040code_007btarget_0028_0022custom_002dfpu_002dcfg_003d_0040var_007bname_007d_0022_0029_007d-function-attribute_002c-Nios-II-3290"></a>This attribute corresponds to the <samp><span class="option">-mcustom-fpu-cfg=</span><var>name</var></samp>
 command-line option, to select a predefined set of custom instructions
 named <var>name</var>. 
 See <a href="Nios-II-Options.html#Nios-II-Options">Nios II Options</a>, for more information. 
@@ -1696,7 +1696,7 @@ versioning.  HP-UX system header files may use function level versioning
 for some system calls.
 
      <pre class="smallexample">          extern int foo () __attribute__((version_id ("20040821")));
-</pre>
+     </pre>
      <p class="noindent">Calls to <var>foo</var> are mapped to calls to <var>foo{20040821}</var>.
 
      <br><dt><code>visibility ("</code><var>visibility_type</var><code>")</code><dd><a name="index-g_t_0040code_007bvisibility_007d-function-attribute-3297"></a>This attribute affects the linkage of the declaration to which it is attached. 
@@ -1706,7 +1706,7 @@ hidden, protected or internal visibility.
      <pre class="smallexample">          void __attribute__ ((visibility ("protected")))
           f () { /* <span class="roman">Do something.</span> */; }
           int i __attribute__ ((visibility ("hidden")));
-</pre>
+     </pre>
      <p>The possible values of <var>visibility_type</var> correspond to the
 visibility settings in the ELF gABI.
 
@@ -1749,7 +1749,7 @@ overridden by another module.
      </dl>
 
      <p>All visibilities are supported on many, but not all, ELF targets
-(supported when the assembler supports the &lsquo;<samp><span class="samp">.visibility</span></samp>&rsquo;
+(supported when the assembler supports the `<samp><span class="samp">.visibility</span></samp>'
 pseudo-op).  Default visibility is supported everywhere.  Hidden
 visibility is supported on Darwin targets.
 
@@ -1777,10 +1777,10 @@ an inline method as hidden without marking the whole class as hidden.
 
      <pre class="smallexample">          namespace nspace1 __attribute__ ((visibility ("protected")))
           { /* <span class="roman">Do something.</span> */; }
-</pre>
+     </pre>
      <p>This attribute applies only to the particular namespace body, not to
 other definitions of the same namespace; it is equivalent to using
-&lsquo;<samp><span class="samp">#pragma GCC visibility</span></samp>&rsquo; before and after the namespace
+`<samp><span class="samp">#pragma GCC visibility</span></samp>' before and after the namespace
 definition (see <a href="Visibility-Pragmas.html#Visibility-Pragmas">Visibility Pragmas</a>).
 
      <p>In C++, if a template argument has limited visibility, this
@@ -1809,7 +1809,7 @@ the result is either a security problem or always a bug, such as
             fn ();
             return 0;
           }
-</pre>
+     </pre>
      <p class="noindent">results in warning on line 5.
 
      <br><dt><code>weak</code><dd><a name="index-g_t_0040code_007bweak_007d-function-attribute-3300"></a>The <code>weak</code> attribute causes the declaration to be emitted as a weak
@@ -1833,7 +1833,7 @@ implicitly marks the declaration as <code>weak</code>.  Without a
           /* and to... */
           static int x() __attribute__ ((weakref));
           static int x() __attribute__ ((alias ("y")));
-</pre>
+     </pre>
      <p>A weak reference is an alias that does not by itself require a
 definition to be given for the target symbol.  If the target symbol is
 only referenced through weak references, then it becomes a <code>weak</code>

@@ -3,7 +3,7 @@
 <title>RX Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="RS_002f6000-and-PowerPC-Options.html#RS_002f6000-and-PowerPC-Options" title="RS/6000 and PowerPC Options">
@@ -77,13 +77,13 @@ values, however, so the FPU hardware is not used for doubles if the
 This is because the RX FPU instructions are themselves unsafe.
 
      <br><dt><code>-mcpu=</code><var>name</var><dd><a name="index-mcpu-2371"></a>Selects the type of RX CPU to be targeted.  Currently three types are
-supported, the generic &lsquo;<samp><span class="samp">RX600</span></samp>&rsquo; and &lsquo;<samp><span class="samp">RX200</span></samp>&rsquo; series hardware and
-the specific &lsquo;<samp><span class="samp">RX610</span></samp>&rsquo; CPU.  The default is &lsquo;<samp><span class="samp">RX600</span></samp>&rsquo;.
+supported, the generic `<samp><span class="samp">RX600</span></samp>' and `<samp><span class="samp">RX200</span></samp>' series hardware and
+the specific `<samp><span class="samp">RX610</span></samp>' CPU.  The default is `<samp><span class="samp">RX600</span></samp>'.
 
-     <p>The only difference between &lsquo;<samp><span class="samp">RX600</span></samp>&rsquo; and &lsquo;<samp><span class="samp">RX610</span></samp>&rsquo; is that the
-&lsquo;<samp><span class="samp">RX610</span></samp>&rsquo; does not support the <code>MVTIPL</code> instruction.
+     <p>The only difference between `<samp><span class="samp">RX600</span></samp>' and `<samp><span class="samp">RX610</span></samp>' is that the
+`<samp><span class="samp">RX610</span></samp>' does not support the <code>MVTIPL</code> instruction.
 
-     <p>The &lsquo;<samp><span class="samp">RX200</span></samp>&rsquo; series does not have a hardware floating-point unit
+     <p>The `<samp><span class="samp">RX200</span></samp>' series does not have a hardware floating-point unit
 and so <samp><span class="option">-nofpu</span></samp> is enabled by default when this type is
 selected.
 

@@ -3,7 +3,7 @@
 <title>Guile Exception Handling - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="GDB-Scheme-Data-Types.html#GDB-Scheme-Data-Types" title="GDB Scheme Data Types">
@@ -69,7 +69,7 @@ point where the exception was raised.  Example:
           ERROR: In procedure memoize-variable-access!:
           ERROR: Unbound variable: foo
           Error while executing Scheme code.
-</pre>
+     </pre>
      <br><dt><code>full</code><dd>In addition to an error message a full backtrace is printed.
 
      <pre class="smallexample">          (gdb) set guile print-stack full
@@ -98,7 +98,7 @@ point where the exception was raised.  Example:
           ERROR: In procedure memoize-variable-access!:
           ERROR: Unbound variable: foo
           Error while executing Scheme code.
-</pre>
+     </pre>
      </dl>
 
    <p><span class="sc">gdb</span> errors that happen in <span class="sc">gdb</span> commands invoked by

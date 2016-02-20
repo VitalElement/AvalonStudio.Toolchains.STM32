@@ -3,7 +3,7 @@
 <title>Statements for C++ - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-and-C_002b_002b-Trees.html#C-and-C_002b_002b-Trees" title="C and C++ Trees">
 <link rel="prev" href="Functions-for-C_002b_002b.html#Functions-for-C_002b_002b" title="Functions for C++">
@@ -130,7 +130,7 @@ This tree has one field that holds the name of the spawning function.
 <code>_Cilk_spawn</code> can be written in C in the following way:
 
      <pre class="smallexample">          <code>_Cilk_spawn</code> &lt;function_name&gt; (&lt;parameters&gt;);
-</pre>
+     </pre>
      <p>Detailed description for usage and functionality of <code>_Cilk_spawn</code> can be
 found at http://www.cilkplus.org
 
@@ -141,7 +141,7 @@ There are no additional fields.  <code>_Cilk_sync</code> can be written in C in 
 following way:
 
      <pre class="smallexample">          <code>_Cilk_sync</code>;
-</pre>
+     </pre>
      <br><dt><code>CLEANUP_STMT</code><dd>
 Used to represent an action that should take place upon exit from the
 enclosing scope.  Typically, these actions are calls to destructors for
@@ -207,7 +207,7 @@ This representation is used to handle C++ code like this:
      <p>C++ distinguishes between this and <code>COND_EXPR</code> for handling templates.
 
      <pre class="smallexample">          if (int i = 7) ...
-</pre>
+     </pre>
      <p>where there is a new local variable (or variables) declared within the
 condition.
 

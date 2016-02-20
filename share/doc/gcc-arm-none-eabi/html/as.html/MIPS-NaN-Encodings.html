@@ -3,7 +3,7 @@
 <title>MIPS NaN Encodings - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="MIPS_002dDependent.html#MIPS_002dDependent" title="MIPS-Dependent">
 <link rel="prev" href="MIPS-FP-ABIs.html#MIPS-FP-ABIs" title="MIPS FP ABIs">
@@ -64,17 +64,17 @@ so MIPS ELF objects have a flag (<code>EF_MIPS_NAN2008</code>) to record which
 encoding is being used.
 
    <p>Assembly files can use the <code>.nan</code> directive to select between the
-two encodings.  &lsquo;<samp><span class="samp">.nan 2008</span></samp>&rsquo; says that the assembly file uses the
-IEEE 754-2008 encoding while &lsquo;<samp><span class="samp">.nan legacy</span></samp>&rsquo; says that the file uses
+two encodings.  `<samp><span class="samp">.nan 2008</span></samp>' says that the assembly file uses the
+IEEE 754-2008 encoding while `<samp><span class="samp">.nan legacy</span></samp>' says that the file uses
 the original MIPS encoding.  If several <code>.nan</code> directives are given,
 the final setting is the one that is used.
 
    <p>The command-line options <samp><span class="option">-mnan=legacy</span></samp> and <samp><span class="option">-mnan=2008</span></samp>
-can be used instead of &lsquo;<samp><span class="samp">.nan legacy</span></samp>&rsquo; and &lsquo;<samp><span class="samp">.nan 2008</span></samp>&rsquo;
+can be used instead of `<samp><span class="samp">.nan legacy</span></samp>' and `<samp><span class="samp">.nan 2008</span></samp>'
 respectively.  However, any <code>.nan</code> directive overrides the
 command-line setting.
 
-   <p>&lsquo;<samp><span class="samp">.nan legacy</span></samp>&rsquo; is the default if no <code>.nan</code> directive or
+   <p>`<samp><span class="samp">.nan legacy</span></samp>' is the default if no <code>.nan</code> directive or
 <samp><span class="option">-mnan</span></samp> option is given.
 
    <p>Note that <span class="sc">gnu</span> <code>as</code> does not produce NaNs itself and

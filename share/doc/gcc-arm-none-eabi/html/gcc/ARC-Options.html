@@ -3,7 +3,7 @@
 <title>ARC Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="Adapteva-Epiphany-Options.html#Adapteva-Epiphany-Options" title="Adapteva Epiphany Options">
@@ -59,7 +59,7 @@ The following options control the architecture variant for which code
 is being compiled:
 
 <!-- architecture variants -->
-     <dl>
+<dl>
 <dt><code>-mbarrel-shifter</code><dd><a name="index-mbarrel_002dshifter-1311"></a>Generate instructions supported by barrel shifter.  This is the default
 unless <samp><span class="option">-mcpu=ARC601</span></samp> is in effect.
 
@@ -71,11 +71,11 @@ values for <var>cpu</var> are
           
 <a name="index-mA6-1313"></a>
 <a name="index-mARC600-1314"></a>
-<dl><dt>&lsquo;<samp><span class="samp">ARC600</span></samp>&rsquo;<dd>Compile for ARC600.  Aliases: <samp><span class="option">-mA6</span></samp>, <samp><span class="option">-mARC600</span></samp>.
+<dl><dt>`<samp><span class="samp">ARC600</span></samp>'<dd>Compile for ARC600.  Aliases: <samp><span class="option">-mA6</span></samp>, <samp><span class="option">-mARC600</span></samp>.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC601</span></samp>&rsquo;<dd><a name="index-mARC601-1315"></a>Compile for ARC601.  Alias: <samp><span class="option">-mARC601</span></samp>.
+          <br><dt>`<samp><span class="samp">ARC601</span></samp>'<dd><a name="index-mARC601-1315"></a>Compile for ARC601.  Alias: <samp><span class="option">-mARC601</span></samp>.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC700</span></samp>&rsquo;<dd><a name="index-mA7-1316"></a><a name="index-mARC700-1317"></a>Compile for ARC700.  Aliases: <samp><span class="option">-mA7</span></samp>, <samp><span class="option">-mARC700</span></samp>. 
+          <br><dt>`<samp><span class="samp">ARC700</span></samp>'<dd><a name="index-mA7-1316"></a><a name="index-mARC700-1317"></a>Compile for ARC700.  Aliases: <samp><span class="option">-mA7</span></samp>, <samp><span class="option">-mARC700</span></samp>. 
 This is the default when configured with <samp><span class="option">--with-cpu=arc700</span></samp>. 
 </dl>
 
@@ -111,9 +111,9 @@ builtins.  Only valid for <samp><span class="option">-mcpu=ARC700</span></samp>.
 
      <br><dt><code>-msoft-float</code><dd><a name="index-msoft_002dfloat-1331"></a>This option ignored; it is provided for compatibility purposes only. 
 Software floating point code is emitted by default, and this default
-can overridden by FPX options; &lsquo;<samp><span class="samp">mspfp</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mspfp-compact</span></samp>&rsquo;, or
-&lsquo;<samp><span class="samp">mspfp-fast</span></samp>&rsquo; for single precision, and &lsquo;<samp><span class="samp">mdpfp</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">mdpfp-compact</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">mdpfp-fast</span></samp>&rsquo; for double precision.
+can overridden by FPX options; `<samp><span class="samp">mspfp</span></samp>', `<samp><span class="samp">mspfp-compact</span></samp>', or
+`<samp><span class="samp">mspfp-fast</span></samp>' for single precision, and `<samp><span class="samp">mdpfp</span></samp>',
+`<samp><span class="samp">mdpfp-compact</span></samp>', or `<samp><span class="samp">mdpfp-fast</span></samp>' for double precision.
 
      <br><dt><code>-mswap</code><dd><a name="index-mswap-1332"></a>Generate swap instructions.
 
@@ -124,7 +124,7 @@ define preprocessor macro symbols.
 
 <!-- Flags used by the assembler, but for which we define preprocessor -->
 <!-- macro symbols as well. -->
-     <dl>
+<dl>
 <dt><code>-mdsp-packa</code><dd><a name="index-mdsp_002dpacka-1333"></a>Passed down to the assembler to enable the DSP Pack A extensions. 
 Also sets the preprocessor symbol <code>__Xdsp_packa</code>.
 
@@ -132,7 +132,7 @@ Also sets the preprocessor symbol <code>__Xdsp_packa</code>.
 extension.  Also sets the preprocessor symbol <code>__Xdvbf</code>.
 
      <!-- ARC700 4.10 extension instruction -->
-     <br><dt><code>-mlock</code><dd><a name="index-mlock-1335"></a>Passed down to the assembler to enable the Locked Load/Store
+<br><dt><code>-mlock</code><dd><a name="index-mlock-1335"></a>Passed down to the assembler to enable the Locked Load/Store
 Conditional extension.  Also sets the preprocessor symbol
 <code>__Xlock</code>.
 
@@ -143,12 +143,12 @@ Conditional extension.  Also sets the preprocessor symbol
 <code>__Xxmac_24</code>.
 
      <!-- ARC700 4.10 extension instruction -->
-     <br><dt><code>-mrtsc</code><dd><a name="index-mrtsc-1338"></a>Passed down to the assembler to enable the 64-bit Time-Stamp Counter
+<br><dt><code>-mrtsc</code><dd><a name="index-mrtsc-1338"></a>Passed down to the assembler to enable the 64-bit Time-Stamp Counter
 extension instruction.  Also sets the preprocessor symbol
 <code>__Xrtsc</code>.
 
      <!-- ARC700 4.10 extension instruction -->
-     <br><dt><code>-mswape</code><dd><a name="index-mswape-1339"></a>Passed down to the assembler to enable the swap byte ordering
+<br><dt><code>-mswape</code><dd><a name="index-mswape-1339"></a>Passed down to the assembler to enable the swap byte ordering
 extension instruction.  Also sets the preprocessor symbol
 <code>__Xswape</code>.
 
@@ -164,7 +164,7 @@ sets the preprocessor symbol <code>__Xxy</code>.
  <p>The following options control how the assembly code is annotated:
 
 <!-- Assembly annotation options -->
-     <dl>
+<dl>
 <dt><code>-misize</code><dd><a name="index-misize-1342"></a>Annotate assembler instructions with estimated addresses.
 
      <br><dt><code>-mannotate-align</code><dd><a name="index-mannotate_002dalign-1343"></a>Explain what alignment considerations lead to the decision to make an
@@ -175,7 +175,7 @@ instruction short or long.
  <p>The following options are passed through to the linker:
 
 <!-- options passed through to the linker -->
-     <dl>
+<dl>
 <dt><code>-marclinux</code><dd><a name="index-marclinux-1344"></a>Passed through to the linker, to specify use of the <code>arclinux</code> emulation. 
 This option is enabled by default in tool chains built for
 <code>arc-linux-uclibc</code><!-- /@w --> and <code>arceb-linux-uclibc</code><!-- /@w --> targets
@@ -191,7 +191,7 @@ tool chains built for <code>arc-linux-uclibc</code><!-- /@w --> and
  <p>The following options control the semantics of generated code:
 
 <!-- semantically relevant code generation options -->
-     <dl>
+<dl>
 <dt><code>-mepilogue-cfi</code><dd><a name="index-mepilogue_002dcfi-1346"></a>Enable generation of call frame information for epilogues.
 
      <br><dt><code>-mno-epilogue-cfi</code><dd><a name="index-mno_002depilogue_002dcfi-1347"></a>Disable generation of call frame information for epilogues.
@@ -296,18 +296,18 @@ This is the default.
      <br><dt><code>-msize-level=</code><var>level</var><dd><a name="index-msize_002dlevel-1373"></a>Fine-tune size optimization with regards to instruction lengths and alignment. 
 The recognized values for <var>level</var> are:
           <dl>
-<dt>&lsquo;<samp><span class="samp">0</span></samp>&rsquo;<dd>No size optimization.  This level is deprecated and treated like &lsquo;<samp><span class="samp">1</span></samp>&rsquo;.
+<dt>`<samp><span class="samp">0</span></samp>'<dd>No size optimization.  This level is deprecated and treated like `<samp><span class="samp">1</span></samp>'.
 
-          <br><dt>&lsquo;<samp><span class="samp">1</span></samp>&rsquo;<dd>Short instructions are used opportunistically.
+          <br><dt>`<samp><span class="samp">1</span></samp>'<dd>Short instructions are used opportunistically.
 
-          <br><dt>&lsquo;<samp><span class="samp">2</span></samp>&rsquo;<dd>In addition, alignment of loops and of code after barriers are dropped.
+          <br><dt>`<samp><span class="samp">2</span></samp>'<dd>In addition, alignment of loops and of code after barriers are dropped.
 
-          <br><dt>&lsquo;<samp><span class="samp">3</span></samp>&rsquo;<dd>In addition, optional data alignment is dropped, and the option <samp><span class="option">Os</span></samp> is enabled.
+          <br><dt>`<samp><span class="samp">3</span></samp>'<dd>In addition, optional data alignment is dropped, and the option <samp><span class="option">Os</span></samp> is enabled.
 
      </dl>
 
-     <p>This defaults to &lsquo;<samp><span class="samp">3</span></samp>&rsquo; when <samp><span class="option">-Os</span></samp> is in effect.  Otherwise,
-the behavior when this is not set is equivalent to level &lsquo;<samp><span class="samp">1</span></samp>&rsquo;.
+     <p>This defaults to `<samp><span class="samp">3</span></samp>' when <samp><span class="option">-Os</span></samp> is in effect.  Otherwise,
+the behavior when this is not set is equivalent to level `<samp><span class="samp">1</span></samp>'.
 
      <br><dt><code>-mtune=</code><var>cpu</var><dd><a name="index-mtune-1374"></a>Set instruction scheduling parameters for <var>cpu</var>, overriding any implied
 by <samp><span class="option">-mcpu=</span></samp>.
@@ -315,25 +315,25 @@ by <samp><span class="option">-mcpu=</span></samp>.
      <p>Supported values for <var>cpu</var> are
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">ARC600</span></samp>&rsquo;<dd>Tune for ARC600 cpu.
+<dt>`<samp><span class="samp">ARC600</span></samp>'<dd>Tune for ARC600 cpu.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC601</span></samp>&rsquo;<dd>Tune for ARC601 cpu.
+          <br><dt>`<samp><span class="samp">ARC601</span></samp>'<dd>Tune for ARC601 cpu.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC700</span></samp>&rsquo;<dd>Tune for ARC700 cpu with standard multiplier block.
+          <br><dt>`<samp><span class="samp">ARC700</span></samp>'<dd>Tune for ARC700 cpu with standard multiplier block.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC700-xmac</span></samp>&rsquo;<dd>Tune for ARC700 cpu with XMAC block.
+          <br><dt>`<samp><span class="samp">ARC700-xmac</span></samp>'<dd>Tune for ARC700 cpu with XMAC block.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC725D</span></samp>&rsquo;<dd>Tune for ARC725D cpu.
+          <br><dt>`<samp><span class="samp">ARC725D</span></samp>'<dd>Tune for ARC725D cpu.
 
-          <br><dt>&lsquo;<samp><span class="samp">ARC750D</span></samp>&rsquo;<dd>Tune for ARC750D cpu.
+          <br><dt>`<samp><span class="samp">ARC750D</span></samp>'<dd>Tune for ARC750D cpu.
 
      </dl>
 
-     <br><dt><code>-mmultcost=</code><var>num</var><dd><a name="index-mmultcost-1375"></a>Cost to assume for a multiply instruction, with &lsquo;<samp><span class="samp">4</span></samp>&rsquo; being equal to a
+     <br><dt><code>-mmultcost=</code><var>num</var><dd><a name="index-mmultcost-1375"></a>Cost to assume for a multiply instruction, with `<samp><span class="samp">4</span></samp>' being equal to a
 normal instruction.
 
      <br><dt><code>-munalign-prob-threshold=</code><var>probability</var><dd><a name="index-munalign_002dprob_002dthreshold-1376"></a>Set probability threshold for unaligning branches. 
-When tuning for &lsquo;<samp><span class="samp">ARC700</span></samp>&rsquo; and optimizing for speed, branches without
+When tuning for `<samp><span class="samp">ARC700</span></samp>' and optimizing for speed, branches without
 filled delay slot are preferably emitted unaligned and long, unless
 profiling indicates that the probability for the branch to be taken
 is below <var>probability</var>.  See <a href="Cross_002dprofiling.html#Cross_002dprofiling">Cross-profiling</a>. 
@@ -345,7 +345,7 @@ The default is (REG_BR_PROB_BASE/2), i.e. 5000.
 are now deprecated and will be removed in a future release:
 
 <!-- Deprecated options -->
-     <dl>
+<dl>
 <dt><code>-margonaut</code><dd><a name="index-margonaut-1377"></a>Obsolete FPX.
 
      <br><dt><code>-mbig-endian</code><dd><a name="index-mbig_002dendian-1378"></a><dt><code>-EB</code><dd><a name="index-EB-1379"></a>Compile code for big endian targets.  Use of these options is now
@@ -376,9 +376,9 @@ building the tool chain, for which little-endian is the default.
 
      <br><dt><code>-mspfp_fast</code><dd><a name="index-mspfp_005ffast-1390"></a>Replaced by <samp><span class="option">-mspfp-fast</span></samp>.
 
-     <br><dt><code>-mtune=</code><var>cpu</var><dd><a name="index-mtune-1391"></a>Values &lsquo;<samp><span class="samp">arc600</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arc601</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arc700</span></samp>&rsquo; and
-&lsquo;<samp><span class="samp">arc700-xmac</span></samp>&rsquo; for <var>cpu</var> are replaced by &lsquo;<samp><span class="samp">ARC600</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">ARC601</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ARC700</span></samp>&rsquo; and &lsquo;<samp><span class="samp">ARC700-xmac</span></samp>&rsquo; respectively
+     <br><dt><code>-mtune=</code><var>cpu</var><dd><a name="index-mtune-1391"></a>Values `<samp><span class="samp">arc600</span></samp>', `<samp><span class="samp">arc601</span></samp>', `<samp><span class="samp">arc700</span></samp>' and
+`<samp><span class="samp">arc700-xmac</span></samp>' for <var>cpu</var> are replaced by `<samp><span class="samp">ARC600</span></samp>',
+`<samp><span class="samp">ARC601</span></samp>', `<samp><span class="samp">ARC700</span></samp>' and `<samp><span class="samp">ARC700-xmac</span></samp>' respectively
 
      <br><dt><code>-multcost=</code><var>num</var><dd><a name="index-multcost-1392"></a>Replaced by <samp><span class="option">-mmultcost</span></samp>.
 

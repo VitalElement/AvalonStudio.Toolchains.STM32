@@ -3,7 +3,7 @@
 <title>gcore man - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Man-Pages.html#Man-Pages" title="Man Pages">
 <link rel="prev" href="gdbserver-man.html#gdbserver-man" title="gdbserver man">
@@ -54,7 +54,7 @@ gcore [-o <var>filename</var>] <var>pid</var>
 <!-- man end -->
 </pre>
 <!-- man begin DESCRIPTION gcore -->
-   <p>Generate a core dump of a running program with process ID <var>pid</var>. 
+<p>Generate a core dump of a running program with process ID <var>pid</var>. 
 Produced file is equivalent to a kernel produced core file as if the process
 crashed (and if <kbd>ulimit -c</kbd> were used to set up an appropriate core dump
 limit).  Unlike after a crash, after <samp><span class="command">gcore</span></samp> the program remains
@@ -62,7 +62,7 @@ running without any change.
 <!-- man end -->
 
 <!-- man begin OPTIONS gcore -->
-     <dl>
+<dl>
 <dt><samp><span class="env">-o </span><var>filename</var></samp><dd>The optional argument
 <var>filename</var> specifies the file name where to put the core dump. 
 If not specified, the file name defaults to <samp><span class="file">core.</span><var>pid</var></samp>,
@@ -72,5 +72,5 @@ where <var>pid</var> is the running program process ID.
 
 <!-- man begin SEEALSO gcore -->
 <!-- man end -->
-   </body></html>
+</body></html>
 

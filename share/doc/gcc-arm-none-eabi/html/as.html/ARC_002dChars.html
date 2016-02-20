@@ -3,7 +3,7 @@
 <title>ARC-Chars - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="ARC-Syntax.html#ARC-Syntax" title="ARC Syntax">
 <link rel="next" href="ARC_002dRegs.html#ARC_002dRegs" title="ARC-Regs">
@@ -47,25 +47,25 @@ Up:&nbsp;<a rel="up" accesskey="u" href="ARC-Syntax.html#ARC-Syntax">ARC Syntax<
 <h5 class="subsubsection">9.3.2.1 Special Characters</h5>
 
      <dl>
-<dt><code>%</code><dd><a name="index-register-name-prefix-character_002c-ARC-604"></a><a name="index-ARC-register-name-prefix-character-605"></a>A register name can optionally be prefixed by a &lsquo;<samp><span class="samp">%</span></samp>&rsquo; character.  So
+<dt><code>%</code><dd><a name="index-register-name-prefix-character_002c-ARC-604"></a><a name="index-ARC-register-name-prefix-character-605"></a>A register name can optionally be prefixed by a `<samp><span class="samp">%</span></samp>' character.  So
 register <code>%r0</code> is equivalent to <code>r0</code> in the assembly code.
 
-     <br><dt><code>#</code><dd><a name="index-line-comment-character_002c-ARC-606"></a><a name="index-ARC-line-comment-character-607"></a>The presence of a &lsquo;<samp><span class="samp">#</span></samp>&rsquo; character within a line (but not at the
+     <br><dt><code>#</code><dd><a name="index-line-comment-character_002c-ARC-606"></a><a name="index-ARC-line-comment-character-607"></a>The presence of a `<samp><span class="samp">#</span></samp>' character within a line (but not at the
 start of a line) indicates the start of a comment that extends to the
 end of the current line.
 
-     <p><em>Note:</em> if a line starts with a &lsquo;<samp><span class="samp">#</span></samp>&rsquo; character then it can
+     <p><em>Note:</em> if a line starts with a `<samp><span class="samp">#</span></samp>' character then it can
 also be a logical line number directive (see <a href="Comments.html#Comments">Comments</a>) or a
 preprocessor control command (see <a href="Preprocessing.html#Preprocessing">Preprocessing</a>).
 
-     <br><dt><code>@</code><dd><a name="index-symbol-prefix-character_002c-ARC-608"></a><a name="index-ARC-symbol-prefix-character-609"></a>Prefixing an operand with an &lsquo;<samp><span class="samp">@</span></samp>&rsquo; specifies that the operand is a
+     <br><dt><code>@</code><dd><a name="index-symbol-prefix-character_002c-ARC-608"></a><a name="index-ARC-symbol-prefix-character-609"></a>Prefixing an operand with an `<samp><span class="samp">@</span></samp>' specifies that the operand is a
 symbol and not a register.  This is how the assembler disambiguates
 the use of an ARC register name as a symbol.  So the instruction
      <pre class="example">          mov r0, @r0
-</pre>
+     </pre>
      <p>moves the address of symbol <code>r0</code> into register <code>r0</code>.
 
-     <br><dt><code>`</code><dd><a name="index-line-separator_002c-ARC-610"></a><a name="index-statement-separator_002c-ARC-611"></a><a name="index-ARC-line-separator-612"></a>The &lsquo;<samp><span class="samp">`</span></samp>&rsquo; (backtick) character is used to separate statements on a
+     <br><dt><code>`</code><dd><a name="index-line-separator_002c-ARC-610"></a><a name="index-statement-separator_002c-ARC-611"></a><a name="index-ARC-line-separator-612"></a>The `<samp><span class="samp">`</span></samp>' (backtick) character is used to separate statements on a
 single line.
 
      <p><a name="index-line-613"></a><br><dt><code>-</code><dd><a name="index-C-preprocessor-macro-separator_002c-ARC-614"></a><a name="index-ARC-C-preprocessor-macro-separator-615"></a>Used as a separator to obtain a sequence of commands from a C

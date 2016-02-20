@@ -3,7 +3,7 @@
 <title>Nios II Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="NDS32-Options.html#NDS32-Options" title="NDS32 Options">
@@ -66,25 +66,25 @@ sections.  The default value of <var>num</var> is 8.
 <var>option</var> names are recognized:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">none</span></samp>&rsquo;<dd>Do not generate GP-relative accesses.
+<dt>`<samp><span class="samp">none</span></samp>'<dd>Do not generate GP-relative accesses.
 
-          <br><dt>&lsquo;<samp><span class="samp">local</span></samp>&rsquo;<dd>Generate GP-relative accesses for small data objects that are not
+          <br><dt>`<samp><span class="samp">local</span></samp>'<dd>Generate GP-relative accesses for small data objects that are not
 external or weak.  Also use GP-relative addressing for objects that
 have been explicitly placed in a small data section via a <code>section</code>
 attribute.
 
-          <br><dt>&lsquo;<samp><span class="samp">global</span></samp>&rsquo;<dd>As for &lsquo;<samp><span class="samp">local</span></samp>&rsquo;, but also generate GP-relative accesses for
+          <br><dt>`<samp><span class="samp">global</span></samp>'<dd>As for `<samp><span class="samp">local</span></samp>', but also generate GP-relative accesses for
 small data objects that are external or weak.  If you use this option,
 you must ensure that all parts of your program (including libraries) are
 compiled with the same <samp><span class="option">-G</span></samp> setting.
 
-          <br><dt>&lsquo;<samp><span class="samp">data</span></samp>&rsquo;<dd>Generate GP-relative accesses for all data objects in the program.  If you
+          <br><dt>`<samp><span class="samp">data</span></samp>'<dd>Generate GP-relative accesses for all data objects in the program.  If you
 use this option, the entire data and BSS segments
 of your program must fit in 64K of memory and you must use an appropriate
 linker script to allocate them within the addressible range of the
 global pointer.
 
-          <br><dt>&lsquo;<samp><span class="samp">all</span></samp>&rsquo;<dd>Generate GP-relative addresses for function pointers as well as data
+          <br><dt>`<samp><span class="samp">all</span></samp>'<dd>Generate GP-relative addresses for function pointers as well as data
 pointers.  If you use this option, the entire text, data, and BSS segments
 of your program must fit in 64K of memory and you must use an appropriate
 linker script to allocate them within the addressible range of the
@@ -136,59 +136,59 @@ equivalent GCC built-in functions (see <a href="Other-Builtins.html#Other-Builti
 
      <p>Single-precision floating point:
           <dl>
-<dt>&lsquo;<samp><span class="samp">fadds</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fsubs</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fdivs</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fmuls</span></samp>&rsquo;<dd>Binary arithmetic operations.
+<dt>`<samp><span class="samp">fadds</span></samp>', `<samp><span class="samp">fsubs</span></samp>', `<samp><span class="samp">fdivs</span></samp>', `<samp><span class="samp">fmuls</span></samp>'<dd>Binary arithmetic operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">fnegs</span></samp>&rsquo;<dd>Unary negation.
+          <br><dt>`<samp><span class="samp">fnegs</span></samp>'<dd>Unary negation.
 
-          <br><dt>&lsquo;<samp><span class="samp">fabss</span></samp>&rsquo;<dd>Unary absolute value.
+          <br><dt>`<samp><span class="samp">fabss</span></samp>'<dd>Unary absolute value.
 
-          <br><dt>&lsquo;<samp><span class="samp">fcmpeqs</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpges</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpgts</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmples</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmplts</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpnes</span></samp>&rsquo;<dd>Comparison operations.
+          <br><dt>`<samp><span class="samp">fcmpeqs</span></samp>', `<samp><span class="samp">fcmpges</span></samp>', `<samp><span class="samp">fcmpgts</span></samp>', `<samp><span class="samp">fcmples</span></samp>', `<samp><span class="samp">fcmplts</span></samp>', `<samp><span class="samp">fcmpnes</span></samp>'<dd>Comparison operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">fmins</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fmaxs</span></samp>&rsquo;<dd>Floating-point minimum and maximum.  These instructions are only
+          <br><dt>`<samp><span class="samp">fmins</span></samp>', `<samp><span class="samp">fmaxs</span></samp>'<dd>Floating-point minimum and maximum.  These instructions are only
 generated if <samp><span class="option">-ffinite-math-only</span></samp> is specified.
 
-          <br><dt>&lsquo;<samp><span class="samp">fsqrts</span></samp>&rsquo;<dd>Unary square root operation.
+          <br><dt>`<samp><span class="samp">fsqrts</span></samp>'<dd>Unary square root operation.
 
-          <br><dt>&lsquo;<samp><span class="samp">fcoss</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fsins</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ftans</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fatans</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fexps</span></samp>&rsquo;, &lsquo;<samp><span class="samp">flogs</span></samp>&rsquo;<dd>Floating-point trigonometric and exponential functions.  These instructions
+          <br><dt>`<samp><span class="samp">fcoss</span></samp>', `<samp><span class="samp">fsins</span></samp>', `<samp><span class="samp">ftans</span></samp>', `<samp><span class="samp">fatans</span></samp>', `<samp><span class="samp">fexps</span></samp>', `<samp><span class="samp">flogs</span></samp>'<dd>Floating-point trigonometric and exponential functions.  These instructions
 are only generated if <samp><span class="option">-funsafe-math-optimizations</span></samp> is also specified.
 
      </dl>
 
      <p>Double-precision floating point:
           <dl>
-<dt>&lsquo;<samp><span class="samp">faddd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fsubd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fdivd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fmuld</span></samp>&rsquo;<dd>Binary arithmetic operations.
+<dt>`<samp><span class="samp">faddd</span></samp>', `<samp><span class="samp">fsubd</span></samp>', `<samp><span class="samp">fdivd</span></samp>', `<samp><span class="samp">fmuld</span></samp>'<dd>Binary arithmetic operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">fnegd</span></samp>&rsquo;<dd>Unary negation.
+          <br><dt>`<samp><span class="samp">fnegd</span></samp>'<dd>Unary negation.
 
-          <br><dt>&lsquo;<samp><span class="samp">fabsd</span></samp>&rsquo;<dd>Unary absolute value.
+          <br><dt>`<samp><span class="samp">fabsd</span></samp>'<dd>Unary absolute value.
 
-          <br><dt>&lsquo;<samp><span class="samp">fcmpeqd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpged</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpgtd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpled</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpltd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fcmpned</span></samp>&rsquo;<dd>Comparison operations.
+          <br><dt>`<samp><span class="samp">fcmpeqd</span></samp>', `<samp><span class="samp">fcmpged</span></samp>', `<samp><span class="samp">fcmpgtd</span></samp>', `<samp><span class="samp">fcmpled</span></samp>', `<samp><span class="samp">fcmpltd</span></samp>', `<samp><span class="samp">fcmpned</span></samp>'<dd>Comparison operations.
 
-          <br><dt>&lsquo;<samp><span class="samp">fmind</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fmaxd</span></samp>&rsquo;<dd>Double-precision minimum and maximum.  These instructions are only
+          <br><dt>`<samp><span class="samp">fmind</span></samp>', `<samp><span class="samp">fmaxd</span></samp>'<dd>Double-precision minimum and maximum.  These instructions are only
 generated if <samp><span class="option">-ffinite-math-only</span></samp> is specified.
 
-          <br><dt>&lsquo;<samp><span class="samp">fsqrtd</span></samp>&rsquo;<dd>Unary square root operation.
+          <br><dt>`<samp><span class="samp">fsqrtd</span></samp>'<dd>Unary square root operation.
 
-          <br><dt>&lsquo;<samp><span class="samp">fcosd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fsind</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ftand</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fatand</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fexpd</span></samp>&rsquo;, &lsquo;<samp><span class="samp">flogd</span></samp>&rsquo;<dd>Double-precision trigonometric and exponential functions.  These instructions
+          <br><dt>`<samp><span class="samp">fcosd</span></samp>', `<samp><span class="samp">fsind</span></samp>', `<samp><span class="samp">ftand</span></samp>', `<samp><span class="samp">fatand</span></samp>', `<samp><span class="samp">fexpd</span></samp>', `<samp><span class="samp">flogd</span></samp>'<dd>Double-precision trigonometric and exponential functions.  These instructions
 are only generated if <samp><span class="option">-funsafe-math-optimizations</span></samp> is also specified.
 
      </dl>
 
      <p>Conversions:
           <dl>
-<dt>&lsquo;<samp><span class="samp">fextsd</span></samp>&rsquo;<dd>Conversion from single precision to double precision.
+<dt>`<samp><span class="samp">fextsd</span></samp>'<dd>Conversion from single precision to double precision.
 
-          <br><dt>&lsquo;<samp><span class="samp">ftruncds</span></samp>&rsquo;<dd>Conversion from double precision to single precision.
+          <br><dt>`<samp><span class="samp">ftruncds</span></samp>'<dd>Conversion from double precision to single precision.
 
-          <br><dt>&lsquo;<samp><span class="samp">fixsi</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fixsu</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fixdi</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fixdu</span></samp>&rsquo;<dd>Conversion from floating point to signed or unsigned integer types, with
+          <br><dt>`<samp><span class="samp">fixsi</span></samp>', `<samp><span class="samp">fixsu</span></samp>', `<samp><span class="samp">fixdi</span></samp>', `<samp><span class="samp">fixdu</span></samp>'<dd>Conversion from floating point to signed or unsigned integer types, with
 truncation towards zero.
 
-          <br><dt>&lsquo;<samp><span class="samp">round</span></samp>&rsquo;<dd>Conversion from single-precision floating point to signed integer,
+          <br><dt>`<samp><span class="samp">round</span></samp>'<dd>Conversion from single-precision floating point to signed integer,
 rounding to the nearest integer and ties away from zero. 
 This corresponds to the <code>__builtin_lroundf</code> function when
 <samp><span class="option">-fno-math-errno</span></samp> is used.
 
-          <br><dt>&lsquo;<samp><span class="samp">floatis</span></samp>&rsquo;, &lsquo;<samp><span class="samp">floatus</span></samp>&rsquo;, &lsquo;<samp><span class="samp">floatid</span></samp>&rsquo;, &lsquo;<samp><span class="samp">floatud</span></samp>&rsquo;<dd>Conversion from signed or unsigned integer types to floating-point types.
+          <br><dt>`<samp><span class="samp">floatis</span></samp>', `<samp><span class="samp">floatus</span></samp>', `<samp><span class="samp">floatid</span></samp>', `<samp><span class="samp">floatud</span></samp>'<dd>Conversion from signed or unsigned integer types to floating-point types.
 
      </dl>
 
@@ -207,15 +207,15 @@ register X and/or read register Y when double-precision floating-point
 instructions are used.
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">fwrx</span></samp>&rsquo;<dd>Write <var>src1</var> into the least significant half of X and <var>src2</var> into
+<dt>`<samp><span class="samp">fwrx</span></samp>'<dd>Write <var>src1</var> into the least significant half of X and <var>src2</var> into
 the most significant half of X.
 
-          <br><dt>&lsquo;<samp><span class="samp">fwry</span></samp>&rsquo;<dd>Write <var>src1</var> into Y.
+          <br><dt>`<samp><span class="samp">fwry</span></samp>'<dd>Write <var>src1</var> into Y.
 
-          <br><dt>&lsquo;<samp><span class="samp">frdxhi</span></samp>&rsquo;, &lsquo;<samp><span class="samp">frdxlo</span></samp>&rsquo;<dd>Read the most or least (respectively) significant half of X and store it in
+          <br><dt>`<samp><span class="samp">frdxhi</span></samp>', `<samp><span class="samp">frdxlo</span></samp>'<dd>Read the most or least (respectively) significant half of X and store it in
 <var>dest</var>.
 
-          <br><dt>&lsquo;<samp><span class="samp">frdy</span></samp>&rsquo;<dd>Read the value of Y and store it into <var>dest</var>. 
+          <br><dt>`<samp><span class="samp">frdy</span></samp>'<dd>Read the value of Y and store it into <var>dest</var>. 
 </dl>
 
      <p>Note that you can gain more local control over generation of Nios II custom
@@ -234,14 +234,14 @@ Currently, the following sets are defined:
           -mcustom-fadds=253 
           -mcustom-fsubs=254 
           -fsingle-precision-constant
-</pre>
+     </pre>
      <p><samp><span class="option">-mcustom-fpu-cfg=60-2</span></samp> is equivalent to:
      <pre class="smallexample">          -mcustom-fmuls=252 
           -mcustom-fadds=253 
           -mcustom-fsubs=254 
           -mcustom-fdivs=255 
           -fsingle-precision-constant
-</pre>
+     </pre>
      <p><samp><span class="option">-mcustom-fpu-cfg=72-3</span></samp> is equivalent to:
      <pre class="smallexample">          -mcustom-floatus=243 
           -mcustom-fixsi=244 
@@ -255,7 +255,7 @@ Currently, the following sets are defined:
           -mcustom-fsubs=254 
           -mcustom-fdivs=255 
           -fsingle-precision-constant
-</pre>
+     </pre>
      <p>Custom instruction assignments given by individual
 <samp><span class="option">-mcustom-</span><var>insn</var><span class="option">=</span></samp> options override those given by
 <samp><span class="option">-mcustom-fpu-cfg=</span></samp>, regardless of the
@@ -268,7 +268,7 @@ or pragma (see <a href="Function-Specific-Option-Pragmas.html#Function-Specific-
 
  </dl>
 
- <p>These additional &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; options are available for the Altera Nios II
+ <p>These additional `<samp><span class="samp">-m</span></samp>' options are available for the Altera Nios II
 ELF (bare-metal) target:
 
      <dl>

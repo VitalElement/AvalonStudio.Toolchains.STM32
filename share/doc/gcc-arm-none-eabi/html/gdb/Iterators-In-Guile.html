@@ -3,7 +3,7 @@
 <title>Iterators In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Memory-Ports-in-Guile.html#Memory-Ports-in-Guile" title="Memory Ports in Guile">
@@ -80,7 +80,7 @@ maintain this invariant.
                                    (begin
                                      (set-iterator-progress! iter (cdr l))
                                      (car l)))))))
-</pre>
+     </pre>
         <p>Here is a slightly more realistic example, which computes a list of all the
 functions in <code>my-global-block</code>.
 
@@ -90,7 +90,7 @@ functions in <code>my-global-block</code>.
           (define this-global-block (symtab-global-block this-symtab))
           (define syms-iter (make-block-symbols-iterator this-global-block))
           (define functions (iterator-filter symbol-function? syms-iter))
-</pre>
+     </pre>
         </blockquote></div>
 
 <div class="defun">

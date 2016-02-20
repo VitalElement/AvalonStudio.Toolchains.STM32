@@ -3,7 +3,7 @@
 <title>NDS32-Ops - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="NDS32-Syntax.html#NDS32-Syntax" title="NDS32 Syntax">
 <link rel="prev" href="NDS32_002dRegs.html#NDS32_002dRegs" title="NDS32-Regs">
@@ -47,67 +47,67 @@ Up:&nbsp;<a rel="up" accesskey="u" href="NDS32-Syntax.html#NDS32-Syntax">NDS32 S
 <h5 class="subsubsection">9.30.2.3 Pseudo Instructions</h5>
 
      <dl>
-<dt><code>li rt5,imm32</code><dd>load 32-bit integer into register rt5.  &lsquo;<samp><span class="samp">sethi rt5,hi20(imm32)</span></samp>&rsquo; and then
-&lsquo;<samp><span class="samp">ori rt5,reg,lo12(imm32)</span></samp>&rsquo;.
+<dt><code>li rt5,imm32</code><dd>load 32-bit integer into register rt5.  `<samp><span class="samp">sethi rt5,hi20(imm32)</span></samp>' and then
+`<samp><span class="samp">ori rt5,reg,lo12(imm32)</span></samp>'.
 
-     <br><dt><code>la rt5,var</code><dd>Load 32-bit address of var into register rt5.  &lsquo;<samp><span class="samp">sethi rt5,hi20(var)</span></samp>&rsquo; and
-then &lsquo;<samp><span class="samp">ori reg,rt5,lo12(var)</span></samp>&rsquo;
+     <br><dt><code>la rt5,var</code><dd>Load 32-bit address of var into register rt5.  `<samp><span class="samp">sethi rt5,hi20(var)</span></samp>' and
+then `<samp><span class="samp">ori reg,rt5,lo12(var)</span></samp>'
 
-     <br><dt><code>l.[bhw] rt5,var</code><dd>Load value of var into register rt5.  &lsquo;<samp><span class="samp">sethi $ta,hi20(var)</span></samp>&rsquo; and then
-&lsquo;<samp><span class="samp">l[bhw]i rt5,[$ta+lo12(var)]</span></samp>&rsquo;
+     <br><dt><code>l.[bhw] rt5,var</code><dd>Load value of var into register rt5.  `<samp><span class="samp">sethi $ta,hi20(var)</span></samp>' and then
+`<samp><span class="samp">l[bhw]i rt5,[$ta+lo12(var)]</span></samp>'
 
-     <br><dt><code>l.[bh]s rt5,var</code><dd>Load value of var into register rt5.  &lsquo;<samp><span class="samp">sethi $ta,hi20(var)</span></samp>&rsquo; and then
-&lsquo;<samp><span class="samp">l[bh]si rt5,[$ta+lo12(var)]</span></samp>&rsquo;
+     <br><dt><code>l.[bh]s rt5,var</code><dd>Load value of var into register rt5.  `<samp><span class="samp">sethi $ta,hi20(var)</span></samp>' and then
+`<samp><span class="samp">l[bh]si rt5,[$ta+lo12(var)]</span></samp>'
 
      <br><dt><code>l.[bhw]p rt5,var,inc</code><dd>Load value of var into register rt5 and increment $ta by amount inc. 
-&lsquo;<samp><span class="samp">la $ta,var</span></samp>&rsquo; and then &lsquo;<samp><span class="samp">l[bhw]i.bi rt5,[$ta],inc</span></samp>&rsquo;
+`<samp><span class="samp">la $ta,var</span></samp>' and then `<samp><span class="samp">l[bhw]i.bi rt5,[$ta],inc</span></samp>'
 
      <br><dt><code>l.[bhw]pc rt5,inc</code><dd>Continue loading value of var into register rt5 and increment $ta by amount inc. 
-&lsquo;<samp><span class="samp">l[bhw]i.bi rt5,[$ta],inc.</span></samp>&rsquo;
+`<samp><span class="samp">l[bhw]i.bi rt5,[$ta],inc.</span></samp>'
 
      <br><dt><code>l.[bh]sp rt5,var,inc</code><dd>Load value of var into register rt5 and increment $ta by amount inc. 
-&lsquo;<samp><span class="samp">la $ta,var</span></samp>&rsquo; and then &lsquo;<samp><span class="samp">l[bh]si.bi rt5,[$ta],inc</span></samp>&rsquo;
+`<samp><span class="samp">la $ta,var</span></samp>' and then `<samp><span class="samp">l[bh]si.bi rt5,[$ta],inc</span></samp>'
 
      <br><dt><code>l.[bh]spc rt5,inc</code><dd>Continue loading value of var into register rt5 and increment $ta by amount inc. 
-&lsquo;<samp><span class="samp">l[bh]si.bi rt5,[$ta],inc.</span></samp>&rsquo;
+`<samp><span class="samp">l[bh]si.bi rt5,[$ta],inc.</span></samp>'
 
      <br><dt><code>s.[bhw] rt5,var</code><dd>Store register rt5 to var. 
-&lsquo;<samp><span class="samp">sethi $ta,hi20(var)</span></samp>&rsquo; and then &lsquo;<samp><span class="samp">s[bhw]i rt5,[$ta+lo12(var)]</span></samp>&rsquo;
+`<samp><span class="samp">sethi $ta,hi20(var)</span></samp>' and then `<samp><span class="samp">s[bhw]i rt5,[$ta+lo12(var)]</span></samp>'
 
      <br><dt><code>s.[bhw]p rt5,var,inc</code><dd>Store register rt5 to var and increment $ta by amount inc. 
-&lsquo;<samp><span class="samp">la $ta,var</span></samp>&rsquo; and then &lsquo;<samp><span class="samp">s[bhw]i.bi rt5,[$ta],inc</span></samp>&rsquo;
+`<samp><span class="samp">la $ta,var</span></samp>' and then `<samp><span class="samp">s[bhw]i.bi rt5,[$ta],inc</span></samp>'
 
      <br><dt><code>s.[bhw]pc rt5,inc</code><dd>Continue storing register rt5 to var and increment $ta by amount inc. 
-&lsquo;<samp><span class="samp">s[bhw]i.bi rt5,[$ta],inc.</span></samp>&rsquo;
+`<samp><span class="samp">s[bhw]i.bi rt5,[$ta],inc.</span></samp>'
 
-     <br><dt><code>not rt5,ra5</code><dd>Alias of &lsquo;<samp><span class="samp">nor rt5,ra5,ra5</span></samp>&rsquo;.
+     <br><dt><code>not rt5,ra5</code><dd>Alias of `<samp><span class="samp">nor rt5,ra5,ra5</span></samp>'.
 
-     <br><dt><code>neg rt5,ra5</code><dd>Alias of &lsquo;<samp><span class="samp">subri rt5,ra5,0</span></samp>&rsquo;.
+     <br><dt><code>neg rt5,ra5</code><dd>Alias of `<samp><span class="samp">subri rt5,ra5,0</span></samp>'.
 
-     <br><dt><code>br rb5</code><dd>Depending on how it is assembled, it is translated into &lsquo;<samp><span class="samp">r5 rb5</span></samp>&rsquo;
-or &lsquo;<samp><span class="samp">jr rb5</span></samp>&rsquo;.
+     <br><dt><code>br rb5</code><dd>Depending on how it is assembled, it is translated into `<samp><span class="samp">r5 rb5</span></samp>'
+or `<samp><span class="samp">jr rb5</span></samp>'.
 
      <br><dt><code>b label</code><dd>Branch to label depending on how it is assembled, it is translated into
-&lsquo;<samp><span class="samp">j8 label</span></samp>&rsquo;, &lsquo;<samp><span class="samp">j label</span></samp>&rsquo;, or "&lsquo;<samp><span class="samp">la $ta,label</span></samp>&rsquo; &lsquo;<samp><span class="samp">br $ta</span></samp>&rsquo;".
+`<samp><span class="samp">j8 label</span></samp>', `<samp><span class="samp">j label</span></samp>', or "`<samp><span class="samp">la $ta,label</span></samp>' `<samp><span class="samp">br $ta</span></samp>'".
 
      <br><dt><code>bral rb5</code><dd>Alias of jral br5 depending on how it is assembled, it is translated
-into &lsquo;<samp><span class="samp">jral5 rb5</span></samp>&rsquo; or &lsquo;<samp><span class="samp">jral rb5</span></samp>&rsquo;.
+into `<samp><span class="samp">jral5 rb5</span></samp>' or `<samp><span class="samp">jral rb5</span></samp>'.
 
      <br><dt><code>bal fname</code><dd>Alias of jal fname depending on how it is assembled, it is translated into
-&lsquo;<samp><span class="samp">jal fname</span></samp>&rsquo; or "&lsquo;<samp><span class="samp">la $ta,fname</span></samp>&rsquo; &lsquo;<samp><span class="samp">bral $ta</span></samp>&rsquo;".
+`<samp><span class="samp">jal fname</span></samp>' or "`<samp><span class="samp">la $ta,fname</span></samp>' `<samp><span class="samp">bral $ta</span></samp>'".
 
-     <br><dt><code>call fname</code><dd>Call function fname same as &lsquo;<samp><span class="samp">jal fname</span></samp>&rsquo;.
+     <br><dt><code>call fname</code><dd>Call function fname same as `<samp><span class="samp">jal fname</span></samp>'.
 
-     <br><dt><code>move rt5,ra5</code><dd>For 16-bit, this is &lsquo;<samp><span class="samp">mov55 rt5,ra5</span></samp>&rsquo;. 
-For no 16-bit, this is &lsquo;<samp><span class="samp">ori rt5,ra5,0</span></samp>&rsquo;.
+     <br><dt><code>move rt5,ra5</code><dd>For 16-bit, this is `<samp><span class="samp">mov55 rt5,ra5</span></samp>'. 
+For no 16-bit, this is `<samp><span class="samp">ori rt5,ra5,0</span></samp>'.
 
-     <br><dt><code>move rt5,var</code><dd>This is the same as &lsquo;<samp><span class="samp">l.w rt5,var</span></samp>&rsquo;.
+     <br><dt><code>move rt5,var</code><dd>This is the same as `<samp><span class="samp">l.w rt5,var</span></samp>'.
 
-     <br><dt><code>move rt5,imm32</code><dd>This is the same as &lsquo;<samp><span class="samp">li rt5,imm32</span></samp>&rsquo;.
+     <br><dt><code>move rt5,imm32</code><dd>This is the same as `<samp><span class="samp">li rt5,imm32</span></samp>'.
 
      <br><dt><code>pushm ra5,rb5</code><dd>Push contents of registers from ra5 to rb5 into stack.
 
-     <br><dt><code>push ra5</code><dd>Push content of register ra5 into stack. (same &lsquo;<samp><span class="samp">pushm ra5,ra5</span></samp>&rsquo;).
+     <br><dt><code>push ra5</code><dd>Push content of register ra5 into stack. (same `<samp><span class="samp">pushm ra5,ra5</span></samp>').
 
      <br><dt><code>push.d var</code><dd>Push value of double-word variable var into stack.
 
@@ -123,7 +123,7 @@ For no 16-bit, this is &lsquo;<samp><span class="samp">ori rt5,ra5,0</span></sam
 
      <br><dt><code>popm ra5,rb5</code><dd>Pop top of stack values into registers ra5 to rb5.
 
-     <br><dt><code>pop rt5</code><dd>Pop top of stack value into register. (same as &lsquo;<samp><span class="samp">popm rt5,rt5</span></samp>&rsquo;.)
+     <br><dt><code>pop rt5</code><dd>Pop top of stack value into register. (same as `<samp><span class="samp">popm rt5,rt5</span></samp>'.)
 
      <br><dt><code>pop.d var,ra5</code><dd>Pop value of double-word variable var from stack using register ra5
 as 2nd scratch register. (1st is $ta)
@@ -140,5 +140,5 @@ as 2nd scratch register. (1st is $ta)
 <!-- This is part of the GAS manual. -->
 <!-- For copying conditions, see the file as.texinfo. -->
 <!-- man end -->
-   </body></html>
+</body></html>
 

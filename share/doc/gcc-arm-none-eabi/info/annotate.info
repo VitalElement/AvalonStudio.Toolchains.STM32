@@ -1,5 +1,5 @@
-This is annotate.info, produced by makeinfo version 4.11 from
-/home/build/work/GCC-5-0-build/src/gdb/gdb/doc/annotate.texinfo.
+This is annotate.info, produced by makeinfo version 4.8 from
+/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gdb/gdb/doc/annotate.texinfo.
 
 INFO-DIR-SECTION Software development
 START-INFO-DIR-ENTRY
@@ -1170,21 +1170,21 @@ permit their use in free software.
 
 
 Tag Table:
-Node: Top1218
-Node: Annotations Overview2388
-Node: Limitations4187
-Node: Migrating to GDB/MI6772
-Node: Server Prefix7155
-Node: Value Annotations7801
-Node: Frame Annotations10971
-Node: Displays14870
-Node: Prompting15901
-Node: Errors17404
-Node: Breakpoint Info18294
-Node: Invalidation19519
-Node: Annotations for Running19998
-Node: Source Annotations21511
-Node: Multi-threaded Apps22457
-Node: GNU Free Documentation License23066
+Node: Top1281
+Node: Annotations Overview2451
+Node: Limitations4250
+Node: Migrating to GDB/MI6835
+Node: Server Prefix7218
+Node: Value Annotations7864
+Node: Frame Annotations11034
+Node: Displays14933
+Node: Prompting15964
+Node: Errors17467
+Node: Breakpoint Info18357
+Node: Invalidation19582
+Node: Annotations for Running20061
+Node: Source Annotations21574
+Node: Multi-threaded Apps22520
+Node: GNU Free Documentation License23129
 
 End Tag Table

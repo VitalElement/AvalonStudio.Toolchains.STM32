@@ -3,7 +3,7 @@
 <title>C++ Dialect Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="C-Dialect-Options.html#C-Dialect-Options" title="C Dialect Options">
@@ -126,7 +126,7 @@ normally unnecessary because the C++ standard specifies that
 return value even without this option.  In all other cases, when
 <code>operator new</code> has a non-empty exception specification, memory
 exhaustion is signalled by throwing <code>std::bad_alloc</code>.  See also
-&lsquo;<samp><span class="samp">new (nothrow)</span></samp>&rsquo;.
+`<samp><span class="samp">new (nothrow)</span></samp>'.
 
      <br><dt><code>-fconstexpr-depth=</code><var>n</var><dd><a name="index-fconstexpr_002ddepth-151"></a>Set the maximum nested evaluation depth for C++11 constexpr functions
 to <var>n</var>.  A limit is needed to detect endless recursion during
@@ -145,7 +145,7 @@ is 512.
           {
             forward({1,2}); // call forward&lt;std::initializer_list&lt;int&gt;&gt;
           }
-</pre>
+     </pre>
      <p>This deduction was implemented as a possible extension to the
 originally proposed semantics for the C++11 standard, but was not part
 of the final standard, so it is disabled by default.  This option is
@@ -277,7 +277,7 @@ unambiguous base classes.
      <br><dt><code>-fsized-deallocation</code><dd><a name="index-fsized_002ddeallocation-173"></a>Enable the built-in global declarations
      <pre class="smallexample">          void operator delete (void *, std::size_t) noexcept;
           void operator delete[] (void *, std::size_t) noexcept;
-</pre>
+     </pre>
      <p>as introduced in C++14.  This is useful for user-defined replacement
 deallocation functions that, for example, use the size of the object
 to make deallocation faster.  Enabled by default under
@@ -383,7 +383,7 @@ program is immediately halted.
 
      <p>This option causes run-time data structures to be built at program startup,
 which are used for verifying the vtable pointers. 
-The options &lsquo;<samp><span class="samp">std</span></samp>&rsquo; and &lsquo;<samp><span class="samp">preinit</span></samp>&rsquo;
+The options `<samp><span class="samp">std</span></samp>' and `<samp><span class="samp">preinit</span></samp>'
 control the timing of when these data structures are built.  In both cases the
 data structures are built before execution reaches <code>main</code>.  Using
 <samp><span class="option">-fvtable-verify=std</span></samp> causes the data structures to be built after
@@ -392,8 +392,8 @@ shared libraries have been loaded and initialized.
 libraries have been loaded and initialized.
 
      <p>If this option appears multiple times in the command line with different
-values specified, &lsquo;<samp><span class="samp">none</span></samp>&rsquo; takes highest priority over both &lsquo;<samp><span class="samp">std</span></samp>&rsquo; and
-&lsquo;<samp><span class="samp">preinit</span></samp>&rsquo;; &lsquo;<samp><span class="samp">preinit</span></samp>&rsquo; takes priority over &lsquo;<samp><span class="samp">std</span></samp>&rsquo;.
+values specified, `<samp><span class="samp">none</span></samp>' takes highest priority over both `<samp><span class="samp">std</span></samp>' and
+`<samp><span class="samp">preinit</span></samp>'; `<samp><span class="samp">preinit</span></samp>' takes priority over `<samp><span class="samp">std</span></samp>'.
 
      <br><dt><code>-fvtv-debug</code><dd><a name="index-fvtv_002ddebug-184"></a>When used in conjunction with <samp><span class="option">-fvtable-verify=std</span></samp> or
 <samp><span class="option">-fvtable-verify=preinit</span></samp>, causes debug versions of the
@@ -471,7 +471,7 @@ mangled incorrectly:
           <pre class="smallexample">               extern int N;
                template &lt;int &amp;&gt; struct S {};
                void n (S&lt;N&gt;) {2}
-</pre>
+          </pre>
           <p>This was fixed in <samp><span class="option">-fabi-version=3</span></samp>.
 
           <li>SIMD vector types declared using <code>__attribute ((vector_size))</code> were
@@ -519,7 +519,7 @@ passed in memory as specified in psABI.  For example:
                  long double ld;
                  int i;
                };
-</pre>
+          </pre>
           <p class="noindent"><code>union U</code> is always passed in memory.
 
      </ul>
@@ -554,16 +554,16 @@ For example:
             int64_t i64 = 123;
             printf("My int64: %"PRId64"\n", i64);
           }
-</pre>
+     </pre>
      <p>In this case, <code>PRId64</code> is treated as a separate preprocessing token.
 
      <p>This warning is enabled by default.
 
      <br><dt><code>-Wnarrowing </code><span class="roman">(C++ and Objective-C++ only)</span><dd><a name="index-Wnarrowing-198"></a><a name="index-Wno_002dnarrowing-199"></a>Warn when a narrowing conversion prohibited by C++11 occurs within
-&lsquo;<samp><span class="samp">{ }</span></samp>&rsquo;, e.g.
+`<samp><span class="samp">{ }</span></samp>', e.g.
 
      <pre class="smallexample">          int i = { 2.2 }; // error: narrowing from double to int
-</pre>
+     </pre>
      <p>This flag is included in <samp><span class="option">-Wall</span></samp> and <samp><span class="option">-Wc++11-compat</span></samp>.
 
      <p>With <samp><span class="option">-std=c++11</span></samp>, <samp><span class="option">-Wno-narrowing</span></samp> suppresses the diagnostic
@@ -590,7 +590,7 @@ match the order in which they must be executed.  For instance:
             int j;
             A(): j (0), i (1) { }
           };
-</pre>
+     </pre>
      <p class="noindent">The compiler rearranges the member initializers for <code>i</code>
 and <code>j</code> to match the declaration order of the members, emitting
 a warning to that effect.  This warning is enabled by <samp><span class="option">-Wall</span></samp>.
@@ -635,7 +635,7 @@ extended to warn about the lack of virtual destructor in accessible
 non-polymorphic bases classes too.
 
      <p>When selecting this option, be aware that the standard library
-headers do not obey all of these guidelines; use &lsquo;<samp><span class="samp">grep -v</span></samp>&rsquo;
+headers do not obey all of these guidelines; use `<samp><span class="samp">grep -v</span></samp>'
 to filter out those warnings.
 
      <br><dt><code>-Wstrict-null-sentinel </code><span class="roman">(C++ and Objective-C++ only)</span><dd><a name="index-Wstrict_002dnull_002dsentinel-212"></a><a name="index-Wno_002dstrict_002dnull_002dsentinel-213"></a>Warn about the use of an uncasted <code>NULL</code> as sentinel.  When
@@ -647,7 +647,7 @@ But this use is not portable across different compilers.
      <br><dt><code>-Wno-non-template-friend </code><span class="roman">(C++ and Objective-C++ only)</span><dd><a name="index-Wno_002dnon_002dtemplate_002dfriend-214"></a><a name="index-Wnon_002dtemplate_002dfriend-215"></a>Disable warnings when non-templatized friend functions are declared
 within a template.  Since the advent of explicit template specification
 support in G++, if the name of the friend is an unqualified-id (i.e.,
-&lsquo;<samp><span class="samp">friend foo(int)</span></samp>&rsquo;), the C++ language specification demands that the
+`<samp><span class="samp">friend foo(int)</span></samp>'), the C++ language specification demands that the
 friend declare or define an ordinary, nontemplate function.  (Section
 14.5.3).  Before G++ implemented explicit specification, unqualified-ids
 could be interpreted as a particular specialization of a templatized
@@ -673,13 +673,13 @@ base class.  For example, in:
           struct B: public A {
             void f(int);
           };
-</pre>
+     </pre>
      <p>the <code>A</code> class version of <code>f</code> is hidden in <code>B</code>, and code
 like:
 
      <pre class="smallexample">          B* b;
           b-&gt;f();
-</pre>
+     </pre>
      <p class="noindent">fails to compile.
 
      <br><dt><code>-Wno-pmf-conversions </code><span class="roman">(C++ and Objective-C++ only)</span><dd><a name="index-Wno_002dpmf_002dconversions-222"></a><a name="index-Wpmf_002dconversions-223"></a>Disable the diagnostic for converting a bound pointer to member function

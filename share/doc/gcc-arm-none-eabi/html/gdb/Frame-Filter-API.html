@@ -3,7 +3,7 @@
 <title>Frame Filter API - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Python-API.html#Python-API" title="Python API">
 <link rel="prev" href="Type-Printing-API.html#Type-Printing-API" title="Type Printing API">
@@ -133,11 +133,11 @@ reached the order in the priority list for that filter.
           Filter2      10
           Filter3      100
           Filter4      1
-</pre>
+     </pre>
         <p>The order that the frame filters will be called is:
 
      <pre class="smallexample">          Filter3 -&gt; Filter2 -&gt; Filter1 -&gt; Filter4
-</pre>
+     </pre>
         <p>Note that the output from <code>Filter3</code> is passed to the input of
 <code>Filter2</code>, and so on.
 

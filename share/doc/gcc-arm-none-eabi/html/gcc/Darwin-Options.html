@@ -3,7 +3,7 @@
 <title>Darwin Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="CR16-Options.html#CR16-Options" title="CR16 Options">
@@ -65,19 +65,19 @@ target.  Apple's GCC on Darwin does create &ldquo;fat&rdquo; files if multiple
 linker multiple times and joining the results together with
 <samp><span class="file">lipo</span></samp>.
 
- <p>The subtype of the file created (like &lsquo;<samp><span class="samp">ppc7400</span></samp>&rsquo; or &lsquo;<samp><span class="samp">ppc970</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">i686</span></samp>&rsquo;) is determined by the flags that specify the ISA
+ <p>The subtype of the file created (like `<samp><span class="samp">ppc7400</span></samp>' or `<samp><span class="samp">ppc970</span></samp>' or
+`<samp><span class="samp">i686</span></samp>') is determined by the flags that specify the ISA
 that GCC is targeting, like <samp><span class="option">-mcpu</span></samp> or <samp><span class="option">-march</span></samp>.  The
 <samp><span class="option">-force_cpusubtype_ALL</span></samp> option can be used to override this.
 
  <p>The Darwin tools vary in their behavior when presented with an ISA
 mismatch.  The assembler, <samp><span class="file">as</span></samp>, only permits instructions to
 be used that are valid for the subtype of the file it is generating,
-so you cannot put 64-bit instructions in a &lsquo;<samp><span class="samp">ppc750</span></samp>&rsquo; object file. 
+so you cannot put 64-bit instructions in a `<samp><span class="samp">ppc750</span></samp>' object file. 
 The linker for shared libraries, <samp><span class="file">/usr/bin/libtool</span></samp>, fails
 and prints an error if asked to create a shared library with a less
 restrictive subtype than its input files (for instance, trying to put
-a &lsquo;<samp><span class="samp">ppc970</span></samp>&rsquo; object file in a &lsquo;<samp><span class="samp">ppc7400</span></samp>&rsquo; library).  The linker
+a `<samp><span class="samp">ppc970</span></samp>' object file in a `<samp><span class="samp">ppc7400</span></samp>' library).  The linker
 for executables, <samp><span class="command">ld</span></samp>, quietly gives the executable the most
 restrictive subtype of any of its input files.
 
@@ -171,7 +171,7 @@ output file being linked.  See man ld(1) for more information.
      <br><dt><code>-dynamiclib</code><dd><a name="index-dynamiclib-1539"></a>When passed this option, GCC produces a dynamic library instead of
 an executable when linking, using the Darwin <samp><span class="file">libtool</span></samp> command.
 
-     <br><dt><code>-force_cpusubtype_ALL</code><dd><a name="index-force_005fcpusubtype_005fALL-1540"></a>This causes GCC's output file to have the &lsquo;<samp><span class="samp">ALL</span></samp>&rsquo; subtype, instead of
+     <br><dt><code>-force_cpusubtype_ALL</code><dd><a name="index-force_005fcpusubtype_005fALL-1540"></a>This causes GCC's output file to have the `<samp><span class="samp">ALL</span></samp>' subtype, instead of
 one controlled by the <samp><span class="option">-mcpu</span></samp> or <samp><span class="option">-march</span></samp> option.
 
      <br><dt><code>-allowable_client  </code><var>client_name</var><dt><code>-client_name</code><dt><code>-compatibility_version</code><dt><code>-current_version</code><dt><code>-dead_strip</code><dt><code>-dependency-file</code><dt><code>-dylib_file</code><dt><code>-dylinker_install_name</code><dt><code>-dynamic</code><dt><code>-exported_symbols_list</code><dt><code>-filelist</code><dt><code>-flat_namespace</code><dt><code>-force_flat_namespace</code><dt><code>-headerpad_max_install_names</code><dt><code>-image_base</code><dt><code>-init</code><dt><code>-install_name</code><dt><code>-keep_private_externs</code><dt><code>-multi_module</code><dt><code>-multiply_defined</code><dt><code>-multiply_defined_unused</code><dt><code>-noall_load</code><dt><code>-no_dead_strip_inits_and_terms</code><dt><code>-nofixprebinding</code><dt><code>-nomultidefs</code><dt><code>-noprebind</code><dt><code>-noseglinkedit</code><dt><code>-pagezero_size</code><dt><code>-prebind</code><dt><code>-prebind_all_twolevel_modules</code><dt><code>-private_bundle</code><dt><code>-read_only_relocs</code><dt><code>-sectalign</code><dt><code>-sectobjectsymbols</code><dt><code>-whyload</code><dt><code>-seg1addr</code><dt><code>-sectcreate</code><dt><code>-sectobjectsymbols</code><dt><code>-sectorder</code><dt><code>-segaddr</code><dt><code>-segs_read_only_addr</code><dt><code>-segs_read_write_addr</code><dt><code>-seg_addr_table</code><dt><code>-seg_addr_table_filename</code><dt><code>-seglinkedit</code><dt><code>-segprot</code><dt><code>-segs_read_only_addr</code><dt><code>-segs_read_write_addr</code><dt><code>-single_module</code><dt><code>-static</code><dt><code>-sub_library</code><dt><code>-sub_umbrella</code><dt><code>-twolevel_namespace</code><dt><code>-umbrella</code><dt><code>-undefined</code><dt><code>-unexported_symbols_list</code><dt><code>-weak_reference_mismatches</code><dt><code>-whatsloaded</code><dd><a name="index-allowable_005fclient-1541"></a><a name="index-client_005fname-1542"></a><a name="index-compatibility_005fversion-1543"></a><a name="index-current_005fversion-1544"></a><a name="index-dead_005fstrip-1545"></a><a name="index-dependency_002dfile-1546"></a><a name="index-dylib_005ffile-1547"></a><a name="index-dylinker_005finstall_005fname-1548"></a><a name="index-dynamic-1549"></a><a name="index-exported_005fsymbols_005flist-1550"></a><a name="index-filelist-1551"></a><a name="index-flat_005fnamespace-1552"></a><a name="index-force_005fflat_005fnamespace-1553"></a><a name="index-headerpad_005fmax_005finstall_005fnames-1554"></a><a name="index-image_005fbase-1555"></a><a name="index-init-1556"></a><a name="index-install_005fname-1557"></a><a name="index-keep_005fprivate_005fexterns-1558"></a><a name="index-multi_005fmodule-1559"></a><a name="index-multiply_005fdefined-1560"></a><a name="index-multiply_005fdefined_005funused-1561"></a><a name="index-noall_005fload-1562"></a><a name="index-no_005fdead_005fstrip_005finits_005fand_005fterms-1563"></a><a name="index-nofixprebinding-1564"></a><a name="index-nomultidefs-1565"></a><a name="index-noprebind-1566"></a><a name="index-noseglinkedit-1567"></a><a name="index-pagezero_005fsize-1568"></a><a name="index-prebind-1569"></a><a name="index-prebind_005fall_005ftwolevel_005fmodules-1570"></a><a name="index-private_005fbundle-1571"></a><a name="index-read_005fonly_005frelocs-1572"></a><a name="index-sectalign-1573"></a><a name="index-sectobjectsymbols-1574"></a><a name="index-whyload-1575"></a><a name="index-seg1addr-1576"></a><a name="index-sectcreate-1577"></a><a name="index-sectobjectsymbols-1578"></a><a name="index-sectorder-1579"></a><a name="index-segaddr-1580"></a><a name="index-segs_005fread_005fonly_005faddr-1581"></a><a name="index-segs_005fread_005fwrite_005faddr-1582"></a><a name="index-seg_005faddr_005ftable-1583"></a><a name="index-seg_005faddr_005ftable_005ffilename-1584"></a><a name="index-seglinkedit-1585"></a><a name="index-segprot-1586"></a><a name="index-segs_005fread_005fonly_005faddr-1587"></a><a name="index-segs_005fread_005fwrite_005faddr-1588"></a><a name="index-single_005fmodule-1589"></a><a name="index-static-1590"></a><a name="index-sub_005flibrary-1591"></a><a name="index-sub_005fumbrella-1592"></a><a name="index-twolevel_005fnamespace-1593"></a><a name="index-umbrella-1594"></a><a name="index-undefined-1595"></a><a name="index-unexported_005fsymbols_005flist-1596"></a><a name="index-weak_005freference_005fmismatches-1597"></a><a name="index-whatsloaded-1598"></a>These options are passed to the Darwin linker.  The Darwin linker man page

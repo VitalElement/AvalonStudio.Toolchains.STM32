@@ -3,7 +3,7 @@
 <title>Breakpoints In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Symbol-Tables-In-Guile.html#Symbol-Tables-In-Guile" title="Symbol Tables In Guile">
@@ -70,9 +70,9 @@ location of the breakpoint, or an expression that defines a watchpoint.
 The contents can be any location recognized by the <code>break</code> command,
 or in the case of a watchpoint, by the <code>watch</code> command.
 
-        <p>The breakpoint is initially marked as &lsquo;<samp><span class="samp">invalid</span></samp>&rsquo;. 
+        <p>The breakpoint is initially marked as `<samp><span class="samp">invalid</span></samp>'. 
 The breakpoint is not usable until it has been registered with <span class="sc">gdb</span>
-with <code>register-breakpoint!</code>, at which point it becomes &lsquo;<samp><span class="samp">valid</span></samp>&rsquo;. 
+with <code>register-breakpoint!</code>, at which point it becomes `<samp><span class="samp">valid</span></samp>'. 
 The result is the <code>&lt;gdb:breakpoint&gt;</code> object representing the breakpoint.
 
         <p>The optional <var>type</var> denotes the breakpoint to create. 
@@ -134,7 +134,7 @@ This value cannot be specified when creating the breakpoint.
 list of breakpoints.  The breakpoint must have been created with
 <code>make-breakpoint</code>.  One cannot register breakpoints that have been
 created outside of Guile.  Once a breakpoint is registered it becomes
-&lsquo;<samp><span class="samp">valid</span></samp>&rsquo;. 
+`<samp><span class="samp">valid</span></samp>'. 
 It is an error to register an already registered breakpoint. 
 The result is unspecified. 
 </p></blockquote></div>
@@ -189,7 +189,7 @@ determine the actual breakpoint type or use-case.
 <div class="defun">
 &mdash; Scheme Procedure: <b>breakpoint-visible?</b><var> breakpoint<a name="index-breakpoint_002dvisible_003f-2682"></a></var><br>
 <blockquote><p>Return <code>#t</code> if the breakpoint is visible to the user
-when hit, or when the &lsquo;<samp><span class="samp">info breakpoints</span></samp>&rsquo; command is run. 
+when hit, or when the `<samp><span class="samp">info breakpoints</span></samp>' command is run. 
 Otherwise return <code>#f</code>. 
 </p></blockquote></div>
 
@@ -329,7 +329,7 @@ at this time.
           (define bkpt (make-breakpoint "main.c:42"))
           (register-breakpoint! bkpt)
           (set-breakpoint-stop! bkpt my-stop?)
-</pre>
+     </pre>
         </blockquote></div>
 
 <div class="defun">

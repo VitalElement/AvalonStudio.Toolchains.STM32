@@ -3,7 +3,7 @@
 <title>i386 - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Architectures.html#Architectures" title="Architectures">
 <link rel="prev" href="AArch64.html#AArch64" title="AArch64">
@@ -64,18 +64,18 @@ from functions.
 <h5 class="subsubsection">21.4.2.1 Intel(R) <dfn>Memory Protection Extensions</dfn> (MPX).</h5>
 
 <p><a name="index-Intel_0028R_0029-Memory-Protection-Extensions-_0028MPX_0029_002e-1588"></a>
-Memory Protection Extension (MPX) adds the bound registers &lsquo;<samp><span class="samp">BND0</span></samp>&rsquo;
-<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> through &lsquo;<samp><span class="samp">BND3</span></samp>&rsquo;.  Bound registers store a pair of 64-bit values
+Memory Protection Extension (MPX) adds the bound registers `<samp><span class="samp">BND0</span></samp>'
+<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> through `<samp><span class="samp">BND3</span></samp>'.  Bound registers store a pair of 64-bit values
 which are the lower bound and upper bound.  Bounds are effective addresses or
 memory locations.  The upper bounds are architecturally represented in 1's
 complement form.  A bound having lower bound = 0, and upper bound = 0
 (1's complement of all bits set) will allow access to the entire address space.
 
-   <p>&lsquo;<samp><span class="samp">BND0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">BND3</span></samp>&rsquo; are represented in <span class="sc">gdb</span> as &lsquo;<samp><span class="samp">bnd0raw</span></samp>&rsquo;
-through &lsquo;<samp><span class="samp">bnd3raw</span></samp>&rsquo;.  Pseudo registers &lsquo;<samp><span class="samp">bnd0</span></samp>&rsquo; through &lsquo;<samp><span class="samp">bnd3</span></samp>&rsquo;
+   <p>`<samp><span class="samp">BND0</span></samp>' through `<samp><span class="samp">BND3</span></samp>' are represented in <span class="sc">gdb</span> as `<samp><span class="samp">bnd0raw</span></samp>'
+through `<samp><span class="samp">bnd3raw</span></samp>'.  Pseudo registers `<samp><span class="samp">bnd0</span></samp>' through `<samp><span class="samp">bnd3</span></samp>'
 display the upper bound performing the complement of one operation on the
-upper bound value, i.e. when upper bound in &lsquo;<samp><span class="samp">bnd0raw</span></samp>&rsquo; is 0 in the
-<span class="sc">gdb</span> &lsquo;<samp><span class="samp">bnd0</span></samp>&rsquo; it will be <code>0xfff...</code>.  In this sense it
+upper bound value, i.e. when upper bound in `<samp><span class="samp">bnd0raw</span></samp>' is 0 in the
+<span class="sc">gdb</span> `<samp><span class="samp">bnd0</span></samp>' it will be <code>0xfff...</code>.  In this sense it
 can also be noted that the upper bounds are inclusive.
 
    <p>As an example, assume that the register BND0 holds bounds for a pointer having
@@ -111,7 +111,7 @@ for lower and upper bounds respectively.
 <h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> The register named with capital letters represent the architecture
 registers.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

@@ -3,7 +3,7 @@
 <title>Directory Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="Link-Options.html#Link-Options" title="Link Options">
@@ -96,7 +96,7 @@ include files, and data files of the compiler itself.
      <p>The compiler driver program runs one or more of the subprograms
 <samp><span class="command">cpp</span></samp>, <samp><span class="command">cc1</span></samp>, <samp><span class="command">as</span></samp> and <samp><span class="command">ld</span></samp>.  It tries
 <var>prefix</var> as a prefix for each program it tries to run, both with and
-without &lsquo;<samp><var>machine</var><span class="samp">/</span><var>version</var><span class="samp">/</span></samp>&rsquo; (see <a href="Target-Options.html#Target-Options">Target Options</a>).
+without `<samp><var>machine</var><span class="samp">/</span><var>version</var><span class="samp">/</span></samp>' (see <a href="Target-Options.html#Target-Options">Target Options</a>).
 
      <p>For each subprogram to be run, the compiler driver first tries the
 <samp><span class="option">-B</span></samp> prefix, if any.  If that name is not found, or if <samp><span class="option">-B</span></samp>
@@ -115,7 +115,7 @@ to libraries in the linker, because the compiler translates these
 options into <samp><span class="option">-L</span></samp> options for the linker.  They also apply to
 include files in the preprocessor, because the compiler translates these
 options into <samp><span class="option">-isystem</span></samp> options for the preprocessor.  In this case,
-the compiler appends &lsquo;<samp><span class="samp">include</span></samp>&rsquo; to the prefix.
+the compiler appends `<samp><span class="samp">include</span></samp>' to the prefix.
 
      <p>The runtime support file <samp><span class="file">libgcc.a</span></samp> can also be searched for using
 the <samp><span class="option">-B</span></samp> prefix, if needed.  If it is not found there, the two
@@ -184,5 +184,5 @@ independent.
 </dl>
 
 <!-- man end -->
- </body></html>
+</body></html>
 

@@ -3,7 +3,7 @@
 <title>NDS32 Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="MSP430-Options.html#MSP430-Options" title="MSP430 Options">
@@ -91,12 +91,12 @@ which must be a power of 2 between 4 and 512.
 
      <br><dt><code>-mcmodel=</code><var>code-model</var><dd><a name="index-mcmodel-2128"></a>Set the code model to one of
           <dl>
-<dt>&lsquo;<samp><span class="samp">small</span></samp>&rsquo;<dd>All the data and read-only data segments must be within 512KB addressing space. 
+<dt>`<samp><span class="samp">small</span></samp>'<dd>All the data and read-only data segments must be within 512KB addressing space. 
 The text segment must be within 16MB addressing space. 
-<br><dt>&lsquo;<samp><span class="samp">medium</span></samp>&rsquo;<dd>The data segment must be within 512KB while the read-only data segment can be
+<br><dt>`<samp><span class="samp">medium</span></samp>'<dd>The data segment must be within 512KB while the read-only data segment can be
 within 4GB addressing space.  The text segment should be still within 16MB
 addressing space. 
-<br><dt>&lsquo;<samp><span class="samp">large</span></samp>&rsquo;<dd>All the text and data segments can be within 4GB addressing space. 
+<br><dt>`<samp><span class="samp">large</span></samp>'<dd>All the text and data segments can be within 4GB addressing space. 
 </dl>
 
      <br><dt><code>-mctor-dtor</code><dd><a name="index-mctor_002ddtor-2129"></a>Enable constructor/destructor feature.

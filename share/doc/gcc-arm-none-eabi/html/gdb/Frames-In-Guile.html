@@ -3,7 +3,7 @@
 <title>Frames In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Objfiles-In-Guile.html#Objfiles-In-Guile" title="Objfiles In Guile">
@@ -157,7 +157,7 @@ versions.  Using it, you could write:
                (define reason-str (unwind-stop-reason-string reason))
                (if (&gt;= reason FRAME_UNWIND_FIRST_ERROR)
                    (format #t "An error occured: ~s\n" reason-str))
-</pre>
+          </pre>
           </dl>
         </p></blockquote></div>
 
@@ -198,7 +198,7 @@ See <a href="Symbol-Tables-In-Guile.html#Symbol-Tables-In-Guile">Symbol Tables I
 <div class="defun">
 &mdash; Scheme Procedure: <b>frame-read-register</b><var> frame register<a name="index-frame_002dread_002dregister-2585"></a></var><br>
 <blockquote><p>Return the value of <var>register</var> in <var>frame</var>.  <var>register</var>
-should be a string, like &lsquo;<samp><span class="samp">pc</span></samp>&rsquo;. 
+should be a string, like `<samp><span class="samp">pc</span></samp>'. 
 </p></blockquote></div>
 
 <div class="defun">

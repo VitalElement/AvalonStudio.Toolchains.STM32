@@ -3,7 +3,7 @@
 <title>M32R/D Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="M32C-Options.html#M32C-Options" title="M32C Options">
@@ -101,7 +101,7 @@ special instructions to reference them.
      <br><dt><code>-G </code><var>num</var><dd><a name="index-G-1801"></a><a name="index-smaller-data-references-1802"></a>Put global and static objects less than or equal to <var>num</var> bytes
 into the small data or BSS sections instead of the normal data or BSS
 sections.  The default value of <var>num</var> is 8. 
-The <samp><span class="option">-msdata</span></samp> option must be set to one of &lsquo;<samp><span class="samp">sdata</span></samp>&rsquo; or &lsquo;<samp><span class="samp">use</span></samp>&rsquo;
+The <samp><span class="option">-msdata</span></samp> option must be set to one of `<samp><span class="samp">sdata</span></samp>' or `<samp><span class="samp">use</span></samp>'
 for this option to have any effect.
 
      <p>All modules should be compiled with the same <samp><span class="option">-G </span><var>num</var></samp> value. 
@@ -128,7 +128,7 @@ preferred over conditional code, if it is 2, then the opposite applies.
      <br><dt><code>-mno-flush-trap</code><dd><a name="index-mno_002dflush_002dtrap-1809"></a>Specifies that the cache cannot be flushed by using a trap.
 
      <br><dt><code>-mflush-func=</code><var>name</var><dd><a name="index-mflush_002dfunc_003d_0040var_007bname_007d-1810"></a>Specifies the name of the operating system function to call to flush
-the cache.  The default is &lsquo;<samp><span class="samp">_flush_cache</span></samp>&rsquo;, but a function call
+the cache.  The default is `<samp><span class="samp">_flush_cache</span></samp>', but a function call
 is only used if a trap is not available.
 
      <br><dt><code>-mno-flush-func</code><dd><a name="index-mno_002dflush_002dfunc-1811"></a>Indicates that there is no OS function for flushing the cache.

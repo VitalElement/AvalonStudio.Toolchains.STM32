@@ -3,7 +3,7 @@
 <title>Nios II - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Dependent.html#Machine-Dependent" title="Machine Dependent">
 <link rel="prev" href="NDS32.html#NDS32" title="NDS32">
@@ -51,7 +51,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Dependent.html#Machine-Dependen
 Call and immediate jump instructions on Nios II processors are limited to
 transferring control to addresses in the same 256MB memory segment,
 which may result in <samp><span class="command">ld</span></samp> giving
-&lsquo;<samp><span class="samp">relocation truncated to fit</span></samp>&rsquo; errors with very large programs. 
+`<samp><span class="samp">relocation truncated to fit</span></samp>' errors with very large programs. 
 The command-line option <samp><span class="option">--relax</span></samp> enables the generation of
 trampolines that can access the entire 32-bit address space for calls
 outside the normal <code>call</code> and <code>jmpi</code> address range.  These
@@ -62,7 +62,7 @@ larger than 256MB.
    <p>The <samp><span class="option">--relax</span></samp> option is enabled by default unless <samp><span class="option">-r</span></samp>
 is also specified.  You can disable trampoline generation by using the
 <samp><span class="option">--no-relax</span></samp> linker option.  You can also disable this optimization
-locally by using the &lsquo;<samp><span class="samp">set .noat</span></samp>&rsquo; directive in assembly-language
+locally by using the `<samp><span class="samp">set .noat</span></samp>' directive in assembly-language
 source files, as the linker-inserted trampolines use the <code>at</code>
 register as a temporary.
 

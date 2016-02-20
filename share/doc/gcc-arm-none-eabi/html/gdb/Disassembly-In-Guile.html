@@ -3,7 +3,7 @@
 <title>Disassembly In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Architectures-In-Guile.html#Architectures-In-Guile" title="Architectures In Guile">
@@ -63,7 +63,7 @@ If <var>port</var> is <code>#f</code> then bytes are read from target memory.
 
         <p>The optional argument <var>offset</var> specifies the address offset of the
 first byte in <var>port</var>.  This is useful, for example, when <var>port</var>
-specifies a &lsquo;<samp><span class="samp">bytevector</span></samp>&rsquo; and you want the bytevector to be disassembled
+specifies a `<samp><span class="samp">bytevector</span></samp>' and you want the bytevector to be disassembled
 as if it came from that address.  The <var>start-pc</var> passed to the reader
 for <var>port</var> is offset by the same amount.
 
@@ -76,7 +76,7 @@ for <var>port</var> is offset by the same amount.
           (gdb) guile (define arch (current-arch))
           (gdb) guile (arch-disassemble arch pc #:port bv-port #:offset pc)
           (((address . 4195516) (asm . "mov    $0x4005c8,%edi") (length . 5)))
-</pre>
+     </pre>
         <p>The optional arguments <var>size</var> and
 <var>count</var> determine the number of instructions in the returned list. 
 If either <var>size</var> or <var>count</var> is specified as zero, then

@@ -3,7 +3,7 @@
 <title>Guile Auto-loading - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile.html#Guile" title="Guile">
 <link rel="prev" href="Guile-API.html#Guile-API" title="Guile API">
@@ -63,11 +63,14 @@ debugging commands and scripts.
 and the list of auto-loaded scripts can be printed.
 
      <dl>
-<a name="set-auto_002dload-guile_002dscripts"></a><a name="index-set-auto_002dload-guile_002dscripts-2770"></a><dt><code>set auto-load guile-scripts [on|off]</code><dd>Enable or disable the auto-loading of Guile scripts.
+<a name="set-auto_002dload-guile_002dscripts"></a>
+<a name="index-set-auto_002dload-guile_002dscripts-2770"></a><dt><code>set auto-load guile-scripts [on|off]</code><dd>Enable or disable the auto-loading of Guile scripts.
 
-     <p><a name="show-auto_002dload-guile_002dscripts"></a><a name="index-show-auto_002dload-guile_002dscripts-2771"></a><br><dt><code>show auto-load guile-scripts</code><dd>Show whether auto-loading of Guile scripts is enabled or disabled.
+     <p><a name="show-auto_002dload-guile_002dscripts"></a>
+<a name="index-show-auto_002dload-guile_002dscripts-2771"></a><br><dt><code>show auto-load guile-scripts</code><dd>Show whether auto-loading of Guile scripts is enabled or disabled.
 
-     <p><a name="info-auto_002dload-guile_002dscripts"></a><a name="index-info-auto_002dload-guile_002dscripts-2772"></a><a name="index-print-list-of-auto_002dloaded-Guile-scripts-2773"></a><br><dt><code>info auto-load guile-scripts [</code><var>regexp</var><code>]</code><dd>Print the list of all Guile scripts that <span class="sc">gdb</span> auto-loaded.
+     <p><a name="info-auto_002dload-guile_002dscripts"></a>
+<a name="index-info-auto_002dload-guile_002dscripts-2772"></a><a name="index-print-list-of-auto_002dloaded-Guile-scripts-2773"></a><br><dt><code>info auto-load guile-scripts [</code><var>regexp</var><code>]</code><dd>Print the list of all Guile scripts that <span class="sc">gdb</span> auto-loaded.
 
      <p>Also printed is the list of Guile scripts that were mentioned in
 the <code>.debug_gdb_scripts</code> section and were not found. 
@@ -84,7 +87,7 @@ an error message for each one is problematic.
           Yes    scm-section-script.scm
                  full name: /tmp/scm-section-script.scm
           No     my-foo-pretty-printers.scm
-</pre>
+     </pre>
      </dl>
 
    <p>When reading an auto-loaded file, <span class="sc">gdb</span> sets the

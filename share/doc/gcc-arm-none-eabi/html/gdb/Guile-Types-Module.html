@@ -3,7 +3,7 @@
 <title>Guile Types Module - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-Modules.html#Guile-Modules" title="Guile Modules">
 <link rel="prev" href="Guile-Printing-Module.html#Guile-Printing-Module" title="Guile Printing Module">
@@ -64,7 +64,7 @@ and with typedefs and C<tt>++</tt> references converted to the underlying type.
           const_int foo (3);
           const_int&amp; foo_ref (foo);
           int main () { return 0; }
-</pre>
+     </pre>
         <p>Then in gdb:
 
      <pre class="smallexample">          (gdb) start
@@ -72,7 +72,7 @@ and with typedefs and C<tt>++</tt> references converted to the underlying type.
           (gdb) guile (define foo-ref (parse-and-eval "foo_ref"))
           (gdb) guile (get-basic-type (value-type foo-ref))
           int
-</pre>
+     </pre>
         </blockquote></div>
 
 <div class="defun">

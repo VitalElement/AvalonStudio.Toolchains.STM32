@@ -3,7 +3,7 @@
 <title>Guile Pretty Printing API - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Types-In-Guile.html#Types-In-Guile" title="Types In Guile">
@@ -104,22 +104,22 @@ The value returned is unspecified.
         <p>This function takes three parameters:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">display-hint</span></samp>&rsquo;<dd><var>display-hint</var> provides a hint to <span class="sc">gdb</span> or <span class="sc">gdb</span>
+<dt>`<samp><span class="samp">display-hint</span></samp>'<dd><var>display-hint</var> provides a hint to <span class="sc">gdb</span> or <span class="sc">gdb</span>
 front end via MI to change the formatting of the value being printed. 
 The value must be a string or <code>#f</code> (meaning there is no hint). 
 Several values for <var>display-hint</var>
 are predefined by <span class="sc">gdb</span>:
 
                <dl>
-<dt>&lsquo;<samp><span class="samp">array</span></samp>&rsquo;<dd>Indicate that the object being printed is &ldquo;array-like&rdquo;.  The CLI
+<dt>`<samp><span class="samp">array</span></samp>'<dd>Indicate that the object being printed is &ldquo;array-like&rdquo;.  The CLI
 uses this to respect parameters such as <code>set print elements</code> and
 <code>set print array</code>.
 
-               <br><dt>&lsquo;<samp><span class="samp">map</span></samp>&rsquo;<dd>Indicate that the object being printed is &ldquo;map-like&rdquo;, and that the
+               <br><dt>`<samp><span class="samp">map</span></samp>'<dd>Indicate that the object being printed is &ldquo;map-like&rdquo;, and that the
 children of this value can be assumed to alternate between keys and
 values.
 
-               <br><dt>&lsquo;<samp><span class="samp">string</span></samp>&rsquo;<dd>Indicate that the object being printed is &ldquo;string-like&rdquo;.  If the
+               <br><dt>`<samp><span class="samp">string</span></samp>'<dd>Indicate that the object being printed is &ldquo;string-like&rdquo;.  If the
 printer's <code>to-string</code> function returns a Guile string of some
 kind, then <span class="sc">gdb</span> will call its internal language-specific
 string-printing function to format the string.  For the CLI this means
@@ -127,7 +127,7 @@ adding quotation marks, possibly escaping some characters, respecting
 <code>set print elements</code>, and the like. 
 </dl>
 
-          <br><dt>&lsquo;<samp><span class="samp">to-string</span></samp>&rsquo;<dd><var>to-string</var> is either a function of one parameter, the
+          <br><dt>`<samp><span class="samp">to-string</span></samp>'<dd><var>to-string</var> is either a function of one parameter, the
 <code>&lt;gdb:pretty-printer-worker&gt;</code> object, or <code>#f</code>.
 
           <p>When printing from the CLI, if the <code>to-string</code> method exists,
@@ -158,7 +158,7 @@ are peformed in this method and nothing is printed.
           <p><var>to-string</var> may also be <code>#f</code> in which case it is left to
 <var>children</var> to print the value.
 
-          <br><dt>&lsquo;<samp><span class="samp">children</span></samp>&rsquo;<dd><var>children</var> is either a function of one parameter, the
+          <br><dt>`<samp><span class="samp">children</span></samp>'<dd><var>children</var> is either a function of one parameter, the
 <code>&lt;gdb:pretty-printer-worker&gt;</code> object, or <code>#f</code>.
 
           <p><span class="sc">gdb</span> will call this function on a pretty-printer to compute the

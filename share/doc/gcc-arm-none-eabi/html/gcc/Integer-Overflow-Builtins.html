@@ -3,7 +3,7 @@
 <title>Integer Overflow Builtins - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="_005f_005fatomic-Builtins.html#g_t_005f_005fatomic-Builtins" title="__atomic Builtins">
@@ -66,7 +66,7 @@ together with checking whether the operations overflowed.
 &mdash; Built-in Function: bool <b>__builtin_uaddl_overflow</b> (<var>unsigned long int a, unsigned long int b, unsigned long int *res</var>)<var><a name="index-g_t_005f_005fbuiltin_005fuaddl_005foverflow-3561"></a></var><br>
 &mdash; Built-in Function: bool <b>__builtin_uaddll_overflow</b> (<var>unsigned long long int a, unsigned long long int b, unsigned long int *res</var>)<var><a name="index-g_t_005f_005fbuiltin_005fuaddll_005foverflow-3562"></a></var><br>
 <blockquote>
-      <p>These built-in functions promote the first two operands into infinite precision signed
+<p>These built-in functions promote the first two operands into infinite precision signed
 type and perform addition on those promoted operands.  The result is then
 cast to the type the third pointer argument points to and stored there. 
 If the stored result is equal to the infinite precision result, the built-in
@@ -93,7 +93,7 @@ after addition, conditional jump on carry etc.
 &mdash; Built-in Function: bool <b>__builtin_usubl_overflow</b> (<var>unsigned long int a, unsigned long int b, unsigned long int *res</var>)<var><a name="index-g_t_005f_005fbuiltin_005fusubl_005foverflow-3568"></a></var><br>
 &mdash; Built-in Function: bool <b>__builtin_usubll_overflow</b> (<var>unsigned long long int a, unsigned long long int b, unsigned long int *res</var>)<var><a name="index-g_t_005f_005fbuiltin_005fusubll_005foverflow-3569"></a></var><br>
 <blockquote>
-      <p>These built-in functions are similar to the add overflow checking built-in
+<p>These built-in functions are similar to the add overflow checking built-in
 functions above, except they perform subtraction, subtract the second argument
 from the first one, instead of addition.
 
@@ -108,7 +108,7 @@ from the first one, instead of addition.
 &mdash; Built-in Function: bool <b>__builtin_umull_overflow</b> (<var>unsigned long int a, unsigned long int b, unsigned long int *res</var>)<var><a name="index-g_t_005f_005fbuiltin_005fumull_005foverflow-3575"></a></var><br>
 &mdash; Built-in Function: bool <b>__builtin_umulll_overflow</b> (<var>unsigned long long int a, unsigned long long int b, unsigned long int *res</var>)<var><a name="index-g_t_005f_005fbuiltin_005fumulll_005foverflow-3576"></a></var><br>
 <blockquote>
-      <p>These built-in functions are similar to the add overflow checking built-in
+<p>These built-in functions are similar to the add overflow checking built-in
 functions above, except they perform multiplication, instead of addition.
 
       </blockquote></div>

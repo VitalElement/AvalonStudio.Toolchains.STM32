@@ -3,7 +3,7 @@
 <title>Extended Asm - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Using-Assembly-Language-with-C.html#Using-Assembly-Language-with-C" title="Using Assembly Language with C">
 <link rel="prev" href="Basic-Asm.html#Basic-Asm" title="Basic Asm">
@@ -57,7 +57,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Using-Assembly-Language-with-C.html#Usi
 <p><a name="index-extended-_0040code_007basm_007d-3417"></a><a name="index-assembly-language-in-C_002c-extended-3418"></a>
 With extended <code>asm</code> you can read and write C variables from
 assembler and perform jumps from assembler code to C labels. 
-Extended <code>asm</code> syntax uses colons (&lsquo;<samp><span class="samp">:</span></samp>&rsquo;) to delimit
+Extended <code>asm</code> syntax uses colons (`<samp><span class="samp">:</span></samp>') to delimit
 the operand parameters after the assembler template:
 
 <pre class="example">     asm <span class="roman">[</span>volatile<span class="roman">]</span> ( <var>AssemblerTemplate</var>
@@ -257,7 +257,7 @@ referencing a variable in the subsequent code, for example:
  <p>Under certain circumstances, GCC may duplicate (or remove duplicates of) your
 assembly code when optimizing. This can lead to unexpected duplicate symbol
 errors during compilation if your asm code defines symbols or labels. 
-Using &lsquo;<samp><span class="samp">%=</span></samp>&rsquo;
+Using `<samp><span class="samp">%=</span></samp>'
 (see <a href="AssemblerTemplate.html#AssemblerTemplate">AssemblerTemplate</a>) may help resolve this problem.
 
  <p><a name="AssemblerTemplate"></a>
@@ -279,7 +279,7 @@ assembler input. However, it does count the statements
 string, separated by the characters normally used in assembly code for the
 system. A combination that works in most places is a newline to break the
 line, plus a tab character to move to the instruction field (written as
-&lsquo;<samp><span class="samp">\n\t</span></samp>&rsquo;). 
+`<samp><span class="samp">\n\t</span></samp>'). 
 Some assemblers allow semicolons as a line separator. However, note
 that some assembler dialects use semicolons to start a comment.
 
@@ -304,14 +304,14 @@ unreferenced unless they are also listed as input, output, or goto operands.
 these tokens have special meanings in the assembler template:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">%%</span></samp>&rsquo;<dd>Outputs a single &lsquo;<samp><span class="samp">%</span></samp>&rsquo; into the assembler code.
+<dt>`<samp><span class="samp">%%</span></samp>'<dd>Outputs a single `<samp><span class="samp">%</span></samp>' into the assembler code.
 
-     <br><dt>&lsquo;<samp><span class="samp">%=</span></samp>&rsquo;<dd>Outputs a number that is unique to each instance of the <code>asm</code>
+     <br><dt>`<samp><span class="samp">%=</span></samp>'<dd>Outputs a number that is unique to each instance of the <code>asm</code>
 statement in the entire compilation. This option is useful when creating local
 labels and referring to them multiple times in a single template that
 generates multiple assembler instructions.
 
-     <br><dt>&lsquo;<samp><span class="samp">%{</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">%|</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">%}</span></samp>&rsquo;<dd>Outputs &lsquo;<samp><span class="samp">{</span></samp>&rsquo;, &lsquo;<samp><span class="samp">|</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">}</span></samp>&rsquo; characters (respectively)
+     <br><dt>`<samp><span class="samp">%{</span></samp>'<dt>`<samp><span class="samp">%|</span></samp>'<dt>`<samp><span class="samp">%}</span></samp>'<dd>Outputs `<samp><span class="samp">{</span></samp>', `<samp><span class="samp">|</span></samp>', and `<samp><span class="samp">}</span></samp>' characters (respectively)
 into the assembler code.  When unescaped, these characters have special
 meaning to indicate multiple assembler dialects, as described below. 
 </dl>
@@ -340,7 +340,7 @@ braces than the number of dialects the compiler supports, the construct
 outputs nothing.
 
  <p>For example, if an x86 compiler supports two dialects
-(&lsquo;<samp><span class="samp">att</span></samp>&rsquo;, &lsquo;<samp><span class="samp">intel</span></samp>&rsquo;), an
+(`<samp><span class="samp">att</span></samp>', `<samp><span class="samp">intel</span></samp>'), an
 assembler template such as this:
 
 <pre class="example">     "bt{l %[Offset],%[Base] | %[Base],%[Offset]}; jc %l2"
@@ -391,7 +391,7 @@ of C variables modified by the assembler code.
 <dt><var>asmSymbolicName</var><dd>Specifies a symbolic name for the operand. 
 Reference the name in the assembler template
 by enclosing it in square brackets
-(i.e. &lsquo;<samp><span class="samp">%[Value]</span></samp>&rsquo;). The scope of the name is the <code>asm</code> statement
+(i.e. `<samp><span class="samp">%[Value]</span></samp>'). The scope of the name is the <code>asm</code> statement
 that contains the definition. Any valid C variable name is acceptable,
 including names already defined in the surrounding code. No two operands
 within the same <code>asm</code> statement can use the same symbolic name.
@@ -399,21 +399,21 @@ within the same <code>asm</code> statement can use the same symbolic name.
      <p>When not using an <var>asmSymbolicName</var>, use the (zero-based) position
 of the operand
 in the list of operands in the assembler template. For example if there are
-three output operands, use &lsquo;<samp><span class="samp">%0</span></samp>&rsquo; in the template to refer to the first,
-&lsquo;<samp><span class="samp">%1</span></samp>&rsquo; for the second, and &lsquo;<samp><span class="samp">%2</span></samp>&rsquo; for the third.
+three output operands, use `<samp><span class="samp">%0</span></samp>' in the template to refer to the first,
+`<samp><span class="samp">%1</span></samp>' for the second, and `<samp><span class="samp">%2</span></samp>' for the third.
 
      <br><dt><var>constraint</var><dd>A string constant specifying constraints on the placement of the operand;
 See <a href="Constraints.html#Constraints">Constraints</a>, for details.
 
-     <p>Output constraints must begin with either &lsquo;<samp><span class="samp">=</span></samp>&rsquo; (a variable overwriting an
-existing value) or &lsquo;<samp><span class="samp">+</span></samp>&rsquo; (when reading and writing). When using
-&lsquo;<samp><span class="samp">=</span></samp>&rsquo;, do not assume the location contains the existing value
+     <p>Output constraints must begin with either `<samp><span class="samp">=</span></samp>' (a variable overwriting an
+existing value) or `<samp><span class="samp">+</span></samp>' (when reading and writing). When using
+`<samp><span class="samp">=</span></samp>', do not assume the location contains the existing value
 on entry to the <code>asm</code>, except
 when the operand is tied to an input; see <a href="InputOperands.html#InputOperands">Input Operands</a>.
 
      <p>After the prefix, there must be one or more additional constraints
 (see <a href="Constraints.html#Constraints">Constraints</a>) that describe where the value resides. Common
-constraints include &lsquo;<samp><span class="samp">r</span></samp>&rsquo; for register and &lsquo;<samp><span class="samp">m</span></samp>&rsquo; for memory. 
+constraints include `<samp><span class="samp">r</span></samp>' for register and `<samp><span class="samp">m</span></samp>' for memory. 
 When you list more than one possible location (for example, <code>"=rm"</code>),
 the compiler chooses the most efficient one based on the current context. 
 If you list as many alternates as the <code>asm</code> statement allows, you permit
@@ -438,11 +438,11 @@ example a bit-field), the constraint must allow a register. In that case, GCC
 uses the register as the output of the <code>asm</code>, and then stores that
 register into the output.
 
- <p>Operands using the &lsquo;<samp><span class="samp">+</span></samp>&rsquo; constraint modifier count as two operands
+ <p>Operands using the `<samp><span class="samp">+</span></samp>' constraint modifier count as two operands
 (that is, both as input and output) towards the total maximum of 30 operands
 per <code>asm</code> statement.
 
- <p>Use the &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; constraint modifier (see <a href="Modifiers.html#Modifiers">Modifiers</a>) on all output
+ <p>Use the `<samp><span class="samp">&amp;</span></samp>' constraint modifier (see <a href="Modifiers.html#Modifiers">Modifiers</a>) on all output
 operands that must not overlap an input.  Otherwise,
 GCC may allocate the output operand in the same register as an unrelated
 input operand, on the assumption that the assembler code consumes its
@@ -456,13 +456,13 @@ registers which <em>might</em> be shared by <var>a</var>, and GCC considers thos
 registers to be inputs to the asm. As above, GCC assumes that such input
 registers are consumed before any outputs are written. This assumption may
 result in incorrect behavior if the asm writes to <var>a</var> before using
-<var>b</var>. Combining the &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; modifier with the register constraint on <var>a</var>
+<var>b</var>. Combining the `<samp><span class="samp">&amp;</span></samp>' modifier with the register constraint on <var>a</var>
 ensures that modifying <var>a</var> does not affect the address referenced by
 <var>b</var>. Otherwise, the location of <var>b</var>
 is undefined if <var>a</var> is modified before using <var>b</var>.
 
- <p><code>asm</code> supports operand modifiers on operands (for example &lsquo;<samp><span class="samp">%k2</span></samp>&rsquo;
-instead of simply &lsquo;<samp><span class="samp">%2</span></samp>&rsquo;). Typically these qualifiers are hardware
+ <p><code>asm</code> supports operand modifiers on operands (for example `<samp><span class="samp">%k2</span></samp>'
+instead of simply `<samp><span class="samp">%2</span></samp>'). Typically these qualifiers are hardware
 dependent. The list of supported modifiers for x86 is found at
 <a href="x86Operandmodifiers.html#x86Operandmodifiers">x86 Operand modifiers</a>.
 
@@ -485,9 +485,9 @@ than that of the last output operand. In this i386 example, that makes
           : "r" (Mask)
           : "cc");
 </pre>
- <p>That code overwrites the variable <code>Index</code> (&lsquo;<samp><span class="samp">=</span></samp>&rsquo;),
-placing the value in a register (&lsquo;<samp><span class="samp">r</span></samp>&rsquo;). 
-Using the generic &lsquo;<samp><span class="samp">r</span></samp>&rsquo; constraint instead of a constraint for a specific
+ <p>That code overwrites the variable <code>Index</code> (`<samp><span class="samp">=</span></samp>'),
+placing the value in a register (`<samp><span class="samp">r</span></samp>'). 
+Using the generic `<samp><span class="samp">r</span></samp>' constraint instead of a constraint for a specific
 register allows the compiler to pick the register to use, which can result
 in more efficient code. This may not be possible if an assembler instruction
 requires a specific register.
@@ -541,7 +541,7 @@ assembly code.
 <dt><var>asmSymbolicName</var><dd>Specifies a symbolic name for the operand. 
 Reference the name in the assembler template
 by enclosing it in square brackets
-(i.e. &lsquo;<samp><span class="samp">%[Value]</span></samp>&rsquo;). The scope of the name is the <code>asm</code> statement
+(i.e. `<samp><span class="samp">%[Value]</span></samp>'). The scope of the name is the <code>asm</code> statement
 that contains the definition. Any valid C variable name is acceptable,
 including names already defined in the surrounding code. No two operands
 within the same <code>asm</code> statement can use the same symbolic name.
@@ -550,14 +550,14 @@ within the same <code>asm</code> statement can use the same symbolic name.
 of the operand
 in the list of operands in the assembler template. For example if there are
 two output operands and three inputs,
-use &lsquo;<samp><span class="samp">%2</span></samp>&rsquo; in the template to refer to the first input operand,
-&lsquo;<samp><span class="samp">%3</span></samp>&rsquo; for the second, and &lsquo;<samp><span class="samp">%4</span></samp>&rsquo; for the third.
+use `<samp><span class="samp">%2</span></samp>' in the template to refer to the first input operand,
+`<samp><span class="samp">%3</span></samp>' for the second, and `<samp><span class="samp">%4</span></samp>' for the third.
 
      <br><dt><var>constraint</var><dd>A string constant specifying constraints on the placement of the operand;
 See <a href="Constraints.html#Constraints">Constraints</a>, for details.
 
-     <p>Input constraint strings may not begin with either &lsquo;<samp><span class="samp">=</span></samp>&rsquo; or &lsquo;<samp><span class="samp">+</span></samp>&rsquo;. 
-When you list more than one possible location (for example, &lsquo;<samp><span class="samp">"irm"</span></samp>&rsquo;),
+     <p>Input constraint strings may not begin with either `<samp><span class="samp">=</span></samp>' or `<samp><span class="samp">+</span></samp>'. 
+When you list more than one possible location (for example, `<samp><span class="samp">"irm"</span></samp>'),
 the compiler chooses the most efficient one based on the current context. 
 If you must use a specific register, but your Machine Constraints do not
 provide sufficient control to select the specific register you want,
@@ -567,7 +567,7 @@ local register variables may provide a solution (see <a href="Local-Reg-Vars.htm
 that the specified input must be in the same place as the output constraint
 at the (zero-based) index in the output constraint list. 
 When using <var>asmSymbolicName</var> syntax for the output operands,
-you may use these names (enclosed in brackets &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;) instead of digits.
+you may use these names (enclosed in brackets `<samp><span class="samp">[]</span></samp>') instead of digits.
 
      <br><dt><var>cexpression</var><dd>This is the C variable or expression being passed to the <code>asm</code> statement
 as input.  The enclosing parentheses are a required part of the syntax.
@@ -596,8 +596,8 @@ that never gets used. Note, however, that if the code that follows the
 optimizers may discard the <code>asm</code> statement as unneeded
 (see <a href="Volatile.html#Volatile">Volatile</a>).
 
- <p><code>asm</code> supports operand modifiers on operands (for example &lsquo;<samp><span class="samp">%k2</span></samp>&rsquo;
-instead of simply &lsquo;<samp><span class="samp">%2</span></samp>&rsquo;). Typically these qualifiers are hardware
+ <p><code>asm</code> supports operand modifiers on operands (for example `<samp><span class="samp">%k2</span></samp>'
+instead of simply `<samp><span class="samp">%2</span></samp>'). Typically these qualifiers are hardware
 dependent. The list of supported modifiers for x86 is found at
 <a href="x86Operandmodifiers.html#x86Operandmodifiers">x86 Operand modifiers</a>.
 
@@ -715,14 +715,14 @@ necessary after the <code>asm</code> statement.
 considered volatile.
 
  <p>To reference a label in the assembler template,
-prefix it with &lsquo;<samp><span class="samp">%l</span></samp>&rsquo; (lowercase &lsquo;<samp><span class="samp">L</span></samp>&rsquo;) followed
+prefix it with `<samp><span class="samp">%l</span></samp>' (lowercase `<samp><span class="samp">L</span></samp>') followed
 by its (zero-based) position in <var>GotoLabels</var> plus the number of input
 operands.  For example, if the <code>asm</code> has three inputs and references two
-labels, refer to the first label as &lsquo;<samp><span class="samp">%l3</span></samp>&rsquo; and the second as &lsquo;<samp><span class="samp">%l4</span></samp>&rsquo;).
+labels, refer to the first label as `<samp><span class="samp">%l3</span></samp>' and the second as `<samp><span class="samp">%l4</span></samp>').
 
  <p>Alternately, you can reference labels using the actual C label name enclosed
 in brackets.  For example, to reference a label named <code>carry</code>, you can
-use &lsquo;<samp><span class="samp">%l[carry]</span></samp>&rsquo;.  The label must still be listed in the <var>GotoLabels</var>
+use `<samp><span class="samp">%l[carry]</span></samp>'.  The label must still be listed in the <var>GotoLabels</var>
 section when using this approach.
 
  <p>Here is an example of <code>asm goto</code> for i386:
@@ -763,7 +763,7 @@ section when using this approach.
 of extended <code>asm</code> statements can use
 modifiers to affect the way the operands are formatted in
 the code output to the assembler. For example, the
-following code uses the &lsquo;<samp><span class="samp">h</span></samp>&rsquo; and &lsquo;<samp><span class="samp">b</span></samp>&rsquo; modifiers for x86:
+following code uses the `<samp><span class="samp">h</span></samp>' and `<samp><span class="samp">b</span></samp>' modifiers for x86:
 
 <pre class="example">     uint16_t  num;
      asm volatile ("xchg %h0, %b0" : "+a" (num) );
@@ -788,7 +788,7 @@ following code uses the &lsquo;<samp><span class="samp">h</span></samp>&rsquo; a
      }
 </pre>
  <p>With no modifiers, this is what the output from the operands would be for the
-&lsquo;<samp><span class="samp">att</span></samp>&rsquo; and &lsquo;<samp><span class="samp">intel</span></samp>&rsquo; dialects of assembler:
+`<samp><span class="samp">att</span></samp>' and `<samp><span class="samp">intel</span></samp>' dialects of assembler:
 
  <p><table summary=""><tr align="left"><th valign="top">Operand </th><th valign="top">masm=att </th><th valign="top">masm=intel
 <br></th></tr><tr align="left"><td valign="top"><code>%0</code>
@@ -878,7 +878,7 @@ the reg-stack than any input that is not implicitly popped.
 use the input register for an output reload.  Consider this example:
 
      <pre class="smallexample">          asm ("foo" : "=t" (a) : "f" (b));
-</pre>
+     </pre>
      <p class="noindent">This code says that input <code>b</code> is not popped by the <code>asm</code>, and that
 the <code>asm</code> pushes a result onto the reg-stack, i.e., the stack is one
 deeper after the <code>asm</code> than it was before.  But, it is possible that
@@ -886,20 +886,20 @@ reload may think that it can use the same register for both the input and
 the output.
 
      <p>To prevent this from happening,
-if any input operand uses the &lsquo;<samp><span class="samp">f</span></samp>&rsquo; constraint, all output register
-constraints must use the &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; early-clobber modifier.
+if any input operand uses the `<samp><span class="samp">f</span></samp>' constraint, all output register
+constraints must use the `<samp><span class="samp">&amp;</span></samp>' early-clobber modifier.
 
      <p>The example above is correctly written as:
 
      <pre class="smallexample">          asm ("foo" : "=&amp;t" (a) : "f" (b));
-</pre>
+     </pre>
      <li>Some operands need to be in particular places on the stack.  All
 output operands fall in this category&mdash;GCC has no other way to
 know which registers the outputs appear in unless you indicate
 this in the constraints.
 
      <p>Output operands must specifically indicate which register an output
-appears in after an <code>asm</code>.  &lsquo;<samp><span class="samp">=f</span></samp>&rsquo; is not allowed: the operand
+appears in after an <code>asm</code>.  `<samp><span class="samp">=f</span></samp>' is not allowed: the operand
 constraints must select a class with a single register.
 
      <li>Output operands may not be &ldquo;inserted&rdquo; between existing stack registers. 
@@ -933,5 +933,5 @@ for the compiler to know that <code>fyl2xp1</code> pops both inputs.
 <!-- Most of this node appears by itself (in a different place) even -->
 <!-- when the INTERNALS flag is clear.  Passages that require the internals -->
 <!-- manual's context are conditionalized to appear only in the internals manual. -->
- </body></html>
+</body></html>
 

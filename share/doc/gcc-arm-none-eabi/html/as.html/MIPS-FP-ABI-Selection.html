@@ -3,7 +3,7 @@
 <title>MIPS FP ABI Selection - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="MIPS-FP-ABIs.html#MIPS-FP-ABIs" title="MIPS FP ABIs">
 <link rel="prev" href="MIPS-FP-ABI-Variants.html#MIPS-FP-ABI-Variants" title="MIPS FP ABI Variants">
@@ -54,14 +54,14 @@ options and <code>.module</code> overrides.  Where an explicit
 <code>.gnu_attribute 4, </code><var>n</var> directive has been seen then a warning
 will be raised if it does not match an inferred setting.
 
-   <p>The floating-point ABI is inferred as follows.  If &lsquo;<samp><span class="samp">-msoft-float</span></samp>&rsquo;
+   <p>The floating-point ABI is inferred as follows.  If `<samp><span class="samp">-msoft-float</span></samp>'
 has been used the module will be marked as soft-float.  If
-&lsquo;<samp><span class="samp">-msingle-float</span></samp>&rsquo; has been used then the module will be marked as
+`<samp><span class="samp">-msingle-float</span></samp>' has been used then the module will be marked as
 single-precision.  The remaining ABIs are then selected based
 on the FP register width.  Double-precision is selected if the width
 of GP and FP registers match and the special double-precision variants
-for 32-bit ABIs are then selected depending on &lsquo;<samp><span class="samp">-mfpxx</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">-mfp64</span></samp>&rsquo; and &lsquo;<samp><span class="samp">-mno-odd-spreg</span></samp>&rsquo;.
+for 32-bit ABIs are then selected depending on `<samp><span class="samp">-mfpxx</span></samp>',
+`<samp><span class="samp">-mfp64</span></samp>' and `<samp><span class="samp">-mno-odd-spreg</span></samp>'.
 
    </body></html>
 

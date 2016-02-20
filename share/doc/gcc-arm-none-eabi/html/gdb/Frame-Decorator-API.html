@@ -3,7 +3,7 @@
 <title>Frame Decorator API - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Python-API.html#Python-API" title="Python API">
 <link rel="prev" href="Frame-Filter-API.html#Frame-Filter-API" title="Frame Filter API">
@@ -72,7 +72,7 @@ object, and only to override the methods needed.
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.elided</b> (<var>self</var>)<var><a name="index-FrameDecorator_002eelided-1981"></a></var><br>
 <blockquote>
-        <p>The <code>elided</code> method groups frames together in a hierarchical
+<p>The <code>elided</code> method groups frames together in a hierarchical
 system.  An example would be an interpreter, where multiple low-level
 frames make up a single call in the interpreted language.  In this
 example, the frame filter would elide the low-level frames and present
@@ -94,7 +94,7 @@ the source iterator.  This will avoid printing the frame twice.
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.function</b> (<var>self</var>)<var><a name="index-FrameDecorator_002efunction-1982"></a></var><br>
 <blockquote>
-        <p>This method returns the name of the function in the frame that is to
+<p>This method returns the name of the function in the frame that is to
 be printed.
 
         <p>This method must return a Python string describing the function, or
@@ -107,7 +107,7 @@ data for this field.
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.address</b> (<var>self</var>)<var><a name="index-FrameDecorator_002eaddress-1983"></a></var><br>
 <blockquote>
-        <p>This method returns the address of the frame that is to be printed.
+<p>This method returns the address of the frame that is to be printed.
 
         <p>This method must return a Python numeric integer type of sufficient
 size to describe the address of the frame, or <code>None</code>.
@@ -119,7 +119,7 @@ any data for this field.
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.filename</b> (<var>self</var>)<var><a name="index-FrameDecorator_002efilename-1984"></a></var><br>
 <blockquote>
-        <p>This method returns the filename and path associated with this frame.
+<p>This method returns the filename and path associated with this frame.
 
         <p>This method must return a Python string containing the filename and
 the path to the object file backing the frame, or <code>None</code>.
@@ -131,7 +131,7 @@ any data for this field.
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.line</b> (<var>self</var>)<var>:<a name="index-FrameDecorator_002eline-1985"></a></var><br>
 <blockquote>
-        <p>This method returns the line number associated with the current
+<p>This method returns the line number associated with the current
 position within the function addressed by this frame.
 
         <p>This method must return a Python integer type, or <code>None</code>.
@@ -142,7 +142,9 @@ any data for this field.
 
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.frame_args</b> (<var>self</var>)<var><a name="index-FrameDecorator_002eframe_005fargs-1986"></a></var><br>
-<blockquote><p><a name="frame_005fargs"></a>This method must return an iterable, or <code>None</code>.  Returning an
+<blockquote><p><a name="frame_005fargs"></a>
+
+        <p>This method must return an iterable, or <code>None</code>.  Returning an
 empty iterable, or <code>None</code> means frame arguments will not be
 printed for this frame.  This iterable must contain objects that
 implement two methods, described here.
@@ -191,13 +193,13 @@ the <code>gdb.Symbol</code> automatically.
                   args.append(SymValueWrapper(``foo'', 42))
           
                   return args
-</pre>
+     </pre>
         </blockquote></div>
 
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.frame_locals</b> (<var>self</var>)<var><a name="index-FrameDecorator_002eframe_005flocals-1987"></a></var><br>
 <blockquote>
-        <p>This method must return an iterable or <code>None</code>.  Returning an
+<p>This method must return an iterable or <code>None</code>.  Returning an
 empty iterable, or <code>None</code> means frame local arguments will not be
 printed for this frame.
 
@@ -226,13 +228,13 @@ described in the <code>frame_args</code> function, (see <a href="frame_005fargs.
                   vars.append(SymValueWrapper(``bar'', 99))
           
                   return vars
-</pre>
+     </pre>
         </blockquote></div>
 
 <div class="defun">
 &mdash; Function: <b>FrameDecorator.inferior_frame</b> (<var>self</var>)<var>:<a name="index-FrameDecorator_002einferior_005fframe-1988"></a></var><br>
 <blockquote>
-        <p>This method must return the underlying <code>gdb.Frame</code> that this
+<p>This method must return the underlying <code>gdb.Frame</code> that this
 frame decorator is decorating.  <span class="sc">gdb</span> requires the underlying
 frame for internal frame information to determine how to print certain
 values when printing a frame. 

@@ -3,7 +3,7 @@
 <title>Language Independent Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options.html#Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options" title="Objective-C and Objective-C++ Dialect Options">
@@ -81,12 +81,12 @@ messages reporter to emit the same source location information (as
 prefix) for physical lines that result from the process of breaking
 a message which is too long to fit on a single line.
 
-     <br><dt><code>-fdiagnostics-color[=</code><var>WHEN</var><code>]</code><dt><code>-fno-diagnostics-color</code><dd><a name="index-fdiagnostics_002dcolor-262"></a><a name="index-highlight_002c-color_002c-colour-263"></a><a name="index-GCC_005fCOLORS-_0040r_007benvironment-variable_007d-264"></a>Use color in diagnostics.  <var>WHEN</var> is &lsquo;<samp><span class="samp">never</span></samp>&rsquo;, &lsquo;<samp><span class="samp">always</span></samp>&rsquo;,
-or &lsquo;<samp><span class="samp">auto</span></samp>&rsquo;.  The default depends on how the compiler has been configured,
-it can be any of the above <var>WHEN</var> options or also &lsquo;<samp><span class="samp">never</span></samp>&rsquo;
+     <br><dt><code>-fdiagnostics-color[=</code><var>WHEN</var><code>]</code><dt><code>-fno-diagnostics-color</code><dd><a name="index-fdiagnostics_002dcolor-262"></a><a name="index-highlight_002c-color_002c-colour-263"></a><a name="index-GCC_005fCOLORS-_0040r_007benvironment-variable_007d-264"></a>Use color in diagnostics.  <var>WHEN</var> is `<samp><span class="samp">never</span></samp>', `<samp><span class="samp">always</span></samp>',
+or `<samp><span class="samp">auto</span></samp>'.  The default depends on how the compiler has been configured,
+it can be any of the above <var>WHEN</var> options or also `<samp><span class="samp">never</span></samp>'
 if <samp><span class="env">GCC_COLORS</span></samp> environment variable isn't present in the environment,
-and &lsquo;<samp><span class="samp">auto</span></samp>&rsquo; otherwise. 
-&lsquo;<samp><span class="samp">auto</span></samp>&rsquo; means to use color only when the standard error is a terminal. 
+and `<samp><span class="samp">auto</span></samp>' otherwise. 
+`<samp><span class="samp">auto</span></samp>' means to use color only when the standard error is a terminal. 
 The forms <samp><span class="option">-fdiagnostics-color</span></samp> and <samp><span class="option">-fno-diagnostics-color</span></samp> are
 aliases for <samp><span class="option">-fdiagnostics-color=always</span></samp> and
 <samp><span class="option">-fdiagnostics-color=never</span></samp>, respectively.
@@ -99,27 +99,27 @@ of your text terminal for permitted values and their meanings as
 character attributes.)  These substring values are integers in decimal
 representation and can be concatenated with semicolons. 
 Common values to concatenate include
-&lsquo;<samp><span class="samp">1</span></samp>&rsquo; for bold,
-&lsquo;<samp><span class="samp">4</span></samp>&rsquo; for underline,
-&lsquo;<samp><span class="samp">5</span></samp>&rsquo; for blink,
-&lsquo;<samp><span class="samp">7</span></samp>&rsquo; for inverse,
-&lsquo;<samp><span class="samp">39</span></samp>&rsquo; for default foreground color,
-&lsquo;<samp><span class="samp">30</span></samp>&rsquo; to &lsquo;<samp><span class="samp">37</span></samp>&rsquo; for foreground colors,
-&lsquo;<samp><span class="samp">90</span></samp>&rsquo; to &lsquo;<samp><span class="samp">97</span></samp>&rsquo; for 16-color mode foreground colors,
-&lsquo;<samp><span class="samp">38;5;0</span></samp>&rsquo; to &lsquo;<samp><span class="samp">38;5;255</span></samp>&rsquo;
+`<samp><span class="samp">1</span></samp>' for bold,
+`<samp><span class="samp">4</span></samp>' for underline,
+`<samp><span class="samp">5</span></samp>' for blink,
+`<samp><span class="samp">7</span></samp>' for inverse,
+`<samp><span class="samp">39</span></samp>' for default foreground color,
+`<samp><span class="samp">30</span></samp>' to `<samp><span class="samp">37</span></samp>' for foreground colors,
+`<samp><span class="samp">90</span></samp>' to `<samp><span class="samp">97</span></samp>' for 16-color mode foreground colors,
+`<samp><span class="samp">38;5;0</span></samp>' to `<samp><span class="samp">38;5;255</span></samp>'
 for 88-color and 256-color modes foreground colors,
-&lsquo;<samp><span class="samp">49</span></samp>&rsquo; for default background color,
-&lsquo;<samp><span class="samp">40</span></samp>&rsquo; to &lsquo;<samp><span class="samp">47</span></samp>&rsquo; for background colors,
-&lsquo;<samp><span class="samp">100</span></samp>&rsquo; to &lsquo;<samp><span class="samp">107</span></samp>&rsquo; for 16-color mode background colors,
-and &lsquo;<samp><span class="samp">48;5;0</span></samp>&rsquo; to &lsquo;<samp><span class="samp">48;5;255</span></samp>&rsquo;
+`<samp><span class="samp">49</span></samp>' for default background color,
+`<samp><span class="samp">40</span></samp>' to `<samp><span class="samp">47</span></samp>' for background colors,
+`<samp><span class="samp">100</span></samp>' to `<samp><span class="samp">107</span></samp>' for 16-color mode background colors,
+and `<samp><span class="samp">48;5;0</span></samp>' to `<samp><span class="samp">48;5;255</span></samp>'
 for 88-color and 256-color modes background colors.
 
      <p>The default <samp><span class="env">GCC_COLORS</span></samp> is
      <pre class="smallexample">          error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01
-</pre>
-     <p class="noindent">where &lsquo;<samp><span class="samp">01;31</span></samp>&rsquo; is bold red, &lsquo;<samp><span class="samp">01;35</span></samp>&rsquo; is bold magenta,
-&lsquo;<samp><span class="samp">01;36</span></samp>&rsquo; is bold cyan, &lsquo;<samp><span class="samp">01;32</span></samp>&rsquo; is bold green and
-&lsquo;<samp><span class="samp">01</span></samp>&rsquo; is bold. Setting <samp><span class="env">GCC_COLORS</span></samp> to the empty
+     </pre>
+     <p class="noindent">where `<samp><span class="samp">01;31</span></samp>' is bold red, `<samp><span class="samp">01;35</span></samp>' is bold magenta,
+`<samp><span class="samp">01;36</span></samp>' is bold cyan, `<samp><span class="samp">01;32</span></samp>' is bold green and
+`<samp><span class="samp">01</span></samp>' is bold. Setting <samp><span class="env">GCC_COLORS</span></samp> to the empty
 string disables colors. 
 Supported capabilities are as follows.
 
@@ -132,8 +132,8 @@ Supported capabilities are as follows.
 
           <br><dt><code>caret=</code><dd><a name="index-caret-GCC_005fCOLORS-_0040r_007bcapability_007d-268"></a>SGR substring for caret line.
 
-          <br><dt><code>locus=</code><dd><a name="index-locus-GCC_005fCOLORS-_0040r_007bcapability_007d-269"></a>SGR substring for location information, &lsquo;<samp><span class="samp">file:line</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">file:line:column</span></samp>&rsquo; etc.
+          <br><dt><code>locus=</code><dd><a name="index-locus-GCC_005fCOLORS-_0040r_007bcapability_007d-269"></a>SGR substring for location information, `<samp><span class="samp">file:line</span></samp>' or
+`<samp><span class="samp">file:line:column</span></samp>' etc.
 
           <br><dt><code>quote=</code><dd><a name="index-quote-GCC_005fCOLORS-_0040r_007bcapability_007d-270"></a>SGR substring for information printed within quotes. 
 </dl>

@@ -3,7 +3,7 @@
 <title>Convenience Funs - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Convenience-Vars.html#Convenience-Vars" title="Convenience Vars">
@@ -77,7 +77,7 @@ it is <code>void</code>:
           $3 = 0
           (gdb) print $_isvoid ($_exitcode)
           $4 = 0
-</pre>
+     </pre>
      <p>In the example above, we used <code>$_isvoid</code> to check whether
 <code>$_exitcode</code> is <code>void</code> before and after the execution of the
 program being debugged.  Before the execution there is no exit code to
@@ -93,7 +93,7 @@ program being debugged.  For example, given the following function:
           foo (void)
           {
           }
-</pre>
+     </pre>
      <p>The result of calling it inside <span class="sc">gdb</span> is <code>void</code>:
 
      <pre class="smallexample">          (gdb) print foo ()
@@ -105,7 +105,7 @@ program being debugged.  For example, given the following function:
           $3 = void
           (gdb) print $_isvoid ($v)
           $4 = 1
-</pre>
+     </pre>
      </dl>
 
    <p>These functions require <span class="sc">gdb</span> to be configured with
@@ -148,7 +148,7 @@ The default is 1.
           $1 = 1
           (gdb) print $_caller_is ("top_func", 2)
           $1 = 1
-</pre>
+     </pre>
      <br><dt><code>$_caller_matches(</code><var>regexp</var><span class="roman">[</span><code>, </code><var>number_of_frames</var><span class="roman">]</span><code>)</code><dd><a name="index-g_t_0024_005fcaller_005fmatches_0040r_007b_002c-convenience-function_007d-698"></a>Returns one if the calling function's name matches the regular expression
 <var>regexp</var>.  Otherwise it returns zero.
 

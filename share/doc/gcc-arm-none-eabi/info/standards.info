@@ -1,5 +1,5 @@
-This is standards.info, produced by makeinfo version 4.11 from
-/home/build/work/GCC-5-0-build/src/newlib/etc/standards.texi.
+This is standards.info, produced by makeinfo version 4.8 from
+/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/newlib/etc/standards.texi.
 
 INFO-DIR-SECTION GNU organization
 START-INFO-DIR-ENTRY
@@ -3155,7 +3155,7 @@ the functions, variables, options, and important concepts that are part
 of the program.  One combined Index should do for a short manual, but
 sometimes for a complex package it is better to use multiple indices.
 The Texinfo manual includes advice on preparing good index entries, see
-*note Making Index Entries: (texinfo)Index Entries, and see *note
+*Note Making Index Entries: (texinfo)Index Entries, and see *Note
 Defining the Entries of an Index: (texinfo)Indexing Commands.
 
    Don't use Unix man pages as a model for how to write GNU
@@ -4294,8 +4294,8 @@ have Info files, so every program needs `infodir', but not all need
 
 `lispdir'
      The directory for installing any Emacs Lisp files in this package.
-     By default, it should be `/usr/local/share/emacs/site-lisp', but it
-     should be written as `$(datarootdir)/emacs/site-lisp'.
+     By default, it should be `/usr/local/share/emacs/site-lisp', but
+     it should be written as `$(datarootdir)/emacs/site-lisp'.
 
      If you are using Autoconf, write the default as `@lispdir@'.  In
      order to make `@lispdir@' work, you need the following lines in
@@ -5671,74 +5671,74 @@ Index
 
 
 Tag Table:
-Node: Top859
-Node: Preface2134
-Node: Legal Issues4847
-Node: Reading Non-Free Code5317
-Node: Contributions7047
-Node: Trademarks9285
-Node: Design Advice10920
-Node: Source Language11512
-Node: Compatibility13638
-Node: Using Extensions15266
-Node: Standard C16842
-Node: Conditional Compilation19245
-Node: Program Behavior20643
-Node: Non-GNU Standards21759
-Node: Semantics24040
-Node: Libraries28760
-Node: Errors30005
-Node: User Interfaces32498
-Node: Graphical Interfaces34103
-Node: Command-Line Interfaces35287
-Node: --version37319
-Node: --help43056
-Node: Option Table43929
-Node: OID Allocations58884
-Node: Memory Usage60681
-Node: File Usage61717
-Node: Writing C62467
-Node: Formatting63439
-Node: Comments67728
-Node: Syntactic Conventions71280
-Node: Names74742
-Node: System Portability76954
-Node: CPU Portability79845
-Node: System Functions83746
-Node: Internationalization88943
-Node: Character Set92937
-Node: Quote Characters93750
-Node: Mmap95270
-Node: Documentation95978
-Node: GNU Manuals97084
-Node: Doc Strings and Manuals102822
-Node: Manual Structure Details104375
-Node: License for Manuals105793
-Node: Manual Credits106767
-Node: Printed Manuals107160
-Node: NEWS File107846
-Node: Change Logs108524
-Node: Change Log Concepts109278
-Node: Style of Change Logs111381
-Node: Simple Changes113881
-Node: Conditional Changes115323
-Node: Indicating the Part Changed116745
-Node: Man Pages117272
-Node: Reading other Manuals119478
-Node: Managing Releases120269
-Node: Configuration121050
-Node: Makefile Conventions129715
-Node: Makefile Basics130597
-Node: Utilities in Makefiles133771
-Node: Command Variables135916
-Node: DESTDIR139138
-Node: Directory Variables141287
-Node: Standard Targets155780
-Ref: Standard Targets-Footnote-1169295
-Node: Install Command Categories169395
-Node: Releases173928
-Node: References177933
-Node: GNU Free Documentation License183780
-Node: Index208947
+Node: Top922
+Node: Preface2197
+Node: Legal Issues4910
+Node: Reading Non-Free Code5380
+Node: Contributions7110
+Node: Trademarks9348
+Node: Design Advice10983
+Node: Source Language11575
+Node: Compatibility13701
+Node: Using Extensions15329
+Node: Standard C16905
+Node: Conditional Compilation19308
+Node: Program Behavior20706
+Node: Non-GNU Standards21822
+Node: Semantics24103
+Node: Libraries28823
+Node: Errors30068
+Node: User Interfaces32561
+Node: Graphical Interfaces34166
+Node: Command-Line Interfaces35350
+Node: --version37382
+Node: --help43119
+Node: Option Table43992
+Node: OID Allocations58947
+Node: Memory Usage60744
+Node: File Usage61780
+Node: Writing C62530
+Node: Formatting63502
+Node: Comments67791
+Node: Syntactic Conventions71343
+Node: Names74805
+Node: System Portability77017
+Node: CPU Portability79908
+Node: System Functions83809
+Node: Internationalization89006
+Node: Character Set93000
+Node: Quote Characters93813
+Node: Mmap95333
+Node: Documentation96041
+Node: GNU Manuals97147
+Node: Doc Strings and Manuals102885
+Node: Manual Structure Details104438
+Node: License for Manuals105856
+Node: Manual Credits106830
+Node: Printed Manuals107223
+Node: NEWS File107909
+Node: Change Logs108587
+Node: Change Log Concepts109341
+Node: Style of Change Logs111444
+Node: Simple Changes113944
+Node: Conditional Changes115386
+Node: Indicating the Part Changed116808
+Node: Man Pages117335
+Node: Reading other Manuals119541
+Node: Managing Releases120332
+Node: Configuration121113
+Node: Makefile Conventions129778
+Node: Makefile Basics130660
+Node: Utilities in Makefiles133834
+Node: Command Variables135979
+Node: DESTDIR139201
+Node: Directory Variables141350
+Node: Standard Targets155843
+Ref: Standard Targets-Footnote-1169358
+Node: Install Command Categories169458
+Node: Releases173991
+Node: References177996
+Node: GNU Free Documentation License183843
+Node: Index209010
 
 End Tag Table

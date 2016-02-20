@@ -238,7 +238,7 @@
 
 /* Define to 1 if `TIOCGWINSZ' requires <sys/ioctl.h>. */
 #ifndef USED_FOR_TARGET
-#define GWINSZ_IN_SYS_IOCTL 1
+/* #undef GWINSZ_IN_SYS_IOCTL */
 #endif
 
 
@@ -684,7 +684,7 @@
 /* Define to 1 if we found a declaration for 'basename', otherwise define to
    0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_BASENAME 1
+#define HAVE_DECL_BASENAME 0
 #endif
 
 
@@ -733,7 +733,7 @@
 /* Define to 1 if we found a declaration for 'fflush_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FFLUSH_UNLOCKED 1
+#define HAVE_DECL_FFLUSH_UNLOCKED 0
 #endif
 
 
@@ -746,14 +746,14 @@
 /* Define to 1 if we found a declaration for 'fgetc_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FGETC_UNLOCKED 1
+#define HAVE_DECL_FGETC_UNLOCKED 0
 #endif
 
 
 /* Define to 1 if we found a declaration for 'fgets_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FGETS_UNLOCKED 1
+#define HAVE_DECL_FGETS_UNLOCKED 0
 #endif
 
 
@@ -774,21 +774,21 @@
 /* Define to 1 if we found a declaration for 'fputc_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FPUTC_UNLOCKED 1
+#define HAVE_DECL_FPUTC_UNLOCKED 0
 #endif
 
 
 /* Define to 1 if we found a declaration for 'fputs_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FPUTS_UNLOCKED 1
+#define HAVE_DECL_FPUTS_UNLOCKED 0
 #endif
 
 
 /* Define to 1 if we found a declaration for 'fread_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FREAD_UNLOCKED 1
+#define HAVE_DECL_FREAD_UNLOCKED 0
 #endif
 
 
@@ -801,7 +801,7 @@
 /* Define to 1 if we found a declaration for 'fwrite_unlocked', otherwise
    define to 0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_FWRITE_UNLOCKED 1
+#define HAVE_DECL_FWRITE_UNLOCKED 0
 #endif
 
 
@@ -836,7 +836,7 @@
 /* Define to 1 if we found a declaration for 'getopt', otherwise define to 0.
    */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_GETOPT 0
+#define HAVE_DECL_GETOPT 1
 #endif
 
 
@@ -996,7 +996,7 @@
 /* Define to 1 if we found a declaration for 'strverscmp', otherwise define to
    0. */
 #ifndef USED_FOR_TARGET
-#define HAVE_DECL_STRVERSCMP 1
+#define HAVE_DECL_STRVERSCMP 0
 #endif
 
 
@@ -1059,19 +1059,19 @@
 
 /* Define to 1 if you have the `fflush_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FFLUSH_UNLOCKED 1
+/* #undef HAVE_FFLUSH_UNLOCKED */
 #endif
 
 
 /* Define to 1 if you have the `fgetc_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FGETC_UNLOCKED 1
+/* #undef HAVE_FGETC_UNLOCKED */
 #endif
 
 
 /* Define to 1 if you have the `fgets_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FGETS_UNLOCKED 1
+/* #undef HAVE_FGETS_UNLOCKED */
 #endif
 
 
@@ -1095,19 +1095,19 @@
 
 /* Define to 1 if you have the `fputc_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FPUTC_UNLOCKED 1
+/* #undef HAVE_FPUTC_UNLOCKED */
 #endif
 
 
 /* Define to 1 if you have the `fputs_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FPUTS_UNLOCKED 1
+/* #undef HAVE_FPUTS_UNLOCKED */
 #endif
 
 
 /* Define to 1 if you have the `fread_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FREAD_UNLOCKED 1
+/* #undef HAVE_FREAD_UNLOCKED */
 #endif
 
 
@@ -1119,7 +1119,7 @@
 
 /* Define to 1 if you have the `fwrite_unlocked' function. */
 #ifndef USED_FOR_TARGET
-#define HAVE_FWRITE_UNLOCKED 1
+/* #undef HAVE_FWRITE_UNLOCKED */
 #endif
 
 
@@ -1372,7 +1372,7 @@
 /* Define if the linker supports clearing hardware capabilities via mapfile.
    */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_CLEARCAP */
+#define HAVE_LD_CLEARCAP 1
 #endif
 
 
@@ -1505,7 +1505,7 @@
 
 /* Define to 1 if you have the <malloc.h> header file. */
 #ifndef USED_FOR_TARGET
-#define HAVE_MALLOC_H 1
+/* #undef HAVE_MALLOC_H */
 #endif
 
 
@@ -1541,7 +1541,7 @@
 
 /* Define if mmap of /dev/zero works. */
 #ifndef USED_FOR_TARGET
-#define HAVE_MMAP_DEV_ZERO 1
+/* #undef HAVE_MMAP_DEV_ZERO */
 #endif
 
 
@@ -1937,7 +1937,7 @@
 
 /* The size of `long', as computed by sizeof. */
 #ifndef USED_FOR_TARGET
-#define SIZEOF_LONG 4
+#define SIZEOF_LONG 8
 #endif
 
 
@@ -1955,7 +1955,7 @@
 
 /* The size of `void *', as computed by sizeof. */
 #ifndef USED_FOR_TARGET
-#define SIZEOF_VOID_P 4
+#define SIZEOF_VOID_P 8
 #endif
 
 
@@ -2082,7 +2082,7 @@
 
 /* Number of bits in a file offset, on hosts where this is settable. */
 #ifndef USED_FOR_TARGET
-#define _FILE_OFFSET_BITS 64
+/* #undef _FILE_OFFSET_BITS */
 #endif
 
 

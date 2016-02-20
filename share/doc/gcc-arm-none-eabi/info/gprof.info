@@ -1,5 +1,5 @@
-This is gprof.info, produced by makeinfo version 4.11 from
-/home/build/work/GCC-5-0-build/src/binutils/gprof/gprof.texi.
+This is gprof.info, produced by makeinfo version 4.8 from
+/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/binutils/gprof/gprof.texi.
 
 INFO-DIR-SECTION Software development
 START-INFO-DIR-ENTRY
@@ -2446,35 +2446,35 @@ permit their use in free software.
 
 
 Tag Table:
-Node: Top773
-Node: Introduction2124
-Node: Compiling4616
-Node: Executing8672
-Node: Invoking11460
-Node: Output Options12875
-Node: Analysis Options19964
-Node: Miscellaneous Options23882
-Node: Deprecated Options25137
-Node: Symspecs27206
-Node: Output29032
-Node: Flat Profile30072
-Node: Call Graph35025
-Node: Primary38257
-Node: Callers40845
-Node: Subroutines42962
-Node: Cycles44803
-Node: Line-by-line51580
-Node: Annotated Source55653
-Node: Inaccuracy58652
-Node: Sampling Error58910
-Node: Assumptions61814
-Node: How do I?63284
-Node: Incompatibilities64838
-Node: Details66332
-Node: Implementation66725
-Node: File Format72622
-Node: Internals76912
-Node: Debugging85407
-Node: GNU Free Documentation License87008
+Node: Top836
+Node: Introduction2187
+Node: Compiling4679
+Node: Executing8735
+Node: Invoking11523
+Node: Output Options12938
+Node: Analysis Options20027
+Node: Miscellaneous Options23945
+Node: Deprecated Options25200
+Node: Symspecs27269
+Node: Output29095
+Node: Flat Profile30135
+Node: Call Graph35088
+Node: Primary38320
+Node: Callers40908
+Node: Subroutines43025
+Node: Cycles44866
+Node: Line-by-line51643
+Node: Annotated Source55716
+Node: Inaccuracy58715
+Node: Sampling Error58973
+Node: Assumptions61877
+Node: How do I?63347
+Node: Incompatibilities64901
+Node: Details66395
+Node: Implementation66788
+Node: File Format72685
+Node: Internals76975
+Node: Debugging85470
+Node: GNU Free Documentation License87071
 
 End Tag Table

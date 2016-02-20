@@ -3,7 +3,7 @@
 <title>Modifiers - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Constraints.html#Constraints" title="Constraints">
 <link rel="prev" href="Multi_002dAlternative.html#Multi_002dAlternative" title="Multi-Alternative">
@@ -60,51 +60,51 @@ Here are constraint modifier characters.
 
      
 <a name="index-g_t_0040samp_007b_003d_007d-in-constraint-3474"></a>
-<dl><dt>&lsquo;<samp><span class="samp">=</span></samp>&rsquo;<dd>Means that this operand is written to by this instruction:
+<dl><dt>`<samp><span class="samp">=</span></samp>'<dd>Means that this operand is written to by this instruction:
 the previous value is discarded and replaced by new data.
 
-     <p><a name="index-g_t_0040samp_007b_002b_007d-in-constraint-3475"></a><br><dt>&lsquo;<samp><span class="samp">+</span></samp>&rsquo;<dd>Means that this operand is both read and written by the instruction.
+     <p><a name="index-g_t_0040samp_007b_002b_007d-in-constraint-3475"></a><br><dt>`<samp><span class="samp">+</span></samp>'<dd>Means that this operand is both read and written by the instruction.
 
      <p>When the compiler fixes up the operands to satisfy the constraints,
 it needs to know which operands are read by the instruction and
-which are written by it.  &lsquo;<samp><span class="samp">=</span></samp>&rsquo; identifies an operand which is only
-written; &lsquo;<samp><span class="samp">+</span></samp>&rsquo; identifies an operand that is both read and written; all
+which are written by it.  `<samp><span class="samp">=</span></samp>' identifies an operand which is only
+written; `<samp><span class="samp">+</span></samp>' identifies an operand that is both read and written; all
 other operands are assumed to only be read.
 
-     <p>If you specify &lsquo;<samp><span class="samp">=</span></samp>&rsquo; or &lsquo;<samp><span class="samp">+</span></samp>&rsquo; in a constraint, you put it in the
+     <p>If you specify `<samp><span class="samp">=</span></samp>' or `<samp><span class="samp">+</span></samp>' in a constraint, you put it in the
 first character of the constraint string.
 
-     <p><a name="index-g_t_0040samp_007b_0026_007d-in-constraint-3476"></a><a name="index-earlyclobber-operand-3477"></a><br><dt>&lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo;<dd>Means (in a particular alternative) that this operand is an
+     <p><a name="index-g_t_0040samp_007b_0026_007d-in-constraint-3476"></a><a name="index-earlyclobber-operand-3477"></a><br><dt>`<samp><span class="samp">&amp;</span></samp>'<dd>Means (in a particular alternative) that this operand is an
 <dfn>earlyclobber</dfn> operand, which is written before the instruction is
 finished using the input operands.  Therefore, this operand may not lie
 in a register that is read by the instruction or as part of any memory
 address.
 
-     <p>&lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; applies only to the alternative in which it is written.  In
+     <p>`<samp><span class="samp">&amp;</span></samp>' applies only to the alternative in which it is written.  In
 constraints with multiple alternatives, sometimes one alternative
-requires &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; while others do not.  See, for example, the
-&lsquo;<samp><span class="samp">movdf</span></samp>&rsquo; insn of the 68000.
+requires `<samp><span class="samp">&amp;</span></samp>' while others do not.  See, for example, the
+`<samp><span class="samp">movdf</span></samp>' insn of the 68000.
 
      <p>A operand which is read by the instruction can be tied to an earlyclobber
 operand if its only use as an input occurs before the early result is
 written.  Adding alternatives of this form often allows GCC to produce
 better code when only some of the read operands can be affected by the
-earlyclobber. See, for example, the &lsquo;<samp><span class="samp">mulsi3</span></samp>&rsquo; insn of the ARM.
+earlyclobber. See, for example, the `<samp><span class="samp">mulsi3</span></samp>' insn of the ARM.
 
      <p>Furthermore, if the <dfn>earlyclobber</dfn> operand is also a read/write
 operand, then that operand is written only after it's used.
 
-     <p>&lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; does not obviate the need to write &lsquo;<samp><span class="samp">=</span></samp>&rsquo; or &lsquo;<samp><span class="samp">+</span></samp>&rsquo;.  As
+     <p>`<samp><span class="samp">&amp;</span></samp>' does not obviate the need to write `<samp><span class="samp">=</span></samp>' or `<samp><span class="samp">+</span></samp>'.  As
 <dfn>earlyclobber</dfn> operands are always written, a read-only
 <dfn>earlyclobber</dfn> operand is ill-formed and will be rejected by the
 compiler.
 
-     <p><a name="index-g_t_0040samp_007b_0025_007d-in-constraint-3478"></a><br><dt>&lsquo;<samp><span class="samp">%</span></samp>&rsquo;<dd>Declares the instruction to be commutative for this operand and the
+     <p><a name="index-g_t_0040samp_007b_0025_007d-in-constraint-3478"></a><br><dt>`<samp><span class="samp">%</span></samp>'<dd>Declares the instruction to be commutative for this operand and the
 following operand.  This means that the compiler may interchange the
 two operands if that is the cheapest way to make all operands fit the
-constraints.  &lsquo;<samp><span class="samp">%</span></samp>&rsquo; applies to all alternatives and must appear as
+constraints.  `<samp><span class="samp">%</span></samp>' applies to all alternatives and must appear as
 the first character in the constraint.  Only read-only operands can use
-&lsquo;<samp><span class="samp">%</span></samp>&rsquo;.
+`<samp><span class="samp">%</span></samp>'.
 
      <p>GCC can only handle one commutative pair in an asm; if you use more,
 the compiler may fail.  Note that you need not use the modifier if
@@ -112,16 +112,16 @@ the two alternatives are strictly identical; this would only waste
 time in the reload pass.  The modifier is not operational after
 register allocation, so the result of <code>define_peephole2</code>
 and <code>define_split</code>s performed after reload cannot rely on
-&lsquo;<samp><span class="samp">%</span></samp>&rsquo; to make the intended insn match.
+`<samp><span class="samp">%</span></samp>' to make the intended insn match.
 
-     <p><a name="index-g_t_0040samp_007b_0023_007d-in-constraint-3479"></a><br><dt>&lsquo;<samp><span class="samp">#</span></samp>&rsquo;<dd>Says that all following characters, up to the next comma, are to be
+     <p><a name="index-g_t_0040samp_007b_0023_007d-in-constraint-3479"></a><br><dt>`<samp><span class="samp">#</span></samp>'<dd>Says that all following characters, up to the next comma, are to be
 ignored as a constraint.  They are significant only for choosing
 register preferences.
 
-     <p><a name="index-g_t_0040samp_007b_002a_007d-in-constraint-3480"></a><br><dt>&lsquo;<samp><span class="samp">*</span></samp>&rsquo;<dd>Says that the following character should be ignored when choosing
-register preferences.  &lsquo;<samp><span class="samp">*</span></samp>&rsquo; has no effect on the meaning of the
+     <p><a name="index-g_t_0040samp_007b_002a_007d-in-constraint-3480"></a><br><dt>`<samp><span class="samp">*</span></samp>'<dd>Says that the following character should be ignored when choosing
+register preferences.  `<samp><span class="samp">*</span></samp>' has no effect on the meaning of the
 constraint as a constraint, and no effect on reloading.  For LRA
-&lsquo;<samp><span class="samp">*</span></samp>&rsquo; additionally disparages slightly the alternative if the
+`<samp><span class="samp">*</span></samp>' additionally disparages slightly the alternative if the
 following character matches the operand.
 
  </dl>

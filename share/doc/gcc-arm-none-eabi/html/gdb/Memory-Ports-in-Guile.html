@@ -3,7 +3,7 @@
 <title>Memory Ports in Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="I_002fO-Ports-in-Guile.html#I_002fO-Ports-in-Guile" title="I/O Ports in Guile">
@@ -57,13 +57,13 @@ returns a port object.  One can then read/write memory using that object.
 &mdash; Scheme Procedure: <b>open-memory</b> <span class="roman">[</span><var>#:mode mode</var>] <span class="roman">[</span><var>#:start address</var>] <span class="roman">[</span><var>#:size size</var>]<var><a name="index-open_002dmemory-2746"></a></var><br>
 <blockquote><p>Return a port object that can be used for reading and writing memory. 
 The port will be open according to <var>mode</var>, which is the standard
-mode argument to Guile port open routines, except that the &lsquo;<samp><span class="samp">"a"</span></samp>&rsquo;
-and &lsquo;<samp><span class="samp">"l"</span></samp>&rsquo; modes are not supported. 
+mode argument to Guile port open routines, except that the `<samp><span class="samp">"a"</span></samp>'
+and `<samp><span class="samp">"l"</span></samp>' modes are not supported. 
 See <a href="../guile/File-Ports.html#File-Ports">File Ports</a>. 
-The &lsquo;<samp><span class="samp">"b"</span></samp>&rsquo; (binary) character may be present, but is ignored:
-memory ports are binary only.  If &lsquo;<samp><span class="samp">"0"</span></samp>&rsquo; is appended then
+The `<samp><span class="samp">"b"</span></samp>' (binary) character may be present, but is ignored:
+memory ports are binary only.  If `<samp><span class="samp">"0"</span></samp>' is appended then
 the port is marked as unbuffered. 
-The default is &lsquo;<samp><span class="samp">"r"</span></samp>&rsquo;, read-only and buffered.
+The default is `<samp><span class="samp">"r"</span></samp>', read-only and buffered.
 
         <p>The chunk of memory that can be accessed can be bounded. 
 If both <var>start</var> and <var>size</var> are unspecified, all of memory can be

@@ -3,7 +3,7 @@
 <title>Types In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Arithmetic-In-Guile.html#Arithmetic-In-Guile" title="Arithmetic In Guile">
@@ -225,7 +225,7 @@ of <var>type</var>, an exception is thrown.
 a structure type, you can access its <code>foo</code> field with:
 
      <pre class="smallexample">          (define bar (type-field some-type "foo"))
-</pre>
+     </pre>
         <p><code>bar</code> will be a <code>&lt;gdb:field&gt;</code> object. 
 </p></blockquote></div>
 
@@ -298,7 +298,8 @@ convenience functions (see <a href="Convenience-Funs.html#Convenience-Funs">Conv
    <p>Further support for types is provided in the <code>(gdb types)</code>
 Guile module (see <a href="Guile-Types-Module.html#Guile-Types-Module">Guile Types Module</a>).
 
-   <p><a name="Fields-of-a-type-in-Guile"></a>Each field is represented as an object of type <code>&lt;gdb:field&gt;</code>.
+   <p><a name="Fields-of-a-type-in-Guile"></a>
+Each field is represented as an object of type <code>&lt;gdb:field&gt;</code>.
 
    <p>The following field-related procedures are provided by the
 <code>(gdb)</code> module:

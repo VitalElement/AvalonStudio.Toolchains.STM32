@@ -5,7 +5,7 @@
 ;;; This file should be parsed by the same gengtype which wrote it.
 
 (!version  "5.2.1 20151202 (release) [ARM/embedded-5-branch revision 231848]")
-(!srcdir  "/home/build/work/GCC-5-0-build/src/gcc/gcc")
+(!srcdir  "/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc")
 (!languages 10 ada c cp fortran go java jit lto objc objcp)
 (!fileslist 197
  (!srcfile 1023  "../libcpp/include/line-map.h")
@@ -317,11 +317,11 @@
               (!srcfileloc  "tree-core.h" 809)
               nil )
              (!pair  "u"
-              (!type union 12 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/tree-core.h:811"
+              (!type union 12 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/tree-core.h:811"
                (!srcfileloc  "tree-core.h" 878)
                (!fields 6 
                 (!pair  "bits"
-                 (!type struct 13 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/tree-core.h:814"
+                 (!type struct 13 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/tree-core.h:814"
                   (!srcfileloc  "tree-core.h" 837)
                   (!fields 16 
                    (!pair  "lang_flag_0"
@@ -393,7 +393,7 @@
                  (!srcfileloc  "tree-core.h" 837)
                  nil )
                 (!pair  "int_length"
-                 (!type struct 14 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/tree-core.h:844"
+                 (!type struct 14 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/tree-core.h:844"
                   (!srcfileloc  "tree-core.h" 858)
                   (!fields 3 
                    (!pair  "unextended"
@@ -433,7 +433,7 @@
                  (!srcfileloc  "tree-core.h" 867)
                  nil )
                 (!pair  "dependence_info"
-                 (!type struct 18 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/tree-core.h:874"
+                 (!type struct 18 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/tree-core.h:874"
                   (!srcfileloc  "tree-core.h" 877)
                   (!fields 2 
                    (!pair  "clique"
@@ -2458,7 +2458,7 @@
                   (!srcfileloc  "rtl.h" 367)
                   nil )
                  (!pair  "u2"
-                  (!type union 138 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/rtl.h:369"
+                  (!type union 138 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/rtl.h:369"
                    (!srcfileloc  "rtl.h" 390)
                    (!fields 5 
                     (!pair  "original_regno"
@@ -6523,7 +6523,7 @@
                                )
                               )
                               (!pair  "x"
-                               (!type struct 322 nil  gc_used "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/basic-block.h:140"
+                               (!type struct 322 nil  gc_used "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/basic-block.h:140"
                                 (!srcfileloc  "basic-block.h" 143)
                                 (!fields 2 
                                  (!pair  "head_"
@@ -8882,7 +8882,7 @@
                               (!srcfileloc  "dwarf2out.h" 57)
                               nil )
                              (!pair  "dw_cfi_oprnd1"
-                              (!type union 452 nil  gc_used "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/dwarf2out.h:49"
+                              (!type union 452 nil  gc_used "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/dwarf2out.h:49"
                                (!srcfileloc  "dwarf2out.h" 54)
                                (!fields 4 
                                 (!pair  "dw_cfi_reg_num"
@@ -11205,7 +11205,7 @@
                  )
                 )
                 (!pair  "loc"
-                 (!type union 555 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/tree-core.h:1262"
+                 (!type union 555 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/tree-core.h:1262"
                   (!srcfileloc  "tree-core.h" 1262)
                   (!fields 2 
                    (!pair  "stmt"
@@ -13179,7 +13179,7 @@
                        (!srcfileloc  "c/c-decl.c" 226)
                        (!fields 11 
                         (!pair  "u"
-                         (!type union 642 nil  gc_used "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/c/c-decl.c:212"
+                         (!type union 642 nil  gc_used "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/c/c-decl.c:212"
                           (!srcfileloc  "c/c-decl.c" 215)
                           (!fields 2 
                            (!pair  "type"
@@ -14274,7 +14274,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 707 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/java/expr.c:2066"nil 
+ (!type struct 707 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/java/expr.c:2066"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -14466,11 +14466,11 @@
  
  (!type already_seen 722)
  
- (!type struct 723 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/fortran/trans.h:345"nil 
+ (!type struct 723 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/fortran/trans.h:345"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 724 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/fortran/trans.h:333"nil 
+ (!type struct 724 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/fortran/trans.h:333"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -14494,7 +14494,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 730 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/fortran/trans.h:33"nil 
+ (!type struct 730 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/fortran/trans.h:33"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -16038,7 +16038,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 860 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/c/c-parser.c:6198"nil 
+ (!type struct 860 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/c/c-parser.c:6198"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -16165,7 +16165,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 869 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/c-family/c-pragma.c:1187"nil 
+ (!type struct 869 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/c-family/c-pragma.c:1187"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -16734,7 +16734,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 934 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/ada/gcc-interface/decl.c:218"nil 
+ (!type struct 934 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/ada/gcc-interface/decl.c:218"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -16809,7 +16809,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 951 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/config/arm/arm-builtins.c:195"nil 
+ (!type struct 951 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/config/arm/arm-builtins.c:195"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -16967,7 +16967,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 969 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/ipa-devirt.c:174"nil 
+ (!type struct 969 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/ipa-devirt.c:174"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -17505,7 +17505,7 @@
                 (!srcfileloc  "gimple.h" 284)
                 nil )
                (!pair  "u"
-                (!type union 1038 nil  gc_used "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/gimple.h:287"
+                (!type union 1038 nil  gc_used "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/gimple.h:287"
                  (!srcfileloc  "gimple.h" 290)
                  (!fields 2 
                   (!pair  "fntype"
@@ -18732,11 +18732,11 @@
  
  (!type already_seen 1139)
  
- (!type struct 1140 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/config/arm/arm.c:3254"nil 
+ (!type struct 1140 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/config/arm/arm.c:3254"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1141 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/config/arm/arm.c:2215"nil 
+ (!type struct 1141 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/config/arm/arm.c:2215"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -19026,7 +19026,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type union 1197 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/tree-eh.c:89"nil 
+ (!type union 1197 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/tree-eh.c:89"nil 
   (!fields 0 )
   nil 0 nil )
  
@@ -19306,11 +19306,11 @@
  
  (!type already_seen 1222)
  
- (!type struct 1223 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/varasm.c:4880"nil 
+ (!type struct 1223 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/varasm.c:4880"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1224 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/varasm.c:4637"nil 
+ (!type struct 1224 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/varasm.c:4637"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -19586,7 +19586,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type union 1270 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/mcf.c:355"nil 
+ (!type union 1270 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/mcf.c:355"nil 
   (!fields 0 )
   nil 0 nil )
  
@@ -20823,11 +20823,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1436 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/dwarf2cfi.c:282"nil 
+ (!type struct 1436 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/dwarf2cfi.c:282"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1437 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/dwarf2cfi.c:240"nil 
+ (!type struct 1437 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/dwarf2cfi.c:240"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -20839,7 +20839,7 @@
   (!type pointer 1440 nil  gc_unused
    (!type already_seen 1439)
   )
-  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/dwarf2cfi.c:123"nil 
+  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/dwarf2cfi.c:123"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -23495,7 +23495,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1657 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/config/arm/arm.h:1602"nil 
+ (!type struct 1657 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/config/arm/arm.h:1602"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -24124,11 +24124,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1713 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/../libcpp/include/cpplib.h:1029"nil 
+ (!type struct 1713 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/../libcpp/include/cpplib.h:1029"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1714 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/../libcpp/include/cpplib.h:1018"nil 
+ (!type struct 1714 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/../libcpp/include/cpplib.h:1018"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -24182,7 +24182,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1723 nil  gc_unused "anonymous:/home/build/work/GCC-5-0-build/src/gcc/gcc/../libcpp/include/line-map.h:656"nil 
+ (!type struct 1723 nil  gc_unused "anonymous:/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/src/gcc/gcc/../libcpp/include/line-map.h:656"nil 
   (!fields 0 )
   nil 0 nil nil )
  

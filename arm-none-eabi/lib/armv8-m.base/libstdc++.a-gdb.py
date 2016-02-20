@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/home/build/work/GCC-5-0-build/install-native/share/gcc-arm-none-eabi'
-libdir = '/home/build/work/GCC-5-0-build/install-native/arm-none-eabi/lib/armv8-m.base'
+pythondir = '/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/install-native/share/gcc-arm-none-eabi'
+libdir = '/Users/build/workspace/GCC-5-0-build_build-toolchain-mac/gcc-arm-none-eabi-5_2-2015q4-20151219/install-native/arm-none-eabi/lib/armv8-m.base'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't

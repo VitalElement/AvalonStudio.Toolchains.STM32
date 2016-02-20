@@ -3,7 +3,7 @@
 <title>Values From Inferior In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Guile-Exception-Handling.html#Guile-Exception-Handling" title="Guile Exception Handling">
@@ -210,12 +210,12 @@ whose contents is the object pointed to by <var>value</var>.  For example, if
 <code>foo</code> is a C pointer to an <code>int</code>, declared in your C program as
 
      <pre class="smallexample">          int *foo;
-</pre>
+     </pre>
         <p class="noindent">then you can use the corresponding <code>&lt;gdb:value&gt;</code> to access what
 <code>foo</code> points to like this:
 
      <pre class="smallexample">          (define bar (value-dereference foo))
-</pre>
+     </pre>
         <p>The result <code>bar</code> will be a <code>&lt;gdb:value&gt;</code> object holding the
 value pointed to by <code>foo</code>.
 
@@ -234,7 +234,7 @@ as
           int val = 10;
           intptr ptr = &amp;val;
           intptr &amp;ptrref = ptr;
-</pre>
+     </pre>
         <p>Though <code>ptrref</code> is a reference value, one can apply the method
 <code>value-dereference</code> to the <code>&lt;gdb:value&gt;</code> object corresponding
 to it and obtain a <code>&lt;gdb:value&gt;</code> which is identical to that
@@ -245,7 +245,7 @@ object identical to that corresponding to <code>ptr</code>.
      <pre class="smallexample">          (define scm-ptrref (parse-and-eval "ptrref"))
           (define scm-val (value-dereference scm-ptrref))
           (define scm-ptr (value-referenced-value scm-ptrref))
-</pre>
+     </pre>
         <p>The <code>&lt;gdb:value&gt;</code> object <code>scm-val</code> is identical to that
 corresponding to <code>val</code>, and <code>scm-ptr</code> is identical to that
 corresponding to <code>ptr</code>.  In general, <code>value-dereference</code> can
@@ -271,7 +271,7 @@ in your C<tt>++</tt> program as
 
      <pre class="smallexample">          int val = 10;
           int &amp;ref = val;
-</pre>
+     </pre>
         <p class="noindent">then applying <code>value-dereference</code> to the <code>&lt;gdb:value&gt;</code> object
 corresponding to <code>ref</code> will result in an error, while applying
 <code>value-referenced-value</code> will result in a <code>&lt;gdb:value&gt;</code> object
@@ -280,7 +280,7 @@ identical to that corresponding to <code>val</code>.
      <pre class="smallexample">          (define scm-ref (parse-and-eval "ref"))
           (define err-ref (value-dereference scm-ref))      ;; error
           (define scm-val (value-referenced-value scm-ref)) ;; ok
-</pre>
+     </pre>
         <p>The <code>&lt;gdb:value&gt;</code> object <code>scm-val</code> is identical to that
 corresponding to <code>val</code>. 
 </p></blockquote></div>
@@ -407,7 +407,7 @@ Otherwise return <code>#f</code>.
 For example:
 
      <pre class="smallexample">          (define myval (parse-and-eval "somevar"))
-</pre>
+     </pre>
         <p>The value of <code>somevar</code> is not fetched at this time.  It will be
 fetched when the value is needed, or when the <code>fetch-lazy</code>
 procedure is invoked. 

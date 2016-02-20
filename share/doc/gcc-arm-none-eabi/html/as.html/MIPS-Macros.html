@@ -3,7 +3,7 @@
 <title>MIPS Macros - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="MIPS_002dDependent.html#MIPS_002dDependent" title="MIPS-Dependent">
 <link rel="prev" href="MIPS-Options.html#MIPS-Options" title="MIPS Options">
@@ -62,10 +62,10 @@ the second operand, and <code>ulh</code>, which implements an unaligned
 
    <p>One of the most common extensions provided by macros is to expand
 memory offsets to the full address range (32 or 64 bits) and to allow
-symbolic offsets such as &lsquo;<samp><span class="samp">my_data + 4</span></samp>&rsquo; to be used in place of
+symbolic offsets such as `<samp><span class="samp">my_data + 4</span></samp>' to be used in place of
 integer constants.  For example, the architectural instruction
 <code>lbu</code> allows only a signed 16-bit offset, whereas the macro
-<code>lbu</code> allows code such as &lsquo;<samp><span class="samp">lbu $4,array+32769($5)</span></samp>&rsquo;. 
+<code>lbu</code> allows code such as `<samp><span class="samp">lbu $4,array+32769($5)</span></samp>'. 
 The implementation of these symbolic offsets depends on several factors,
 such as whether the assembler is generating SVR4-style PIC (selected by
 <samp><span class="option">-KPIC</span></samp>, see <a href="MIPS-Options.html#MIPS-Options">Assembler options</a>), the size of symbols
@@ -101,7 +101,7 @@ it does not make any attempt to optimize them with the surrounding code.
 these macros have no relation to those defined by <code>.macro</code>,
 see <a href="Macro.html#Macro"><code>.macro</code></a>.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

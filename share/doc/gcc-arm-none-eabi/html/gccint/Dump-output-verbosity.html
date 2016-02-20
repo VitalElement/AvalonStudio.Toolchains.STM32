@@ -3,7 +3,7 @@
 <title>Dump output verbosity - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Optimization-info.html#Optimization-info" title="Optimization info">
 <link rel="prev" href="Dump-files-and-streams.html#Dump-files-and-streams" title="Dump files and streams">
@@ -58,23 +58,23 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization-info.html#Optimization-inf
 The dump verbosity has the following options
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">optimized</span></samp>&rsquo;<dd>Print information when an optimization is successfully applied. It is
+<dt>`<samp><span class="samp">optimized</span></samp>'<dd>Print information when an optimization is successfully applied. It is
 up to a pass to decide which information is relevant. For example, the
 vectorizer passes print the source location of loops which got
 successfully vectorized.
 
-     <br><dt>&lsquo;<samp><span class="samp">missed</span></samp>&rsquo;<dd>Print information about missed optimizations. Individual passes
+     <br><dt>`<samp><span class="samp">missed</span></samp>'<dd>Print information about missed optimizations. Individual passes
 control which information to include in the output. For example,
 
      <pre class="smallexample">          gcc -O2 -ftree-vectorize -fopt-info-vec-missed
-</pre>
+     </pre>
      <p>will print information about missed optimization opportunities from
 vectorization passes on stderr.
 
-     <br><dt>&lsquo;<samp><span class="samp">note</span></samp>&rsquo;<dd>Print verbose information about optimizations, such as certain
+     <br><dt>`<samp><span class="samp">note</span></samp>'<dd>Print verbose information about optimizations, such as certain
 transformations, more detailed messages about decisions etc.
 
-     <br><dt>&lsquo;<samp><span class="samp">all</span></samp>&rsquo;<dd>Print detailed optimization information. This includes
+     <br><dt>`<samp><span class="samp">all</span></samp>'<dd>Print detailed optimization information. This includes
 <var>optimized</var>, <var>missed</var>, and <var>note</var>. 
 </dl>
 

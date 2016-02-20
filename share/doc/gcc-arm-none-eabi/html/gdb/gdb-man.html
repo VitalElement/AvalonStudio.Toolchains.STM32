@@ -3,7 +3,7 @@
 <title>gdb man - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Man-Pages.html#Man-Pages" title="Man Pages">
 <link rel="next" href="gdbserver-man.html#gdbserver-man" title="gdbserver man">
@@ -59,7 +59,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Man-Pages.html#Man-Pages">Man Pages</a>
 <!-- man end -->
 
 <!-- man begin DESCRIPTION gdb -->
-   <p>The purpose of a debugger such as <span class="sc">gdb</span> is to allow you to see what is
+<p>The purpose of a debugger such as <span class="sc">gdb</span> is to allow you to see what is
 going on &ldquo;inside&rdquo; another program while it executes &ndash; or what another
 program was doing at the moment it crashed.
 
@@ -108,7 +108,7 @@ With option <samp><span class="option">-p</span></samp> you can omit the <var>pr
    <p>Here are some of the most frequently needed <span class="sc">gdb</span> commands:
 
 <!-- pod2man highlights the right hand side of the @item lines. -->
-     <dl>
+<dl>
 <dt><samp><span class="env">break [</span><var>file</var><span class="env">:]</span><var>functiop</var></samp><dd>Set a breakpoint at <var>function</var> (in <var>file</var>).
 
      <br><dt><samp><span class="env">run [</span><var>arglist</var><span class="env">]</span></samp><dd>Start your program (with <var>arglist</var>, if specified).
@@ -137,7 +137,7 @@ about using <span class="sc">gdb</span>.
 
 <!-- man end -->
 <!-- man begin OPTIONS gdb -->
-   <p>Any arguments other than options specify an executable
+<p>Any arguments other than options specify an executable
 file and core file (or process ID); that is, the first argument
 encountered with no
 associated option flag is equivalent to a <samp><span class="option">-se</span></samp> option, and the second,
@@ -192,7 +192,7 @@ download and run a program on another computer; in order to make this
 more useful, the message
 
      <pre class="smallexample">          Program exited normally.
-</pre>
+     </pre>
      <p class="noindent">(which is ordinarily issued whenever a program running under <span class="sc">gdb</span> control
 terminates) is not issued when running in batch mode.
 
@@ -203,9 +203,9 @@ instead of the current directory.
 <span class="sc">gdb</span> to output the full file name and line number in a standard,
 recognizable fashion each time a stack frame is displayed (which
 includes each time the program stops).  This recognizable format looks
-like two &lsquo;<samp><span class="samp">\032</span></samp>&rsquo; characters, followed by the file name, line number
+like two `<samp><span class="samp">\032</span></samp>' characters, followed by the file name, line number
 and character position separated by colons, and a newline.  The
-Emacs-to-<span class="sc">gdb</span> interface program uses the two &lsquo;<samp><span class="samp">\032</span></samp>&rsquo;
+Emacs-to-<span class="sc">gdb</span> interface program uses the two `<samp><span class="samp">\032</span></samp>'
 characters as a signal to display the source code for the frame.
 
      <br><dt><samp><span class="env">-b </span><var>bps</var></samp><dd>Set the line speed (baud rate or bits per second) of any serial
@@ -217,5 +217,5 @@ interface used by <span class="sc">gdb</span> for remote debugging.
 
 <!-- man begin SEEALSO gdb -->
 <!-- man end -->
-   </body></html>
+</body></html>
 

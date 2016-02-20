@@ -3,7 +3,7 @@
 <title>AArch64 Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="next" href="Adapteva-Epiphany-Options.html#Adapteva-Epiphany-Options" title="Adapteva Epiphany Options">
@@ -57,8 +57,8 @@ These options are defined for AArch64 implementations:
 
      <dl>
 <dt><code>-mabi=</code><var>name</var><dd><a name="index-mabi-1270"></a>Generate code for the specified data model.  Permissible values
-are &lsquo;<samp><span class="samp">ilp32</span></samp>&rsquo; for SysV-like data model where int, long int and pointer
-are 32-bit, and &lsquo;<samp><span class="samp">lp64</span></samp>&rsquo; for SysV-like data model where int is 32-bit,
+are `<samp><span class="samp">ilp32</span></samp>' for SysV-like data model where int, long int and pointer
+are 32-bit, and `<samp><span class="samp">lp64</span></samp>' for SysV-like data model where int is 32-bit,
 but long int and pointer are 64-bit.
 
      <p>The default depends on the specific target configuration.  Note that
@@ -66,17 +66,17 @@ the LP64 and ILP32 ABIs are not link-compatible; you must compile your
 entire program with the same ABI, and link with a compatible set of libraries.
 
      <br><dt><code>-mbig-endian</code><dd><a name="index-mbig_002dendian-1271"></a>Generate big-endian code.  This is the default when GCC is configured for an
-&lsquo;<samp><span class="samp">aarch64_be-*-*</span></samp>&rsquo; target.
+`<samp><span class="samp">aarch64_be-*-*</span></samp>' target.
 
      <br><dt><code>-mgeneral-regs-only</code><dd><a name="index-mgeneral_002dregs_002donly-1272"></a>Generate code which uses only the general registers.
 
      <br><dt><code>-mlittle-endian</code><dd><a name="index-mlittle_002dendian-1273"></a>Generate little-endian code.  This is the default when GCC is configured for an
-&lsquo;<samp><span class="samp">aarch64-*-*</span></samp>&rsquo; but not an &lsquo;<samp><span class="samp">aarch64_be-*-*</span></samp>&rsquo; target.
+`<samp><span class="samp">aarch64-*-*</span></samp>' but not an `<samp><span class="samp">aarch64_be-*-*</span></samp>' target.
 
      <br><dt><code>-mcmodel=tiny</code><dd><a name="index-mcmodel_003dtiny-1274"></a>Generate code for the tiny code model.  The program and its statically defined
 symbols must be within 1GB of each other.  Pointers are 64 bits.  Programs can
 be statically or dynamically linked.  This model is not fully implemented and
-mostly treated as &lsquo;<samp><span class="samp">small</span></samp>&rsquo;.
+mostly treated as `<samp><span class="samp">small</span></samp>'.
 
      <br><dt><code>-mcmodel=small</code><dd><a name="index-mcmodel_003dsmall-1275"></a>Generate code for the small code model.  The program and its statically defined
 symbols must be within 4GB of each other.  Pointers are 64 bits.  Programs can
@@ -108,7 +108,7 @@ corresponding flag to the linker.
      <br><dt><code>-march=</code><var>name</var><dd><a name="index-march-1286"></a>Specify the name of the target architecture, optionally suffixed by one or
 more feature modifiers.  This option has the form
 <samp><span class="option">-march=</span><var>arch</var><span class="option">{+[no]</span><var>feature</var><span class="option">}*</span></samp>, where the
-only permissible value for <var>arch</var> is &lsquo;<samp><span class="samp">armv8-a</span></samp>&rsquo;.  The permissible
+only permissible value for <var>arch</var> is `<samp><span class="samp">armv8-a</span></samp>'.  The permissible
 values for <var>feature</var> are documented in the sub-section below.
 
      <p>Where conflicting feature modifiers are specified, the right-most feature is
@@ -124,12 +124,12 @@ architecture.
 
      <br><dt><code>-mtune=</code><var>name</var><dd><a name="index-mtune-1287"></a>Specify the name of the target processor for which GCC should tune the
 performance of the code.  Permissible values for this option are:
-&lsquo;<samp><span class="samp">generic</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a53</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a57</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a72</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">exynos-m1</span></samp>&rsquo;, &lsquo;<samp><span class="samp">thunderx</span></samp>&rsquo;, &lsquo;<samp><span class="samp">xgene1</span></samp>&rsquo;.
+`<samp><span class="samp">generic</span></samp>', `<samp><span class="samp">cortex-a53</span></samp>', `<samp><span class="samp">cortex-a57</span></samp>', `<samp><span class="samp">cortex-a72</span></samp>',
+`<samp><span class="samp">exynos-m1</span></samp>', `<samp><span class="samp">thunderx</span></samp>', `<samp><span class="samp">xgene1</span></samp>'.
 
      <p>Additionally, this option can specify that GCC should tune the performance
 of the code for a big.LITTLE system.  Permissible values for this
-option are: &lsquo;<samp><span class="samp">cortex-a57.cortex-a53</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a72.cortex-a53</span></samp>&rsquo;.
+option are: `<samp><span class="samp">cortex-a57.cortex-a53</span></samp>', `<samp><span class="samp">cortex-a72.cortex-a53</span></samp>'.
 
      <p>Where none of <samp><span class="option">-mtune=</span></samp>, <samp><span class="option">-mcpu=</span></samp> or <samp><span class="option">-march=</span></samp>
 are specified, the code is tuned to perform well across a range
@@ -163,10 +163,10 @@ over the appropriate part of this option.
 the following:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">crc</span></samp>&rsquo;<dd>Enable CRC extension. 
-<br><dt>&lsquo;<samp><span class="samp">crypto</span></samp>&rsquo;<dd>Enable Crypto extension.  This implies Advanced SIMD is enabled. 
-<br><dt>&lsquo;<samp><span class="samp">fp</span></samp>&rsquo;<dd>Enable floating-point instructions. 
-<br><dt>&lsquo;<samp><span class="samp">simd</span></samp>&rsquo;<dd>Enable Advanced SIMD instructions.  This implies floating-point instructions
+<dt>`<samp><span class="samp">crc</span></samp>'<dd>Enable CRC extension. 
+<br><dt>`<samp><span class="samp">crypto</span></samp>'<dd>Enable Crypto extension.  This implies Advanced SIMD is enabled. 
+<br><dt>`<samp><span class="samp">fp</span></samp>'<dd>Enable floating-point instructions. 
+<br><dt>`<samp><span class="samp">simd</span></samp>'<dd>Enable Advanced SIMD instructions.  This implies floating-point instructions
 are enabled.  This is the default for all current possible values for options
 <samp><span class="option">-march</span></samp> and <samp><span class="option">-mcpu=</span></samp>. 
 </dl>

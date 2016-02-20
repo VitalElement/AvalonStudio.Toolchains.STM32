@@ -3,7 +3,7 @@
 <title>Nios II Relocations - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="NiosII_002dDependent.html#NiosII_002dDependent" title="NiosII-Dependent">
 <link rel="prev" href="Nios-II-Syntax.html#Nios-II-Syntax" title="Nios II Syntax">
@@ -55,14 +55,14 @@ one if the 15th bit is set.
 
      <p>The value of <code>%hiadj(</code><var>expression</var><code>)</code> is:
      <pre class="smallexample">          ((<var>expression</var> &gt;&gt; 16) &amp; 0xffff) + ((<var>expression</var> &gt;&gt; 15) &amp; 0x01)
-</pre>
+     </pre>
      <p>The <code>%hiadj</code> relocation is intended to be used with
 the <code>addi</code>, <code>ld</code> or <code>st</code> instructions
 along with a <code>%lo</code>, in order to load a 32-bit constant.
 
      <pre class="smallexample">          movhi r2, %hiadj(symbol)
           addi r2, r2, %lo(symbol)
-</pre>
+     </pre>
      <p><a name="index-g_t_0040code_007bhi_007d-directive_002c-Nios-II-1679"></a><br><dt><code>%hi(</code><var>expression</var><code>)</code><dd>Extract the upper 16 bits of <var>expression</var>.
 
      <p><a name="index-g_t_0040code_007blo_007d-directive_002c-Nios-II-1680"></a><br><dt><code>%lo(</code><var>expression</var><code>)</code><dd>Extract the lower 16 bits of <var>expression</var>.
@@ -79,7 +79,7 @@ takes a 16-bit immediate to access.
           	.int 123
           	.section .text
           	ldw r4, %gprel(fastint)(gp)
-</pre>
+     </pre>
      <p><a name="index-g_t_0040code_007bcall_007d-directive_002c-Nios-II-1682"></a><a name="index-g_t_0040code_007bcall_005flo_007d-directive_002c-Nios-II-1683"></a><a name="index-g_t_0040code_007bcall_005fhiadj_007d-directive_002c-Nios-II-1684"></a><a name="index-g_t_0040code_007bgot_007d-directive_002c-Nios-II-1685"></a><a name="index-g_t_0040code_007bgot_005flo_007d-directive_002c-Nios-II-1686"></a><a name="index-g_t_0040code_007bgot_005fhiadj_007d-directive_002c-Nios-II-1687"></a><a name="index-g_t_0040code_007bgotoff_007d-directive_002c-Nios-II-1688"></a><a name="index-g_t_0040code_007bgotoff_005flo_007d-directive_002c-Nios-II-1689"></a><a name="index-g_t_0040code_007bgotoff_005fhiadj_007d-directive_002c-Nios-II-1690"></a><a name="index-g_t_0040code_007btls_005fgd_007d-directive_002c-Nios-II-1691"></a><a name="index-g_t_0040code_007btls_005fie_007d-directive_002c-Nios-II-1692"></a><a name="index-g_t_0040code_007btls_005fle_007d-directive_002c-Nios-II-1693"></a><a name="index-g_t_0040code_007btls_005fldm_007d-directive_002c-Nios-II-1694"></a><a name="index-g_t_0040code_007btls_005fldo_007d-directive_002c-Nios-II-1695"></a><br><dt><code>%call(</code><var>expression</var><code>)</code><br><dt><code>%call_lo(</code><var>expression</var><code>)</code><br><dt><code>%call_hiadj(</code><var>expression</var><code>)</code><dt><code>%got(</code><var>expression</var><code>)</code><dt><code>%got_lo(</code><var>expression</var><code>)</code><dt><code>%got_hiadj(</code><var>expression</var><code>)</code><dt><code>%gotoff(</code><var>expression</var><code>)</code><dt><code>%gotoff_lo(</code><var>expression</var><code>)</code><dt><code>%gotoff_hiadj(</code><var>expression</var><code>)</code><dt><code>%tls_gd(</code><var>expression</var><code>)</code><dt><code>%tls_ie(</code><var>expression</var><code>)</code><dt><code>%tls_le(</code><var>expression</var><code>)</code><dt><code>%tls_ldm(</code><var>expression</var><code>)</code><dt><code>%tls_ldo(</code><var>expression</var><code>)</code><dd>
 These relocations support the ABI for Linux Systems documented in the
 <cite>Nios II Processor Reference Handbook</cite>. 

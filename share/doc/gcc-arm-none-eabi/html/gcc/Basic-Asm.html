@@ -3,7 +3,7 @@
 <title>Basic Asm - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Using-Assembly-Language-with-C.html#Using-Assembly-Language-with-C" title="Using Assembly Language with C">
 <link rel="next" href="Extended-Asm.html#Extended-Asm" title="Extended Asm">
@@ -80,7 +80,7 @@ does not know what they mean or even whether they are valid assembler input.
      <p>You may place multiple assembler instructions together in a single <code>asm</code>
 string, separated by the characters normally used in assembly code for the
 system. A combination that works in most places is a newline to break the
-line, plus a tab character (written as &lsquo;<samp><span class="samp">\n\t</span></samp>&rsquo;). 
+line, plus a tab character (written as `<samp><span class="samp">\n\t</span></samp>'). 
 Some assemblers allow semicolons as a line separator. However,
 note that some assembler dialects use semicolons to start a comment. 
 </dl>
@@ -131,11 +131,11 @@ those symbols as unreferenced.
 
  <p>The compiler copies the assembler instructions in a basic <code>asm</code>
 verbatim to the assembly language output file, without
-processing dialects or any of the &lsquo;<samp><span class="samp">%</span></samp>&rsquo; operators that are available with
+processing dialects or any of the `<samp><span class="samp">%</span></samp>' operators that are available with
 extended <code>asm</code>. This results in minor differences between basic
 <code>asm</code> strings and extended <code>asm</code> templates. For example, to refer to
-registers you might use &lsquo;<samp><span class="samp">%eax</span></samp>&rsquo; in basic <code>asm</code> and
-&lsquo;<samp><span class="samp">%%eax</span></samp>&rsquo; in extended <code>asm</code>.
+registers you might use `<samp><span class="samp">%eax</span></samp>' in basic <code>asm</code> and
+`<samp><span class="samp">%%eax</span></samp>' in extended <code>asm</code>.
 
  <p>On targets such as x86 that support multiple assembler dialects,
 all basic <code>asm</code> blocks use the assembler dialect specified by the

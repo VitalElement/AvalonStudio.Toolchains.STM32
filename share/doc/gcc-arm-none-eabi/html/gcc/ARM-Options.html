@@ -3,7 +3,7 @@
 <title>ARM Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="ARC-Options.html#ARC-Options" title="ARC Options">
@@ -55,11 +55,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 <h4 class="subsection">3.17.4 ARM Options</h4>
 
 <p><a name="index-ARM-options-1393"></a>
-These &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; options are defined for the ARM port:
+These `<samp><span class="samp">-m</span></samp>' options are defined for the ARM port:
 
      <dl>
-<dt><code>-mabi=</code><var>name</var><dd><a name="index-mabi-1394"></a>Generate code for the specified ABI.  Permissible values are: &lsquo;<samp><span class="samp">apcs-gnu</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">atpcs</span></samp>&rsquo;, &lsquo;<samp><span class="samp">aapcs</span></samp>&rsquo;, &lsquo;<samp><span class="samp">aapcs-linux</span></samp>&rsquo; and &lsquo;<samp><span class="samp">iwmmxt</span></samp>&rsquo;.
+<dt><code>-mabi=</code><var>name</var><dd><a name="index-mabi-1394"></a>Generate code for the specified ABI.  Permissible values are: `<samp><span class="samp">apcs-gnu</span></samp>',
+`<samp><span class="samp">atpcs</span></samp>', `<samp><span class="samp">aapcs</span></samp>', `<samp><span class="samp">aapcs-linux</span></samp>' and `<samp><span class="samp">iwmmxt</span></samp>'.
 
      <br><dt><code>-mapcs-frame</code><dd><a name="index-mapcs_002dframe-1395"></a>Generate a stack frame that is compliant with the ARM Procedure Call
 Standard for all functions, even if this is not strictly necessary for
@@ -86,13 +86,13 @@ locate the start of functions inside an executable piece of code.  The
 default is <samp><span class="option">-msched-prolog</span></samp>.
 
      <br><dt><code>-mfloat-abi=</code><var>name</var><dd><a name="index-mfloat_002dabi-1399"></a>Specifies which floating-point ABI to use.  Permissible values
-are: &lsquo;<samp><span class="samp">soft</span></samp>&rsquo;, &lsquo;<samp><span class="samp">softfp</span></samp>&rsquo; and &lsquo;<samp><span class="samp">hard</span></samp>&rsquo;.
+are: `<samp><span class="samp">soft</span></samp>', `<samp><span class="samp">softfp</span></samp>' and `<samp><span class="samp">hard</span></samp>'.
 
-     <p>Specifying &lsquo;<samp><span class="samp">soft</span></samp>&rsquo; causes GCC to generate output containing
+     <p>Specifying `<samp><span class="samp">soft</span></samp>' causes GCC to generate output containing
 library calls for floating-point operations. 
-&lsquo;<samp><span class="samp">softfp</span></samp>&rsquo; allows the generation of code using hardware floating-point
+`<samp><span class="samp">softfp</span></samp>' allows the generation of code using hardware floating-point
 instructions, but still uses the soft-float calling conventions. 
-&lsquo;<samp><span class="samp">hard</span></samp>&rsquo; allows generation of floating-point instructions
+`<samp><span class="samp">hard</span></samp>' allows generation of floating-point instructions
 and uses FPU-specific calling conventions.
 
      <p>The default depends on the specific target configuration.  Note that
@@ -109,15 +109,15 @@ to compile code for a little-endian processor.
      <br><dt><code>-march=</code><var>name</var><dd><a name="index-march-1402"></a>This specifies the name of the target ARM architecture.  GCC uses this
 name to determine what kind of instructions it can emit when generating
 assembly code.  This option can be used in conjunction with or instead
-of the <samp><span class="option">-mcpu=</span></samp> option.  Permissible names are: &lsquo;<samp><span class="samp">armv2</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv2a</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv3</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv3m</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv4</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv4t</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv5</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv5t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv5e</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv5te</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv6</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv6j</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv6t2</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv6z</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv6zk</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv6-m</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv7</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv7-a</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv7-r</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv7-m</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv7e-m</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv7ve</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv8-a</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv8-a+crc</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">armv8-m.base</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv8-m.main</span></samp>&rsquo;, &lsquo;<samp><span class="samp">armv8-m.main+dsp</span></samp>&rsquo;
-&lsquo;<samp><span class="samp">iwmmxt</span></samp>&rsquo;, &lsquo;<samp><span class="samp">iwmmxt2</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ep9312</span></samp>&rsquo;.
+of the <samp><span class="option">-mcpu=</span></samp> option.  Permissible names are: `<samp><span class="samp">armv2</span></samp>',
+`<samp><span class="samp">armv2a</span></samp>', `<samp><span class="samp">armv3</span></samp>', `<samp><span class="samp">armv3m</span></samp>', `<samp><span class="samp">armv4</span></samp>', `<samp><span class="samp">armv4t</span></samp>',
+`<samp><span class="samp">armv5</span></samp>', `<samp><span class="samp">armv5t</span></samp>', `<samp><span class="samp">armv5e</span></samp>', `<samp><span class="samp">armv5te</span></samp>',
+`<samp><span class="samp">armv6</span></samp>', `<samp><span class="samp">armv6j</span></samp>',
+`<samp><span class="samp">armv6t2</span></samp>', `<samp><span class="samp">armv6z</span></samp>', `<samp><span class="samp">armv6zk</span></samp>', `<samp><span class="samp">armv6-m</span></samp>',
+`<samp><span class="samp">armv7</span></samp>', `<samp><span class="samp">armv7-a</span></samp>', `<samp><span class="samp">armv7-r</span></samp>', `<samp><span class="samp">armv7-m</span></samp>', `<samp><span class="samp">armv7e-m</span></samp>',
+`<samp><span class="samp">armv7ve</span></samp>', `<samp><span class="samp">armv8-a</span></samp>', `<samp><span class="samp">armv8-a+crc</span></samp>',
+`<samp><span class="samp">armv8-m.base</span></samp>', `<samp><span class="samp">armv8-m.main</span></samp>', `<samp><span class="samp">armv8-m.main+dsp</span></samp>'
+`<samp><span class="samp">iwmmxt</span></samp>', `<samp><span class="samp">iwmmxt2</span></samp>', `<samp><span class="samp">ep9312</span></samp>'.
 
      <p><samp><span class="option">-march=armv7ve</span></samp> is the armv7-a architecture with virtualization
 extensions.
@@ -134,47 +134,47 @@ is unsuccessful the option has no effect.
 which GCC should tune the performance of the code. 
 For some ARM implementations better performance can be obtained by using
 this option. 
-Permissible names are: &lsquo;<samp><span class="samp">arm2</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm250</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm3</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm6</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm60</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm600</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm610</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm620</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7m</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7d</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7dm</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm7di</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7dmi</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm70</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm700</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm700i</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm710</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm710c</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7100</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm720</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm7500</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7500fe</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7tdmi</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm7tdmi-s</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm710t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm720t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm740t</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">strongarm</span></samp>&rsquo;, &lsquo;<samp><span class="samp">strongarm110</span></samp>&rsquo;, &lsquo;<samp><span class="samp">strongarm1100</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">strongarm1110</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm8</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm810</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm9</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm9e</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm920</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm920t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm922t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm946e-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm966e-s</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm968e-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm926ej-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm940t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm9tdmi</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm10tdmi</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1020t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1026ej-s</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm10e</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1020e</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1022e</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm1136j-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1136jf-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mpcore</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mpcorenovfp</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">arm1156t2-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1156t2f-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1176jz-s</span></samp>&rsquo;, &lsquo;<samp><span class="samp">arm1176jzf-s</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-a5</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a7</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a8</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a9</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-a12</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a15</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a53</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-a57</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a72</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-r4</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-r4f</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-r5</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-r7</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-m7</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m4</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m3</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m1</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m0</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m0plus</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m1.small-multiply</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m0.small-multiply</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-m0plus.small-multiply</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">exynos-m1</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">marvell-pj4</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">xscale</span></samp>&rsquo;, &lsquo;<samp><span class="samp">iwmmxt</span></samp>&rsquo;, &lsquo;<samp><span class="samp">iwmmxt2</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ep9312</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">fa526</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fa626</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">fa606te</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fa626te</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fmp626</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fa726te</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">xgene1</span></samp>&rsquo;.
+Permissible names are: `<samp><span class="samp">arm2</span></samp>', `<samp><span class="samp">arm250</span></samp>',
+`<samp><span class="samp">arm3</span></samp>', `<samp><span class="samp">arm6</span></samp>', `<samp><span class="samp">arm60</span></samp>', `<samp><span class="samp">arm600</span></samp>', `<samp><span class="samp">arm610</span></samp>',
+`<samp><span class="samp">arm620</span></samp>', `<samp><span class="samp">arm7</span></samp>', `<samp><span class="samp">arm7m</span></samp>', `<samp><span class="samp">arm7d</span></samp>', `<samp><span class="samp">arm7dm</span></samp>',
+`<samp><span class="samp">arm7di</span></samp>', `<samp><span class="samp">arm7dmi</span></samp>', `<samp><span class="samp">arm70</span></samp>', `<samp><span class="samp">arm700</span></samp>',
+`<samp><span class="samp">arm700i</span></samp>', `<samp><span class="samp">arm710</span></samp>', `<samp><span class="samp">arm710c</span></samp>', `<samp><span class="samp">arm7100</span></samp>',
+`<samp><span class="samp">arm720</span></samp>',
+`<samp><span class="samp">arm7500</span></samp>', `<samp><span class="samp">arm7500fe</span></samp>', `<samp><span class="samp">arm7tdmi</span></samp>', `<samp><span class="samp">arm7tdmi-s</span></samp>',
+`<samp><span class="samp">arm710t</span></samp>', `<samp><span class="samp">arm720t</span></samp>', `<samp><span class="samp">arm740t</span></samp>',
+`<samp><span class="samp">strongarm</span></samp>', `<samp><span class="samp">strongarm110</span></samp>', `<samp><span class="samp">strongarm1100</span></samp>',
+`<samp><span class="samp">strongarm1110</span></samp>',
+`<samp><span class="samp">arm8</span></samp>', `<samp><span class="samp">arm810</span></samp>', `<samp><span class="samp">arm9</span></samp>', `<samp><span class="samp">arm9e</span></samp>', `<samp><span class="samp">arm920</span></samp>',
+`<samp><span class="samp">arm920t</span></samp>', `<samp><span class="samp">arm922t</span></samp>', `<samp><span class="samp">arm946e-s</span></samp>', `<samp><span class="samp">arm966e-s</span></samp>',
+`<samp><span class="samp">arm968e-s</span></samp>', `<samp><span class="samp">arm926ej-s</span></samp>', `<samp><span class="samp">arm940t</span></samp>', `<samp><span class="samp">arm9tdmi</span></samp>',
+`<samp><span class="samp">arm10tdmi</span></samp>', `<samp><span class="samp">arm1020t</span></samp>', `<samp><span class="samp">arm1026ej-s</span></samp>',
+`<samp><span class="samp">arm10e</span></samp>', `<samp><span class="samp">arm1020e</span></samp>', `<samp><span class="samp">arm1022e</span></samp>',
+`<samp><span class="samp">arm1136j-s</span></samp>', `<samp><span class="samp">arm1136jf-s</span></samp>', `<samp><span class="samp">mpcore</span></samp>', `<samp><span class="samp">mpcorenovfp</span></samp>',
+`<samp><span class="samp">arm1156t2-s</span></samp>', `<samp><span class="samp">arm1156t2f-s</span></samp>', `<samp><span class="samp">arm1176jz-s</span></samp>', `<samp><span class="samp">arm1176jzf-s</span></samp>',
+`<samp><span class="samp">cortex-a5</span></samp>', `<samp><span class="samp">cortex-a7</span></samp>', `<samp><span class="samp">cortex-a8</span></samp>', `<samp><span class="samp">cortex-a9</span></samp>',
+`<samp><span class="samp">cortex-a12</span></samp>', `<samp><span class="samp">cortex-a15</span></samp>', `<samp><span class="samp">cortex-a53</span></samp>',
+`<samp><span class="samp">cortex-a57</span></samp>', `<samp><span class="samp">cortex-a72</span></samp>',
+`<samp><span class="samp">cortex-r4</span></samp>',
+`<samp><span class="samp">cortex-r4f</span></samp>', `<samp><span class="samp">cortex-r5</span></samp>', `<samp><span class="samp">cortex-r7</span></samp>', `<samp><span class="samp">cortex-m7</span></samp>',
+`<samp><span class="samp">cortex-m4</span></samp>',
+`<samp><span class="samp">cortex-m3</span></samp>',
+`<samp><span class="samp">cortex-m1</span></samp>',
+`<samp><span class="samp">cortex-m0</span></samp>',
+`<samp><span class="samp">cortex-m0plus</span></samp>',
+`<samp><span class="samp">cortex-m1.small-multiply</span></samp>',
+`<samp><span class="samp">cortex-m0.small-multiply</span></samp>',
+`<samp><span class="samp">cortex-m0plus.small-multiply</span></samp>',
+`<samp><span class="samp">exynos-m1</span></samp>',
+`<samp><span class="samp">marvell-pj4</span></samp>',
+`<samp><span class="samp">xscale</span></samp>', `<samp><span class="samp">iwmmxt</span></samp>', `<samp><span class="samp">iwmmxt2</span></samp>', `<samp><span class="samp">ep9312</span></samp>',
+`<samp><span class="samp">fa526</span></samp>', `<samp><span class="samp">fa626</span></samp>',
+`<samp><span class="samp">fa606te</span></samp>', `<samp><span class="samp">fa626te</span></samp>', `<samp><span class="samp">fmp626</span></samp>', `<samp><span class="samp">fa726te</span></samp>',
+`<samp><span class="samp">xgene1</span></samp>'.
 
      <p>Additionally, this option can specify that GCC should tune the performance
 of the code for a big.LITTLE system.  Permissible names are:
-&lsquo;<samp><span class="samp">cortex-a15.cortex-a7</span></samp>&rsquo;, &lsquo;<samp><span class="samp">cortex-a57.cortex-a53</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">cortex-a72.cortex-a53</span></samp>&rsquo;.
+`<samp><span class="samp">cortex-a15.cortex-a7</span></samp>', `<samp><span class="samp">cortex-a57.cortex-a53</span></samp>',
+`<samp><span class="samp">cortex-a72.cortex-a53</span></samp>'.
 
      <p><samp><span class="option">-mtune=generic-</span><var>arch</var></samp> specifies that GCC should tune the
 performance for a blend of processors within architecture <var>arch</var>. 
@@ -208,18 +208,18 @@ GNU/Linux, and not all architectures are recognized.  If the auto-detect
 is unsuccessful the option has no effect.
 
      <br><dt><code>-mfpu=</code><var>name</var><dd><a name="index-mfpu-1405"></a>This specifies what floating-point hardware (or hardware emulation) is
-available on the target.  Permissible names are: &lsquo;<samp><span class="samp">vfp</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vfpv3</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">vfpv3-fp16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vfpv3-d16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vfpv3-d16-fp16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vfpv3xd</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">vfpv3xd-fp16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">neon</span></samp>&rsquo;, &lsquo;<samp><span class="samp">neon-fp16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vfpv4</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">vfpv4-d16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fpv4-sp-d16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">neon-vfpv4</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">fpv5-d16</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fpv5-sp-d16</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">fp-armv8</span></samp>&rsquo;, &lsquo;<samp><span class="samp">neon-fp-armv8</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">crypto-neon-fp-armv8</span></samp>&rsquo;.
+available on the target.  Permissible names are: `<samp><span class="samp">vfp</span></samp>', `<samp><span class="samp">vfpv3</span></samp>',
+`<samp><span class="samp">vfpv3-fp16</span></samp>', `<samp><span class="samp">vfpv3-d16</span></samp>', `<samp><span class="samp">vfpv3-d16-fp16</span></samp>', `<samp><span class="samp">vfpv3xd</span></samp>',
+`<samp><span class="samp">vfpv3xd-fp16</span></samp>', `<samp><span class="samp">neon</span></samp>', `<samp><span class="samp">neon-fp16</span></samp>', `<samp><span class="samp">vfpv4</span></samp>',
+`<samp><span class="samp">vfpv4-d16</span></samp>', `<samp><span class="samp">fpv4-sp-d16</span></samp>', `<samp><span class="samp">neon-vfpv4</span></samp>',
+`<samp><span class="samp">fpv5-d16</span></samp>', `<samp><span class="samp">fpv5-sp-d16</span></samp>',
+`<samp><span class="samp">fp-armv8</span></samp>', `<samp><span class="samp">neon-fp-armv8</span></samp>', and `<samp><span class="samp">crypto-neon-fp-armv8</span></samp>'.
 
      <p>If <samp><span class="option">-msoft-float</span></samp> is specified this specifies the format of
 floating-point values.
 
      <p>If the selected floating-point hardware includes the NEON extension
-(e.g. <samp><span class="option">-mfpu</span></samp>=&lsquo;<samp><span class="samp">neon</span></samp>&rsquo;), note that floating-point
+(e.g. <samp><span class="option">-mfpu</span></samp>=`<samp><span class="samp">neon</span></samp>'), note that floating-point
 operations are not generated by GCC's auto-vectorization pass unless
 <samp><span class="option">-funsafe-math-optimizations</span></samp> is also specified.  This is
 because NEON hardware does not fully implement the IEEE 754 standard for
@@ -227,8 +227,8 @@ floating-point arithmetic (in particular denormal values are treated as
 zero), so the use of NEON instructions may lead to a loss of precision.
 
      <br><dt><code>-mfp16-format=</code><var>name</var><dd><a name="index-mfp16_002dformat-1406"></a>Specify the format of the <code>__fp16</code> half-precision floating-point type. 
-Permissible names are &lsquo;<samp><span class="samp">none</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ieee</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">alternative</span></samp>&rsquo;;
-the default is &lsquo;<samp><span class="samp">none</span></samp>&rsquo;, in which case the <code>__fp16</code> type is not
+Permissible names are `<samp><span class="samp">none</span></samp>', `<samp><span class="samp">ieee</span></samp>', and `<samp><span class="samp">alternative</span></samp>';
+the default is `<samp><span class="samp">none</span></samp>', in which case the <code>__fp16</code> type is not
 defined.  See <a href="Half_002dPrecision.html#Half_002dPrecision">Half-Precision</a>, for more information.
 
      <br><dt><code>-mstructure-size-boundary=</code><var>n</var><dd><a name="index-mstructure_002dsize_002dboundary-1407"></a>The sizes of all structures and unions are rounded up to a multiple
@@ -279,8 +279,8 @@ before execution begins.
      <br><dt><code>-mpic-register=</code><var>reg</var><dd><a name="index-mpic_002dregister-1412"></a>Specify the register to be used for PIC addressing. 
 For standard PIC base case, the default is any suitable register
 determined by compiler.  For single PIC base case, the default is
-&lsquo;<samp><span class="samp">R9</span></samp>&rsquo; if target is EABI based or stack-checking is enabled,
-otherwise the default is &lsquo;<samp><span class="samp">R10</span></samp>&rsquo;.
+`<samp><span class="samp">R9</span></samp>' if target is EABI based or stack-checking is enabled,
+otherwise the default is `<samp><span class="samp">R10</span></samp>'.
 
      <br><dt><code>-mpic-data-is-text-relative</code><dd><a name="index-mpic_002ddata_002dis_002dtext_002drelative-1413"></a>Assume that each data segments are relative to text segment at load time. 
 Therefore, it permits addressing data using PC-relative operations. 
@@ -298,7 +298,7 @@ preceding the function prologue.  The generated code is similar to this:
                    mov     ip, sp
                    stmfd   sp!, {fp, ip, lr, pc}
                    sub     fp, ip, #4
-</pre>
+     </pre>
      <p>When performing a stack backtrace, code can inspect the value of
 <code>pc</code> stored at <code>fp + 0</code>.  If the trace function then looks at
 location <code>pc - 12</code> and the top 8 bits are set, then we know that
@@ -334,16 +334,16 @@ is not valid in AAPCS configurations because interworking is enabled
 by default.
 
      <br><dt><code>-mtp=</code><var>name</var><dd><a name="index-mtp-1421"></a>Specify the access model for the thread local storage pointer.  The valid
-models are &lsquo;<samp><span class="samp">soft</span></samp>&rsquo;, which generates calls to <code>__aeabi_read_tp</code>,
-&lsquo;<samp><span class="samp">cp15</span></samp>&rsquo;, which fetches the thread pointer from <code>cp15</code> directly
-(supported in the arm6k architecture), and &lsquo;<samp><span class="samp">auto</span></samp>&rsquo;, which uses the
+models are `<samp><span class="samp">soft</span></samp>', which generates calls to <code>__aeabi_read_tp</code>,
+`<samp><span class="samp">cp15</span></samp>', which fetches the thread pointer from <code>cp15</code> directly
+(supported in the arm6k architecture), and `<samp><span class="samp">auto</span></samp>', which uses the
 best available method for the selected processor.  The default setting is
-&lsquo;<samp><span class="samp">auto</span></samp>&rsquo;.
+`<samp><span class="samp">auto</span></samp>'.
 
      <br><dt><code>-mtls-dialect=</code><var>dialect</var><dd><a name="index-mtls_002ddialect-1422"></a>Specify the dialect to use for accessing thread local storage.  Two
-<var>dialect</var>s are supported&mdash;&lsquo;<samp><span class="samp">gnu</span></samp>&rsquo; and &lsquo;<samp><span class="samp">gnu2</span></samp>&rsquo;.  The
-&lsquo;<samp><span class="samp">gnu</span></samp>&rsquo; dialect selects the original GNU scheme for supporting
-local and global dynamic TLS models.  The &lsquo;<samp><span class="samp">gnu2</span></samp>&rsquo; dialect
+<var>dialect</var>s are supported&mdash;`<samp><span class="samp">gnu</span></samp>' and `<samp><span class="samp">gnu2</span></samp>'.  The
+`<samp><span class="samp">gnu</span></samp>' dialect selects the original GNU scheme for supporting
+local and global dynamic TLS models.  The `<samp><span class="samp">gnu2</span></samp>' dialect
 selects the GNU descriptor scheme, which provides better performance
 for shared libraries.  The GNU descriptor scheme is compatible with
 the original scheme, but does require new assembler, linker and

@@ -3,7 +3,7 @@
 <title>Parameters In Guile - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Guile-API.html#Guile-API" title="Guile API">
 <link rel="prev" href="Commands-In-Guile.html#Commands-In-Guile" title="Commands In Guile">
@@ -69,7 +69,7 @@ the parameter to <span class="sc">gdb</span> from <code>make-parameter</code>.
 <div class="defun">
 &mdash; Scheme Procedure: <b>(</b><var>make-parameter name </var><span class="roman">[</span><var>#:command-class command-class</var><span class="roman">]</span> <span class="roman">[</span><var>#:parameter-type parameter-type</var>] <span class="roman">[</span><var>#:enum-list enum-list</var><span class="roman">]</span> <span class="roman">[</span><var>#:set-func set-func</var>] <span class="roman">[</span><var>#:show-func show-func</var>] <span class="roman">[</span><var>#:doc doc</var>] <span class="roman">[</span><var>#:set-doc set-doc</var>] <span class="roman">[</span><var>#:show-doc show-doc</var>] <span class="roman">[</span><var>#:initial-value initial-value</var>])<var><a name="index-g_t_0028-2536"></a></var><br>
 <blockquote>
-        <p>The argument <var>name</var> is the name of the new parameter.  If <var>name</var>
+<p>The argument <var>name</var> is the name of the new parameter.  If <var>name</var>
 consists of multiple words, then the initial words are looked for as prefix
 parameters.  An example of this can be illustrated with the
 <code>set print</code> set of parameters.  If <var>name</var> is
@@ -85,12 +85,12 @@ with <code>register-parameter!</code>.
 
         <p>The rest of the arguments are optional.
 
-        <p>The argument <var>command-class</var> should be one of the &lsquo;<samp><span class="samp">COMMAND_</span></samp>&rsquo; constants
+        <p>The argument <var>command-class</var> should be one of the `<samp><span class="samp">COMMAND_</span></samp>' constants
 (see <a href="Commands-In-Guile.html#Commands-In-Guile">Commands In Guile</a>).  This argument tells <span class="sc">gdb</span> how to
 categorize the new parameter in the help system. 
 The default is <code>COMMAND_NONE</code>.
 
-        <p>The argument <var>parameter-type</var> should be one of the &lsquo;<samp><span class="samp">PARAM_</span></samp>&rsquo; constants
+        <p>The argument <var>parameter-type</var> should be one of the `<samp><span class="samp">PARAM_</span></samp>' constants
 defined below.  This argument tells <span class="sc">gdb</span> the type of the new
 parameter; this information is used for input validation and
 completion.  The default is <code>PARAM_BOOLEAN</code>.
@@ -110,7 +110,7 @@ The value of the parameter has already been set to the new value.
 This function must return a string to be displayed to the user. 
 <span class="sc">gdb</span> will add a trailing newline if the string is non-empty. 
 <span class="sc">gdb</span> generally doesn't print anything when a parameter is set,
-thus typically this function should return &lsquo;<samp><span class="samp">""</span></samp>&rsquo;. 
+thus typically this function should return `<samp><span class="samp">""</span></samp>'. 
 A non-empty string result should typically be used for displaying warnings
 and errors.
 
@@ -173,9 +173,9 @@ module:
 <dt><code>PARAM_BOOLEAN</code><a name="index-PARAM_005fBOOLEAN-2541"></a><dd>The value is a plain boolean.  The Guile boolean values, <code>#t</code>
 and <code>#f</code> are the only valid values.
 
-     <br><dt><code>PARAM_AUTO_BOOLEAN</code><a name="index-PARAM_005fAUTO_005fBOOLEAN-2542"></a><dd>The value has three possible states: true, false, and &lsquo;<samp><span class="samp">auto</span></samp>&rsquo;.  In
+     <br><dt><code>PARAM_AUTO_BOOLEAN</code><a name="index-PARAM_005fAUTO_005fBOOLEAN-2542"></a><dd>The value has three possible states: true, false, and `<samp><span class="samp">auto</span></samp>'.  In
 Guile, true and false are represented using boolean constants, and
-&lsquo;<samp><span class="samp">auto</span></samp>&rsquo; is represented using <code>#:auto</code>.
+`<samp><span class="samp">auto</span></samp>' is represented using <code>#:auto</code>.
 
      <br><dt><code>PARAM_UINTEGER</code><a name="index-PARAM_005fUINTEGER-2543"></a><dd>The value is an unsigned integer.  The value of 0 should be
 interpreted to mean &ldquo;unlimited&rdquo;.
@@ -184,12 +184,12 @@ interpreted to mean &ldquo;unlimited&rdquo;.
 
      <br><dt><code>PARAM_ZUINTEGER</code><a name="index-PARAM_005fZUINTEGER-2545"></a><dd>The value is an unsigned integer.
 
-     <br><dt><code>PARAM_ZUINTEGER_UNLIMITED</code><a name="index-PARAM_005fZUINTEGER_005fUNLIMITED-2546"></a><dd>The value is an integer in the range &lsquo;<samp><span class="samp">[0, INT_MAX]</span></samp>&rsquo;. 
-A value of &lsquo;<samp><span class="samp">-1</span></samp>&rsquo; means &ldquo;unlimited&rdquo;, and other negative
+     <br><dt><code>PARAM_ZUINTEGER_UNLIMITED</code><a name="index-PARAM_005fZUINTEGER_005fUNLIMITED-2546"></a><dd>The value is an integer in the range `<samp><span class="samp">[0, INT_MAX]</span></samp>'. 
+A value of `<samp><span class="samp">-1</span></samp>' means &ldquo;unlimited&rdquo;, and other negative
 numbers are not allowed.
 
      <br><dt><code>PARAM_STRING</code><a name="index-PARAM_005fSTRING-2547"></a><dd>The value is a string.  When the user modifies the string, any escape
-sequences, such as &lsquo;<samp><span class="samp">\t</span></samp>&rsquo;, &lsquo;<samp><span class="samp">\f</span></samp>&rsquo;, and octal escapes, are
+sequences, such as `<samp><span class="samp">\t</span></samp>', `<samp><span class="samp">\f</span></samp>', and octal escapes, are
 translated into corresponding characters and encoded into the current
 host charset.
 
@@ -210,7 +210,7 @@ constants provided when the parameter is created.
 <h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Note that <span class="sc">gdb</span> parameters must not be confused with
 Guile’s parameter objects (see <a href="../guile/Parameters.html#Parameters">Parameters</a>).</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

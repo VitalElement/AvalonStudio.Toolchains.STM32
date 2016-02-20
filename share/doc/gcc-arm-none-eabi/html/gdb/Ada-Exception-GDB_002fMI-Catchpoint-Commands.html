@@ -3,7 +3,7 @@
 <title>Ada Exception GDB/MI Catchpoint Commands - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI-Catchpoint-Commands.html#GDB_002fMI-Catchpoint-Commands" title="GDB/MI Catchpoint Commands">
 <link rel="prev" href="Shared-Library-GDB_002fMI-Catchpoint-Commands.html#Shared-Library-GDB_002fMI-Catchpoint-Commands" title="Shared Library GDB/MI Catchpoint Commands">
@@ -63,14 +63,14 @@ that stop the execution when Ada exceptions are being raised.
    <p>The possible optional parameters for this command are:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">-c </span><var>condition</var></samp>&rsquo;<dd>Make the catchpoint conditional on <var>condition</var>. 
-<br><dt>&lsquo;<samp><span class="samp">-d</span></samp>&rsquo;<dd>Create a disabled catchpoint. 
-<br><dt>&lsquo;<samp><span class="samp">-t</span></samp>&rsquo;<dd>Create a temporary catchpoint. 
+<dt>`<samp><span class="samp">-c </span><var>condition</var></samp>'<dd>Make the catchpoint conditional on <var>condition</var>. 
+<br><dt>`<samp><span class="samp">-d</span></samp>'<dd>Create a disabled catchpoint. 
+<br><dt>`<samp><span class="samp">-t</span></samp>'<dd>Create a temporary catchpoint. 
 </dl>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">catch assert</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">catch assert</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -99,19 +99,19 @@ catchpoints.
    <p>The possible optional parameters for this command are:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">-c </span><var>condition</var></samp>&rsquo;<dd>Make the catchpoint conditional on <var>condition</var>. 
-<br><dt>&lsquo;<samp><span class="samp">-d</span></samp>&rsquo;<dd>Create a disabled catchpoint. 
-<br><dt>&lsquo;<samp><span class="samp">-e </span><var>exception-name</var></samp>&rsquo;<dd>Only stop when <var>exception-name</var> is raised.  This option cannot
-be used combined with &lsquo;<samp><span class="samp">-u</span></samp>&rsquo;. 
-<br><dt>&lsquo;<samp><span class="samp">-t</span></samp>&rsquo;<dd>Create a temporary catchpoint. 
-<br><dt>&lsquo;<samp><span class="samp">-u</span></samp>&rsquo;<dd>Stop only when an unhandled exception gets raised.  This option
-cannot be used combined with &lsquo;<samp><span class="samp">-e</span></samp>&rsquo;. 
+<dt>`<samp><span class="samp">-c </span><var>condition</var></samp>'<dd>Make the catchpoint conditional on <var>condition</var>. 
+<br><dt>`<samp><span class="samp">-d</span></samp>'<dd>Create a disabled catchpoint. 
+<br><dt>`<samp><span class="samp">-e </span><var>exception-name</var></samp>'<dd>Only stop when <var>exception-name</var> is raised.  This option cannot
+be used combined with `<samp><span class="samp">-u</span></samp>'. 
+<br><dt>`<samp><span class="samp">-t</span></samp>'<dd>Create a temporary catchpoint. 
+<br><dt>`<samp><span class="samp">-u</span></samp>'<dd>Stop only when an unhandled exception gets raised.  This option
+cannot be used combined with `<samp><span class="samp">-e</span></samp>'. 
 </dl>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are &lsquo;<samp><span class="samp">catch exception</span></samp>&rsquo;
-and &lsquo;<samp><span class="samp">catch exception unhandled</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> commands are `<samp><span class="samp">catch exception</span></samp>'
+and `<samp><span class="samp">catch exception unhandled</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -123,5 +123,5 @@ and &lsquo;<samp><span class="samp">catch exception unhandled</span></samp>&rsqu
      (gdb)
 </pre>
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-   </body></html>
+</body></html>
 
