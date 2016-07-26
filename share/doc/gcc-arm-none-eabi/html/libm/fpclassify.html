@@ -44,7 +44,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Math.html#Math">Math</a>
      int isnormal(real-floating <var>x</var>);
      
      [Archaic SUSv2 functions:]
-     #include &lt;ieeefp.h&gt;
+     #include &lt;math.h&gt;
      int isnan(double <var>arg</var>);
      int isinf(double <var>arg</var>);
      int finite(double <var>arg</var>);
@@ -119,7 +119,7 @@ counterparts, but on single-precision floating-point numbers.
 and <code>isinf</code> are macros that operate on multiple types of
 floating-point.  The SUSv2 standard declares <code>isnan</code> as
 a function taking double.  Newlib has decided to declare
-them both as macros in math.h and as functions in ieeefp.h to
+them both as functions and as macros in math.h to
 maintain backward compatibility.
 
    <pre class="sp">
@@ -137,9 +137,11 @@ The isnormal macro returns nonzero if <var>x</var> has a normal value, else 0.
 
 </pre>
 <strong>Portability</strong><br>
-math.h macros are C99, POSIX.
+math.h macros are C99, POSIX.1-2001.
 
-   <p>ieeefp.h funtions are outdated and should be avoided.
+   <p>The functions originate from BSD; isnan was listed in the X/Open
+Portability Guide and Single Unix Specification, but was dropped when
+the macro was standardized in POSIX.1-2001.
 
    <pre class="sp">
 

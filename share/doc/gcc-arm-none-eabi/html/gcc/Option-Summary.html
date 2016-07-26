@@ -248,7 +248,7 @@ in the following sections.
           -fmem-report -fpre-ipa-mem-report -fpost-ipa-mem-report -fprofile-arcs 
           -fopt-info 
           -fopt-info-<var>options</var><span class="roman">[</span>=<var>file</var><span class="roman">]</span> 
-          -frandom-seed=<var>number</var> -fsched-verbose=<var>n</var> 
+          -frandom-seed=<var>string</var> -fsched-verbose=<var>n</var> 
           -fsel-sched-verbose -fsel-sched-dump-cfg -fsel-sched-pipelining-verbose 
           -fstack-usage  -ftest-coverage  -ftime-report -fvar-tracking 
           -fvar-tracking-assignments  -fvar-tracking-assignments-toggle 
@@ -457,6 +457,7 @@ in the following sections.
           -mslow-flash-data 
           -masm-syntax-unified 
           -mrestrict-it
+          -mcmse
 </pre>
      <p><em>AVR Options</em>
      <pre class="smallexample">          -mmcu=<var>mcu</var> -maccumulate-args -mbranch-cost=<var>cost</var> 
@@ -810,7 +811,7 @@ See RS/6000 and PowerPC Options.
           -mpointers-to-nested-functions -mno-pointers-to-nested-functions 
           -msave-toc-indirect -mno-save-toc-indirect 
           -mpower8-fusion -mno-mpower8-fusion -mpower8-vector -mno-power8-vector 
-          -mcrypto -mno-crypto -mdirect-move -mno-direct-move 
+          -mcrypto -mno-crypto -mhtm -mno-htm -mdirect-move -mno-direct-move 
           -mquad-memory -mno-quad-memory 
           -mquad-memory-atomic -mno-quad-memory-atomic 
           -mcompat-align-parm -mno-compat-align-parm 
