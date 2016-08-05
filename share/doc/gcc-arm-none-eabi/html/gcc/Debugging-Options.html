@@ -1243,14 +1243,18 @@ the first option takes effect and the subsequent options are
 ignored. Thus only <samp><span class="file">vec.miss</span></samp> is produced which contains
 dumps from the vectorizer about missed opportunities.
 
-     <br><dt><code>-frandom-seed=</code><var>number</var><dd><a name="index-frandom_002dseed-856"></a>This option provides a seed that GCC uses in place of
+     <br><dt><code>-frandom-seed=</code><var>string</var><dd><a name="index-frandom_002dseed-856"></a>This option provides a seed that GCC uses in place of
 random numbers in generating certain symbol names
 that have to be different in every compiled file.  It is also used to
 place unique stamps in coverage data files and the object files that
 produce them.  You can use the <samp><span class="option">-frandom-seed</span></samp> option to produce
 reproducibly identical object files.
 
-     <p>The <var>number</var> should be different for every file you compile.
+     <p>The <var>string</var> can either be a number (decimal, octal or hex) or an
+arbitrary string (in which case it's converted to a number by
+computing CRC32).
+
+     <p>The <var>string</var> should be different for every file you compile.
 
      <br><dt><code>-fsched-verbose=</code><var>n</var><dd><a name="index-fsched_002dverbose-857"></a>On targets that use instruction scheduling, this option controls the
 amount of debugging output the scheduler prints.  This information is

@@ -132,7 +132,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2015-12-02" "gcc-5.2.1" "GNU"
+.TH GCC 1 "2016-06-09" "gcc-5.4.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -385,7 +385,7 @@ in the following sections.
 \&\-fmem\-report \-fpre\-ipa\-mem\-report \-fpost\-ipa\-mem\-report \-fprofile\-arcs 
 \&\-fopt\-info 
 \&\-fopt\-info\-\fR\fIoptions\fR[\fB=\fR\fIfile\fR] 
-\&\fB\-frandom\-seed=\fR\fInumber\fR \fB\-fsched\-verbose=\fR\fIn\fR 
+\&\fB\-frandom\-seed=\fR\fIstring\fR \fB\-fsched\-verbose=\fR\fIn\fR 
 \&\fB\-fsel\-sched\-verbose \-fsel\-sched\-dump\-cfg \-fsel\-sched\-pipelining\-verbose 
 \&\-fstack\-usage  \-ftest\-coverage  \-ftime\-report \-fvar\-tracking 
 \&\-fvar\-tracking\-assignments  \-fvar\-tracking\-assignments\-toggle 
@@ -589,7 +589,8 @@ in the following sections.
 \&\-mneon\-for\-64bits 
 \&\-mslow\-flash\-data 
 \&\-masm\-syntax\-unified 
-\&\-mrestrict\-it\fR
+\&\-mrestrict\-it
+\&\-mcmse\fR
 .Sp
 \&\fI\s-1AVR\s0 Options\fR
 \&\fB\-mmcu=\fR\fImcu\fR \fB\-maccumulate\-args \-mbranch\-cost=\fR\fIcost\fR 
@@ -943,7 +944,7 @@ See \s-1RS/6000\s0 and PowerPC Options.
 \&\-mpointers\-to\-nested\-functions \-mno\-pointers\-to\-nested\-functions 
 \&\-msave\-toc\-indirect \-mno\-save\-toc\-indirect 
 \&\-mpower8\-fusion \-mno\-mpower8\-fusion \-mpower8\-vector \-mno\-power8\-vector 
-\&\-mcrypto \-mno\-crypto \-mdirect\-move \-mno\-direct\-move 
+\&\-mcrypto \-mno\-crypto \-mhtm \-mno\-htm \-mdirect\-move \-mno\-direct\-move 
 \&\-mquad\-memory \-mno\-quad\-memory 
 \&\-mquad\-memory\-atomic \-mno\-quad\-memory\-atomic 
 \&\-mcompat\-align\-parm \-mno\-compat\-align\-parm 
@@ -2119,6 +2120,9 @@ scope.
 Version 8, which first appeared in G++ 4.9, corrects the substitution
 behavior of function types with function-cv-qualifiers.
 .Sp
+Version 9, which first appeared in G++ 5.2, corrects the alignment of
+\&\f(CW\*(C`nullptr_t\*(C'\fR.
+.Sp
 See also \fB\-Wabi\fR.
 .IP "\fB\-fabi\-compat\-version=\fR\fIn\fR" 4
 .IX Item "-fabi-compat-version=n"
@@ -2577,7 +2581,14 @@ When mangling a function type with function-cv-qualifiers, the
 un-qualified function type was incorrectly treated as a substitution
 candidate.
 .Sp
-This was fixed in \fB\-fabi\-version=8\fR.
+This was fixed in \fB\-fabi\-version=8\fR, the default for \s-1GCC\s0 5.1.
+.IP "*" 4
+\&\f(CW\*(C`decltype(nullptr)\*(C'\fR incorrectly had an alignment of 1, leading to
+unaligned accesses.  Note that this did not affect the \s-1ABI\s0 of a
+function with a \f(CW\*(C`nullptr_t\*(C'\fR parameter, as parameters have a
+minimum alignment.
+.Sp
+This was fixed in \fB\-fabi\-version=9\fR, the default for \s-1GCC\s0 5.2.
 .RE
 .RS 4
 .Sp
@@ -6483,8 +6494,8 @@ the first option takes effect and the subsequent options are
 ignored. Thus only \fIvec.miss\fR is produced which contains
 dumps from the vectorizer about missed opportunities.
 .RE
-.IP "\fB\-frandom\-seed=\fR\fInumber\fR" 4
-.IX Item "-frandom-seed=number"
+.IP "\fB\-frandom\-seed=\fR\fIstring\fR" 4
+.IX Item "-frandom-seed=string"
 This option provides a seed that \s-1GCC\s0 uses in place of
 random numbers in generating certain symbol names
 that have to be different in every compiled file.  It is also used to
@@ -6492,7 +6503,11 @@ place unique stamps in coverage data files and the object files that
 produce them.  You can use the \fB\-frandom\-seed\fR option to produce
 reproducibly identical object files.
 .Sp
-The \fInumber\fR should be different for every file you compile.
+The \fIstring\fR can either be a number (decimal, octal or hex) or an
+arbitrary string (in which case it's converted to a number by
+computing \s-1CRC32\s0).
+.Sp
+The \fIstring\fR should be different for every file you compile.
 .IP "\fB\-fsched\-verbose=\fR\fIn\fR" 4
 .IX Item "-fsched-verbose=n"
 On targets that use instruction scheduling, this option controls the
@@ -12208,7 +12223,7 @@ Permissible names are: \fBarm2\fR, \fBarm250\fR,
 \&\fBcortex\-a12\fR, \fBcortex\-a15\fR, \fBcortex\-a53\fR,
 \&\fBcortex\-a57\fR, \fBcortex\-a72\fR,
 \&\fBcortex\-r4\fR,
-\&\fBcortex\-r4f\fR, \fBcortex\-r5\fR, \fBcortex\-r7\fR, \fBcortex\-m7\fR,
+\&\fBcortex\-r4f\fR, \fBcortex\-r5\fR, \fBcortex\-r7\fR, \fBcortex\-r8\fR, \fBcortex\-m7\fR,
 \&\fBcortex\-m4\fR,
 \&\fBcortex\-m3\fR,
 \&\fBcortex\-m1\fR,
@@ -12487,6 +12502,9 @@ Print \s-1CPU\s0 tuning information as comment in assembler file.  This is
 an option used only for regression testing of the compiler and not
 intended for ordinary use in compiling code.  This option is disabled
 by default.
+.IP "\fB\-mcmse\fR" 4
+.IX Item "-mcmse"
+Generate secure code as per ARMv8\-M Security Extensions.
 .PP
 \fI\s-1AVR\s0 Options\fR
 .IX Subsection "AVR Options"
@@ -17604,7 +17622,7 @@ following options:
 \&\-mpopcntb \-mpopcntd  \-mpowerpc64 
 \&\-mpowerpc\-gpopt  \-mpowerpc\-gfxopt  \-msingle\-float \-mdouble\-float 
 \&\-msimple\-fpu \-mstring  \-mmulhw  \-mdlmzb  \-mmfpgpr \-mvsx 
-\&\-mcrypto \-mdirect\-move \-mpower8\-fusion \-mpower8\-vector 
+\&\-mcrypto \-mdirect\-move \-mhtm \-mpower8\-fusion \-mpower8\-vector 
 \&\-mquad\-memory \-mquad\-memory\-atomic\fR
 .Sp
 The particular options set for any particular \s-1CPU\s0 varies between
@@ -17768,6 +17786,15 @@ access to the cryptographic instructions that were added in version
 Generate code that uses (does not use) the instructions to move data
 between the general purpose registers and the vector/scalar (\s-1VSX\s0)
 registers that were added in version 2.07 of the PowerPC \s-1ISA\s0.
+.IP "\fB\-mhtm\fR" 4
+.IX Item "-mhtm"
+.PD 0
+.IP "\fB\-mno\-htm\fR" 4
+.IX Item "-mno-htm"
+.PD
+Enable (disable) the use of the built-in functions that allow direct
+access to the Hardware Transactional Memory (\s-1HTM\s0) instructions that
+were added in version 2.07 of the PowerPC \s-1ISA\s0.
 .IP "\fB\-mpower8\-fusion\fR" 4
 .IX Item "-mpower8-fusion"
 .PD 0
@@ -21570,7 +21597,7 @@ useful together with \fB\-mrecord\-mcount\fR.
 .IX Item "-mno-skip-rax-setup"
 .PD
 When generating code for the x86\-64 architecture with \s-1SSE\s0 extensions
-disabled, \fB\-skip\-rax\-setup\fR can be used to skip setting up \s-1RAX\s0
+disabled, \fB\-mskip\-rax\-setup\fR can be used to skip setting up \s-1RAX\s0
 register when there are no variable arguments passed in vector registers.
 .Sp
 \&\fBWarning:\fR Since \s-1RAX\s0 register is used to avoid unnecessarily

@@ -103,6 +103,9 @@ scope.
      <p>Version 8, which first appeared in G++ 4.9, corrects the substitution
 behavior of function types with function-cv-qualifiers.
 
+     <p>Version 9, which first appeared in G++ 5.2, corrects the alignment of
+<code>nullptr_t</code>.
+
      <p>See also <samp><span class="option">-Wabi</span></samp>.
 
      <br><dt><code>-fabi-compat-version=</code><var>n</var><dd><a name="index-fabi_002dcompat_002dversion-148"></a>On targets that support strong aliases, G++
@@ -505,7 +508,14 @@ ABI changed the mangling of <code>nullptr_t</code>.
 un-qualified function type was incorrectly treated as a substitution
 candidate.
 
-          <p>This was fixed in <samp><span class="option">-fabi-version=8</span></samp>. 
+          <p>This was fixed in <samp><span class="option">-fabi-version=8</span></samp>, the default for GCC 5.1.
+
+          <li><code>decltype(nullptr)</code> incorrectly had an alignment of 1, leading to
+unaligned accesses.  Note that this did not affect the ABI of a
+function with a <code>nullptr_t</code> parameter, as parameters have a
+minimum alignment.
+
+          <p>This was fixed in <samp><span class="option">-fabi-version=9</span></samp>, the default for GCC 5.2. 
 </ul>
 
      <p>It also warns about psABI-related changes.  The known psABI changes at this

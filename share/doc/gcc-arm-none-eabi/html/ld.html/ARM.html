@@ -11,8 +11,8 @@
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <!--
 This file documents the GNU linker LD
-(GNU Tools for ARM Embedded Processors)
-version 2.25.90.
+(GNU Binutils)
+version 2.26.
 
 Copyright (C) 1991-2015 Free Software Foundation, Inc.
 
@@ -258,6 +258,26 @@ otherwise.
    <p><a name="index-g_t_002d_002dlong_002dplt-648"></a><a name="index-g_t32_002dbit-PLT-entries-649"></a>The &lsquo;<samp><span class="samp">--long-plt</span></samp>&rsquo; option enables the use of 16 byte PLT entries
 which support up to 4Gb of code.  The default is to use 12 byte PLT
 entries which only support 512Mb of code.
+
+   <p><a name="index-Placement-of-SG-veneers-650"></a>All SG veneers are placed in the special output section <code>.gnu.sgstubs</code>. 
+Its start address must be set, either with the command line option
+&lsquo;<samp><span class="samp">--section-start</span></samp>&rsquo; or in a linker script, to indicate where to place these
+veneers in memory.
+
+   <p><a name="index-g_t_002d_002dcmse_002dimplib-651"></a><a name="index-Secure-gateway-import-library-652"></a>The &lsquo;<samp><span class="samp">--cmse-implib</span></samp>&rsquo; option requests that the import libraries
+specified by the &lsquo;<samp><span class="samp">--out-implib</span></samp>&rsquo; and &lsquo;<samp><span class="samp">--in-implib</span></samp>&rsquo; options are
+secure gateway import libraries, suitable for linking a non-secure
+executable against secure code as per ARMv8-M Security Extensions.
+
+   <p><a name="index-g_t_002d_002din_002dimplib_003d_0040var_007bfile_007d-653"></a><a name="index-Input-import-library-654"></a>The &lsquo;<samp><span class="samp">--in-implib=file</span></samp>&rsquo; specifies an input import library whose symbols
+must keep the same address in the executable being produced.  A warning is
+given if no &lsquo;<samp><span class="samp">--out-implib</span></samp>&rsquo; is given but new symbols have been introduced
+in the executable that should be listed in its import library.  Otherwise, if
+&lsquo;<samp><span class="samp">--out-implib</span></samp>&rsquo; is specified, the symbols are silently added to the output
+import library.  A warning is also given if some symbols present in the input
+import library have disappeared from the executable.  This option is only
+effective for Secure Gateway import libraries, ie. when &lsquo;<samp><span class="samp">--cmse-implib</span></samp>&rsquo; is
+specified.
 
    </body></html>
 

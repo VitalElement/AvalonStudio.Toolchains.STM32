@@ -271,14 +271,22 @@ single-thread computers
 <samp><span class="option">-momit-lock-prefix=</span><var>no</var></samp> will encode lock prefix as usual,
 which is the default.
 
-     <p><a name="index-g_t_0040samp_007b_002dmevexrcig_003d_007d-option_002c-i386-1021"></a><a name="index-g_t_0040samp_007b_002dmevexrcig_003d_007d-option_002c-x86_002d64-1022"></a><br><dt><code>-mevexrcig=</code><var>rne</var><dt><code>-mevexrcig=</code><var>rd</var><dt><code>-mevexrcig=</code><var>ru</var><dt><code>-mevexrcig=</code><var>rz</var><dd>These options control how the assembler should encode SAE-only
+     <p><a name="index-g_t_0040samp_007b_002dmrelax_002drelocations_003d_007d-option_002c-i386-1021"></a><a name="index-g_t_0040samp_007b_002dmrelax_002drelocations_003d_007d-option_002c-x86_002d64-1022"></a><br><dt><code>-mrelax-relocations=</code><var>no</var><dt><code>-mrelax-relocations=</code><var>yes</var><dd>These options control whether the assembler should generate relax
+relocations, R_386_GOT32X, in 32-bit mode, or R_X86_64_GOTPCRELX and
+R_X86_64_REX_GOTPCRELX, in 64-bit mode. 
+<samp><span class="option">-mrelax-relocations=</span><var>yes</var></samp> will generate relax relocations. 
+<samp><span class="option">-mrelax-relocations=</span><var>no</var></samp> will not generate relax
+relocations.  The default can be controlled by a configure option
+<samp><span class="option">--enable-x86-relax-relocations</span></samp>.
+
+     <p><a name="index-g_t_0040samp_007b_002dmevexrcig_003d_007d-option_002c-i386-1023"></a><a name="index-g_t_0040samp_007b_002dmevexrcig_003d_007d-option_002c-x86_002d64-1024"></a><br><dt><code>-mevexrcig=</code><var>rne</var><dt><code>-mevexrcig=</code><var>rd</var><dt><code>-mevexrcig=</code><var>ru</var><dt><code>-mevexrcig=</code><var>rz</var><dd>These options control how the assembler should encode SAE-only
 EVEX instructions.  <samp><span class="option">-mevexrcig=</span><var>rne</var></samp> will encode RC bits
 of EVEX instruction with 00, which is the default. 
 <samp><span class="option">-mevexrcig=</span><var>rd</var></samp>, <samp><span class="option">-mevexrcig=</span><var>ru</var></samp>
 and <samp><span class="option">-mevexrcig=</span><var>rz</var></samp> will encode SAE-only EVEX instructions
 with 01, 10 and 11 RC bits, respectively.
 
-     <p><a name="index-g_t_0040samp_007b_002dmamd64_007d-option_002c-x86_002d64-1023"></a><a name="index-g_t_0040samp_007b_002dmintel64_007d-option_002c-x86_002d64-1024"></a><br><dt><code>-mamd64</code><dt><code>-mintel64</code><dd>This option specifies that the assembler should accept only AMD64 or
+     <p><a name="index-g_t_0040samp_007b_002dmamd64_007d-option_002c-x86_002d64-1025"></a><a name="index-g_t_0040samp_007b_002dmintel64_007d-option_002c-x86_002d64-1026"></a><br><dt><code>-mamd64</code><dt><code>-mintel64</code><dd>This option specifies that the assembler should accept only AMD64 or
 Intel64 ISA in 64-bit mode.  The default is to accept both.
 
    </dl>

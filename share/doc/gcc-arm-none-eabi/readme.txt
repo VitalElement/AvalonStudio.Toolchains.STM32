@@ -1,5 +1,5 @@
 GNU Tools for ARM Embedded Processors
-Version: 5.0
+Version: 5
 
 Table of Contents
 * Installing executables on Linux
@@ -8,7 +8,6 @@ Table of Contents
 * Invoking GCC
 * Architecture options usage
 * C Libraries usage
-* GCC Plugin usage
 * Linker scripts & startup code
 * Samples
 * GDB Server for CMSIS-DAP based hardware debugger
@@ -85,13 +84,13 @@ options for variants of Cortex-A/R and Cortex-M architectures.
 |------------|--------------------------------------------|--------------|
 | Cortex-M4  | -mthumb -mcpu=cortex-m4 -mfloat-abi=softfp | armv7e-m     |
 | (Soft FP)  | -mfpu=fpv4-sp-d16                          | /softfp      |
-|            |--------------------------------------------| /fpv4-sp-d16 |
+|            |--------------------------------------------|              |
 |            | -mthumb -march=armv7e-m -mfloat-abi=softfp |              |
 |            | -mfpu=fpv4-sp-d16                          |              |
 |------------|--------------------------------------------|--------------|
 | Cortex-M4  | -mthumb -mcpu=cortex-m4 -mfloat-abi=hard   | armv7e-m     |
 | (Hard FP)  | -mfpu=fpv4-sp-d16                          | /fpu         |
-|            |--------------------------------------------| /fpv4-sp-d16 |
+|            |--------------------------------------------|              |
 |            | -mthumb -march=armv7e-m -mfloat-abi=hard   |              |
 |            | -mfpu=fpv4-sp-d16                          |              |
 |------------|--------------------------------------------|--------------|
@@ -149,16 +148,19 @@ options for variants of Cortex-A/R and Cortex-M architectures.
 | Cortex-R4  | [-mthumb] -march=armv7-r                   | armv7-ar     |
 | Cortex-R5  |                                            | /thumb       |
 | Cortex-R7  |                                            |              |
+| Cortex-R8  |						  |		 |
 | (No FP)    |                                            |              |
 |------------|--------------------------------------------|--------------|
 | Cortex-R4  | [-mthumb] -march=armv7-r -mfloat-abi=softfp| armv7-ar     |
 | Cortex-R5  | -mfpu=vfpv3-d16                            | /thumb       |
 | Cortex-R7  |                                            | /softfp      |
+| Cortex-R8  |						  |		 |
 | (Soft FP)  |                                            |              |
 |------------|--------------------------------------------|--------------|
 | Cortex-R4  | [-mthumb] -march=armv7-r -mfloat-abi=hard  | armv7-ar     |
 | Cortex-R5  | -mfpu=vfpv3-d16                            | /thumb       |
 | Cortex-R7  |                                            | /fpu         |
+| Cortex-R8  |						  |		 |
 | (Hard FP)  |                                            |              |
 |------------|--------------------------------------------|--------------|
 | Cortex-A*  | [-mthumb] -march=armv7-a                   | armv7-ar     |
@@ -182,8 +184,12 @@ To distinguish them, we rename the size optimized libraries as:
   libc.a --> libc_s.a
   libg.a --> libg_s.a
 
-To use newlib-nano, users should provide additional gcc link time option:
+To use newlib-nano, users should provide additional gcc compile and link time
+option:
  --specs=nano.specs
+
+At compile time, a 'newlib.h' header file especially configured for newlib-nano
+will be used if --specs=nano.specs is passed to the compiler.
 
 Nano.specs also handles two additional gcc libraries: libstdc++_s.a and
 libsupc++_s.a, which are optimized for code size.
@@ -194,8 +200,9 @@ $ arm-none-eabi-gcc src.c --specs=nano.specs $(OTHER_OPTIONS)
 This option can also work together with other specs options like
 --specs=rdimon.specs
 
-Please be noticed that --specs=nano.specs is a linker option. Be sure
-to include in linker option if compiling and linking are separated.
+Please note that, unlike previous versions of this toolchain, --specs=nano.specs
+is now both a compiler and linker option.  Be sure to include in both compiler
+and linker options if compiling and linking are separated.
 
 ** additional newlib-nano libraries usage
 
@@ -222,17 +229,6 @@ $ arm-none-eabi-gcc --specs=rdimon.specs $(OTHER_LINK_OPTIONS)
 If you are using retarget, linking like:
 $ arm-none-eabi-gcc --specs=nosys.specs $(OTHER_LINK_OPTIONS)
 
-* GCC Plugin usage
-This release includes following Linux GCC plugins for additional performance
-optimization:
-
-** tree_switch_shortcut: optimize (Finite State Machine) FSM style program
-to reduce condition jump or indirect jumps. Usage:
-(GCC option) -fplugin=tree_switch_shortcut_elf
-
-Please be noticed that current GCC plugin can only run on Linux host. They
-are not available to Windows or Mac OS hosted GCC.
-
 * Linker scripts & startup code *
 
 Latest update of linker scripts template and startup code is available on
@@ -254,6 +250,5 @@ hardware debugger.  The pyOCD is an implementation of such GDB server that is
 written in Python and under Apache License.
 
 For those who are using this toolchain and have board with CMSIS-DAP based
-debugger, the pyOCD is our recommended gdb server.  The pyOCD binary
-release is at https://launchpad.net/gcc-arm-embedded-misc/pyocd-binary.
-More information can be found at https://github.com/mbedmicro/pyOCD.
+debugger, the pyOCD is our recommended gdb server.  More information can be
+found at https://github.com/mbedmicro/pyOCD.
