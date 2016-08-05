@@ -4,6 +4,7 @@
   "RepoUrl": "http://github.com/VitalElement/AvalonStudio.Toolchains.STM32.git",
   "Tags": [
     "Win32-Slow-v0.04-5.4.1",
+    "Linux-Slow-v0.04-5.4.1",
     "Linux-Slow-v0.03-5.2.1",
     "Win32-Slow-v0.03-5.2.1",
     "Win32-Slow-v0.01-4.9.3"
